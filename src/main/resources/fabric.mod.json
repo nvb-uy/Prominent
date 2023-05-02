@@ -1,0 +1,32 @@
+{
+  "schemaVersion": 1,
+  "id": "prominent",
+  "version": "1.0.0",
+
+  "name": "Prominent",
+  "description": "Prevents entities from spawning with data-driven config using JSON.",
+  "authors": [
+    "ElocinDev"
+  ],
+  "contact": {
+    "homepage": "https://curseforge.com/members/elocindev/projects",
+    "sources": "https://github.com/nvb-uy/ysns"
+  },
+  "icon":"icon.png",
+  "license": "AGNYA License",
+
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "elocindev.prominent.fabric_quilt.ProminentLoader"
+    ]
+  },
+  "mixins": [
+    "prominent.fabricmixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.14.9",
+    "java": ">=17"
+  }
+}
