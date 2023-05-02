@@ -4,7 +4,7 @@
   "version": "1.0.0",
 
   "name": "Prominent",
-  "description": "Prevents entities from spawning with data-driven config using JSON.",
+  "description": "Custom Content for the Prominence Modpack",
   "authors": [
     "ElocinDev"
   ],
