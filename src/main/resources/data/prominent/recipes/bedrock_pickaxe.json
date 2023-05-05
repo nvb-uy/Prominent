@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#A#",
+        "BNC",
+        "#D#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecells:guts"
+        },
+        "A": {
+            "item": "mythicupgrades:ruby_netherite_pickaxe"
+        },
+        "B": {
+            "item": "mythicupgrades:sapphire_netherite_pickaxe"
+        },
+        "C": {
+            "item": "mythicupgrades:topaz_netherite_pickaxe"
+        },
+        "D": {
+            "item": "betterend:aeternium_pickaxe"
+        },
+        "N": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    "result": {
+        "item": "spectrum:bedrock_pickaxe",
+        "count": 1
+    }
+}

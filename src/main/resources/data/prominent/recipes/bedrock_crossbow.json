@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#A#",
+        "#N#",
+        "#B#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecells:guts"
+        },
+        "A": {
+            "item": "dragonloot:dragon_crossbow"
+        },
+        "B": {
+            "item": "spectrum:bedrock_bow"
+        },
+        "N": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    "result": {
+        "item": "spectrum:bedrock_crossbow",
+        "count": 1
+    }
+}

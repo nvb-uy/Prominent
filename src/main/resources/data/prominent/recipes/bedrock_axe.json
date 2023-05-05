@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#A#",
+        "BNC",
+        "#D#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecells:guts"
+        },
+        "A": {
+            "item": "mythicupgrades:ruby_netherite_axe"
+        },
+        "B": {
+            "item": "mythicupgrades:sapphire_netherite_axe"
+        },
+        "C": {
+            "item": "mythicupgrades:topaz_netherite_axe"
+        },
+        "D": {
+            "item": "betterend:aeternium_axe"
+        },
+        "N": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    "result": {
+        "item": "spectrum:bedrock_axe",
+        "count": 1
+    }
+}

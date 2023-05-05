@@ -1,0 +1,32 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "#A#",
+        "BNC",
+        "#D#"
+    ],
+    "key": {
+        "#": {
+            "item": "minecells:guts"
+        },
+        "A": {
+            "item": "mythicupgrades:ruby_netherite_shovel"
+        },
+        "B": {
+            "item": "mythicupgrades:sapphire_netherite_shovel"
+        },
+        "C": {
+            "item": "mythicupgrades:topaz_netherite_shovel"
+        },
+        "D": {
+            "item": "betterend:aeternium_shovel"
+        },
+        "N": {
+            "item": "minecraft:nether_star"
+        }
+    },
+    "result": {
+        "item": "spectrum:bedrock_shovel",
+        "count": 1
+    }
+}
