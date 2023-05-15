@@ -1,5 +1,6 @@
 package elocindev.prominent.fabric_quilt.config;
 
 public class ServerEntries {
-  // Soon(TM) 
+  public boolean enablePvpFactor = true;
+  public float combatFactorPvp = 0.1F;
 }

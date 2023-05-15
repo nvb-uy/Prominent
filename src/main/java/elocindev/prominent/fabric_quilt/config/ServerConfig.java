@@ -20,6 +20,9 @@ public class ServerConfig {
           if (Files.notExists(file)) {
               ServerEntries exampleConfig = new ServerEntries();
               
+              exampleConfig.enablePvpFactor = true;
+              exampleConfig.combatFactorPvp = 0.1f;
+
               String defaultJson = BUILDER.toJson(exampleConfig);
               Files.writeString(file, defaultJson);
           }
