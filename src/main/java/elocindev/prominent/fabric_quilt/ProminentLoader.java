@@ -10,7 +10,7 @@ import net.minecraft.util.Identifier;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import elocindev.prominent.fabric_quilt.callbacks.CombatCallback;
+import elocindev.prominent.fabric_quilt.commands.CommandRegistry;
 import elocindev.prominent.fabric_quilt.config.ServerConfig;
 import elocindev.prominent.fabric_quilt.config.ServerEntries;
 import elocindev.prominent.fabric_quilt.registry.ItemRegistry;
@@ -35,8 +35,7 @@ public class ProminentLoader implements ModInitializer {
 		LOGGER.info("Loaded Prominent Config");
 
 		SoundRegistry.registerSounds();
-		ItemRegistry.registerItems();
-
-		CombatCallback.register();
+		ItemRegistry.registerItems();		
+		CommandRegistry.register();
 	}
 }

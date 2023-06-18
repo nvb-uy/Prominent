@@ -19,6 +19,9 @@
   "entrypoints": {
     "main": [
       "elocindev.prominent.fabric_quilt.ProminentLoader"
+    ],
+    "server": [
+      "elocindev.prominent.fabric_quilt.ProminentServerLoader"
     ]
   },
   "mixins": [
