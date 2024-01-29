@@ -1,7 +1,7 @@
 {
   "schemaVersion": 1,
   "id": "prominent",
-  "version": "1.1.0",
+  "version": "2.0.0",
 
   "name": "Prominent",
   "description": "Custom Content for the Prominence Modpack",
@@ -18,10 +18,13 @@
   "environment": "*",
   "entrypoints": {
     "main": [
-      "elocindev.prominent.fabric_quilt.ProminentLoader"
+      "elocindev.prominent.ProminentLoader"
     ],
     "server": [
-      "elocindev.prominent.fabric_quilt.ProminentServerLoader"
+      "elocindev.prominent.ProminentServerLoader"
+    ],
+    "client": [
+      "elocindev.prominent.ProminentClient"
     ]
   },
   "mixins": [

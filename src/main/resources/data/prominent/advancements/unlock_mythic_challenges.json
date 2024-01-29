@@ -1,0 +1,24 @@
+{
+    "display": {
+      "icon": {
+        "item": "prominent:molten_core"
+      },
+      "title": "Void's Invasion: Chapter II",
+      "description": "Complete Chapter II of Void's Invasion and unlock the Mythic Challenges.",
+      "hidden": true,
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true
+    },
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:impossible",
+        "conditions": {}
+      }
+    },
+    "rewards": {
+      "loot": [
+        "prominent:unlockmythic"
+      ]
+    }
+}

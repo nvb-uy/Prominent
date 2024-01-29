@@ -1,0 +1,24 @@
+{
+    "display": {
+      "icon": {
+        "item": "prominent:lesser_mythical_essence"
+      },
+      "title": "Void's Invasion: Mythic Initiate",
+      "description": "Successfuly defeat a Mythic 1 boss without dying.",
+      "hidden": true,
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true
+    },
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:impossible",
+        "conditions": {}
+      }
+    },
+    "rewards": {
+      "loot": [
+        "prominent:lesser_tier_1"
+      ]
+    }
+}

@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "prominent:demon_essence"
+    },
+    "base": {
+      "item": "simplyswords:thunderbrand"
+    },
+    "result": {
+      "item": "prominent:thunderwrath"
+    },
+    "template": {
+      "item": "prominent:molten_core"
+    }
+}

@@ -1,9 +1,16 @@
 {
   "required": true,
   "minVersion": "0.8",
-  "package": "elocindev.prominent.fabric_quilt.mixin",
+  "package": "elocindev.prominent.mixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
+    "RageMixin",
+    "FuryFistMixin",
+    "CustomItemNameMixin",
+    "ArtifactTooltipFix",
+    "ItemEntityExplodableMixin",
+    "PlayerEntityMixin",
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1

@@ -1,7 +1,48 @@
 {
+    "itemGroup.prominent.tab":"Prominence Custom Content",
+    "itemGroup.prominent.mythic":"Prominence Mythic Bosses",
+    "item.prominent.icon":"Prominent",
+
     "item.prominent.music_disc_coniferus_forest":"Music Disc",
     "item.prominent.music_disc_coniferus_forest.desc":"Orangery - Coniferus Forest (Main Menu Theme)",
-    "item.prominent.icon":"Prominent",
-    "itemGroup.prominent.tab":"Prominence Custom Content"
+    "item.prominent.music_disc_festivities":"Music Disc",
+    "item.prominent.music_disc_festivities.desc":"Sideralis Music - Prominent Festivities (Original Soundtrack)",
+    
+    "item.prominent.knowledge_scroll": "Knowledge Scroll",
+    "item.prominent.molten_core": "Molten Core",
 
+    "item.prominent.thunderwrath": "Thunderwrath, the Lava Storm",
+    "item.prominent.supernova": "Supernova, Death of a Star",
+    "item.prominent.fury_of_a_thousand_fists": "Fury of a Thousand Fists",
+    "item.prominent.frostmourne": "Frostmourne, Blade of the Fallen King",
+    "item.prominent.azhar": "A'zhar, Scythe of the Damned",
+    "item.prominent.fyralath": "Fyr'alath, the Scorched Agony",
+
+    "spell.prominent.supernova.name": "Astral Burst",
+    "spell.prominent.supernova.description": "Invoke all of the energy of Supernova into a single point, exploding in a lethal nova that deals arcane damage to all nearby enemies.",
+    "spell.prominent.rage.name": "Enrage",
+    "spell.prominent.rage.description": "Unleash your inner rage, increasing your attack speed by 500% for a short duration. Requires a fist of fury and the fist of a thousand furies.",
+
+    "item.prominent.demon_essence": "Demonic Essence",
+    "item.prominent.glory_essence": "Essence of Glory",
+    "item.prominent.wrath_essence": "Essence of Wrath",
+    
+    "item.prominent.cosmic_essence": "Cosmic Essence",
+    "item.prominent.encased_remnant": "Encased Remnant",
+
+    "item.prominent.empty_vessel": "Cinderstone Vessel",
+    "item.prominent.void_hourglass": "Void Hourglass",
+    "item.prominent.lesser_mythical_essence": "Lesser Mythical Essence",
+    "item.prominent.greater_mythical_essence": "Greater Mythical Essence",
+    "effect.prominent.mythic": "Mythic",
+
+    "effect.prominent.obliterated_agony": "Obliterated Agony",
+    "effect.prominent.remorseless_winter": "Remorseless Winter",
+    "effect.prominent.agonizing_breath": "Agonizing Breath",
+    "effect.prominent.broken_soul": "Broken Soul",
+    "effect.prominent.soul_absorption": "Absorbing Souls",
+    "effect.prominent.faceless_gift": "Faceless Gift",
+    "effect.prominent.combat": "In Combat",
+
+    "attribute.prominent.mythic_level": "Mythic Level"
 }

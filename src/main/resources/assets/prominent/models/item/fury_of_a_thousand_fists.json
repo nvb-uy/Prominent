@@ -1,0 +1,7 @@
+{
+    "parent": "archon:item/fist_of_fury",
+    "textures": {
+      "0": "prominent:item/artifacts/foatf/fury_of_a_thousand_fists",
+      "particle": "prominent:item/artifacts/foatf/fury_of_a_thousand_fists"
+    }
+}

@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "/P/",
+        " PI",
+        "/P/"
+    ],
+    "key": {
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "P": {
+            "item": "minecraft:paper"
+        },
+        "I": {
+            "item": "minecraft:ink_sac"
+        }
+    },
+    "result": {
+        "item": "prominent:knowledge_scroll",
+        "count": 1
+    }
+}

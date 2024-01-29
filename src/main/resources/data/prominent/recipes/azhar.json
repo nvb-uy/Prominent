@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "prominent:demon_essence"
+    },
+    "base": {
+      "item": "simplyswords:soulrender"
+    },
+    "result": {
+      "item": "prominent:azhar"
+    },
+    "template": {
+      "item": "prominent:molten_core"
+    }
+}

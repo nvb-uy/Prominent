@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "simplyswords:molten_edge"
+    },
+    "base": {
+      "item": "simplyswords:molten_edge"
+    },
+    "result": {
+      "item": "prominent:fyralath"
+    },
+    "template": {
+      "item": "prominent:molten_core"
+    }
+}

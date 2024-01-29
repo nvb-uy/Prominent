@@ -1,0 +1,19 @@
+{
+    "display": {
+      "icon": {
+        "item": "prominent:greater_mythical_essence"
+      },
+      "title": "Void's Invasion: Mythic Challenger",
+      "description": "Successfuly defeat a Mythic 30 boss without dying.",
+      "hidden": true,
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true
+    },
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:impossible",
+        "conditions": {}
+      }
+    }
+}

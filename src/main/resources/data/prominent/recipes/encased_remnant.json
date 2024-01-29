@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "///",
+        "/P/",
+        "///"
+    ],
+    "key": {
+        "/": {
+            "item": "simplyswords:runic_tablet"
+        },
+        "P": {
+            "item": "simplyswords:empowered_remnant"
+        }
+    },
+    "result": {
+        "item": "prominent:encased_remnant",
+        "count": 1
+    }
+}

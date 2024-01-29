@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "prominent:glory_essence"
+    },
+    "base": {
+      "item": "spellbladenext:starforge"
+    },
+    "result": {
+      "item": "prominent:supernova"
+    },
+    "template": {
+      "item": "prominent:molten_core"
+    }
+}

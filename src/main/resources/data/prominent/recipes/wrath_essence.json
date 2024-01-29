@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "prominent:lesser_mythical_essence"
+    },
+    "base": {
+      "item": "minecells:guts"
+    },
+    "result": {
+      "item": "prominent:wrath_essence"
+    },
+    "template": {
+      "item": "prominent:greater_mythical_essence"
+    }
+}

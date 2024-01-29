@@ -1,0 +1,9 @@
+{
+    "type": "minecraft:smelting",
+    "ingredient": {
+        "tag": "prominent:artifacts"
+    },
+    "result": "prominent:molten_core",
+    "experience": 0,
+    "cookingtime": 6000
+}

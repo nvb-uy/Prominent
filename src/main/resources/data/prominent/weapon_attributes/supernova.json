@@ -1,0 +1,46 @@
+{
+  "attributes": {
+    "attack_range": 3.5,
+    "two_handed": true,
+    "pose": "bettercombat:pose_two_handed_heavy",
+    "category": "claymore",
+    "attacks": [
+      {
+        "hitbox": "HORIZONTAL_PLANE",
+        "damage_multiplier": 0.75,
+        "angle": 150,
+        "upswing": 0.5,
+        "animation": "spellbladenext:twohandfloatright",
+        "swing_sound": {
+          "id": "simplyswords:elemental_sword_fire_attack_03",
+          "volume": 0.3,
+          "pitch": 1
+        }
+      },
+      {
+        "hitbox": "HORIZONTAL_PLANE",
+        "damage_multiplier": 0.75,
+        "angle": 150,
+        "upswing": 0.5,
+        "animation": "spellbladenext:twohandfloatleft",
+        "swing_sound": {
+          "id": "simplyswords:elemental_sword_fire_attack_03",
+          "volume": 0.3,
+          "pitch": 1.5
+        }
+      },
+      {
+        "hitbox": "VERTICAL_PLANE",
+        "damage_multiplier": 1.5,
+        "angle": 150,
+        "upswing": 0.5,
+        "animation": "spellbladenext:twohandfloatslam",
+        "swing_sound": {
+          "id": "simplyswords:elemental_sword_earth_attack_01",
+          "volume": 0.3,
+          "pitch": 1
+        }
+      }
+    ]
+  }
+}

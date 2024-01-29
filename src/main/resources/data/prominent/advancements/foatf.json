@@ -1,0 +1,28 @@
+{
+    "display": {
+      "icon": {
+        "item": "prominent:fury_of_a_thousand_fists"
+      },
+      "title": "Is that a meteor? No! It's a fist!",
+      "description": "Create the soulfire artifact Fury of a Thousand Fists",
+      "hidden": true,
+      "frame": "challenge",
+      "show_toast": true,
+      "announce_to_chat": true
+    },
+    "parent": "prominent:molten_core",
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:inventory_changed",
+        "conditions": {
+          "items": [
+            {
+              "items": [
+                "prominent:fury_of_a_thousand_fists"
+              ]
+            }
+          ]
+        }
+      }
+    }
+}

@@ -1,0 +1,58 @@
+{
+    "providers": [
+        {
+            "type": "bitmap",
+            "file": "prominent:item/molten_core.png",
+            "ascent": 9, "height": 20,
+            "chars": ["\uF933"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:icon/active.png",
+            "ascent": 9, "height": 10,
+            "chars": ["\uF934"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:icon/mythic_bosses/mythic.png",
+            "ascent": 9, "height": 13,
+            "chars": ["\uF935"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:icon/mythic_bosses/heroic.png",
+            "ascent": 9, "height": 13,
+            "chars": ["\uF936"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:item/void_hourglass.png",
+            "ascent": 9, "height": 13,
+            "chars": ["\uF937"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:gui/realms.png",
+            "ascent": 34, "height": 39,
+            "chars": ["\uA735"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:gui/cdu.png",
+            "ascent": 34, "height": 39,
+            "chars": ["\uA736"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:gui/mmcn.png",
+            "ascent": 34, "height": 39,
+            "chars": ["\uA737"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:boss_bar/null_bossbar.png",
+            "ascent": 13, "height": 52,
+            "chars": ["\uA835"]
+        }
+    ]
+}

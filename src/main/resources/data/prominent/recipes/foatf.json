@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "prominent:wrath_essence"
+    },
+    "base": {
+      "item": "archon:fist_of_fury"
+    },
+    "result": {
+      "item": "prominent:fury_of_a_thousand_fists"
+    },
+    "template": {
+      "item": "prominent:molten_core"
+    }
+}
