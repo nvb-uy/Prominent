@@ -23,14 +23,12 @@ public class LivingEntityMixin {
         if (entity.age % 600 == 0) {   
             if (MythicBosses.isMythicBoss(entity))
                 for (int i = 0; i < 3; i++) {
-                    entity.heal(entity.getMaxHealth() / 10 / 2);
-
                     String aberrationId = "eldritch_end:aberration";
 
                     Entity aberrationEntity = EntityType.get(aberrationId).get().create(entity.getWorld());
                     aberrationEntity.setPos(entity.getBlockPos().getX(), entity.getBlockPos().getY() + 2, entity.getBlockPos().getZ());
 
-                    if (aberrationEntity instanceof LivingEntity aberrationLiving ) {
+                    if (aberrationEntity instanceof LivingEntity aberrationLiving) {
                         aberrationLiving = MythicBosses.getMythicMinion(aberrationLiving, MythicBosses.getMythicLevel(entity), entity.getUuid());
 
                         aberrationLiving.teleport(entity.getBlockPos().getX(), entity.getBlockPos().getY() + 2, entity.getBlockPos().getZ());
