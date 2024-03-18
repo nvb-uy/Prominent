@@ -127,7 +127,7 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact {
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Text.literal("Thunder's Fury").setStyle(RIGHTCLICK)));
+        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Thunder's Fury").setStyle(RIGHTCLICK)));
         tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip3").setStyle(TEXT));
         tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip4").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
@@ -135,7 +135,7 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact {
         tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip6").setStyle(TEXT));
         tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip7").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uB996 ").append(Text.literal("Pyroclastic Flow").setStyle(ABILITY)));
+        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Pyroclastic Flow").setStyle(ABILITY)));
         tooltip.add(Text.literal("Chance on hit to refresh Thunder Fury's cooldown").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
 

@@ -88,20 +88,52 @@ public class Ashedar extends SwordItem implements Artifact {
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         Style TEXT = Style.EMPTY.withColor(Formatting.GRAY);
-        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Sunfire Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
+        MutableText TYPE; if (isAsh()) TYPE = Text.literal("Sunfire"); else TYPE = Text.literal("Arcane");
+        MutableText ARTIFACT = TextAPI.Styles.getGradient(TYPE.append(Text.literal(" Artifact")), 1, getGradient()[0], getGradient()[1], 2.0F);
 
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        MutableText Ability1; 
-        if (isAsh()) Ability1 = Text.literal("Sunny Sun.");
-        else Ability1 = Text.literal("Darky Moon.");        
+        MutableText Ability1; MutableText Ability1Desc; MutableText Ability2; MutableText Ability2Desc;
+        MutableText Ability1Passive1; MutableText Ability1Passive2;
+
+
+        if (isAsh()) {
+            Ability1 = Text.literal("Sunstrike");
+            Ability1Desc = Text.literal("Deals a great amount of fire damage in an area.");
+            Ability1Passive1 = Text.literal(" Deals double damage while affected by Solar Eclipse");
+            Ability1Passive2 = Text.literal(" Heals you the damaged amount while affected by Lunar Eclipse.");
+
+
+            Ability2 = Text.literal("Solar Eclipse");
+            Ability2Desc = Text.literal("Increases attack damage by 10% for 10 seconds.");
+        } else {
+            Ability1 = Text.literal("Darkening");
+            Ability1Desc = Text.literal("Deals a great amount of arcane damage in an area.");
+            Ability1Passive1 = Text.literal(" Extends the duration of your current Eclipse by 3 seconds.");
+            Ability1Passive2 = Text.literal(" Heals you the damaged amount while affected by Lunar Eclipse.");
+
+            Ability2 = Text.literal("Lunar Eclipse");
+            Ability2Desc = Text.literal("Increases attack speed and movement speed by 10% for 10 seconds.");
+        }
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Ability1.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
-        tooltip.add(Text.literal("Lorem Ipsum.").setStyle(TEXT));
-        tooltip.add(Text.literal(" Blep at day.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
-        tooltip.add(Text.literal(" Blep at night.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+        tooltip.add(Text.literal("\uF934 ").append(Ability1.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Ability1Desc.setStyle(TEXT));
+        tooltip.add(Ability1Passive1.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+        tooltip.add(Ability1Passive2.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+
+        tooltip.add(Text.literal(" "));
+
+        tooltip.add(Text.literal("\uF934 ").append(Ability2.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Ability2Desc.setStyle(TEXT));
+        tooltip.add(Text.literal(" Solar and Lunar Eclipses share their cooldown.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+
+        tooltip.add(Text.literal(" "));
+
+        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Astral Attunement").setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Text.literal("When dual wielding along with its twin, melee attacks deal double damage.").setStyle(TEXT));
+        tooltip.add(Text.literal(" The spells will change depending on which blade is in your main hand.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Text.literal(" "));
     }
 

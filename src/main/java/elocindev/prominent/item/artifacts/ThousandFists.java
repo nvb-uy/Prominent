@@ -46,7 +46,7 @@ public class ThousandFists extends FistOfFuryItem implements Artifact {
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Text.literal("Enraging").setStyle(Style.EMPTY.withColor(14903072))));
+        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Enraging").setStyle(Style.EMPTY.withColor(14903072))));
         tooltip.add(Text.literal("Enrage yourself, imbuing your fists with 500% attack speed").setStyle(TEXT));
         tooltip.add(Text.literal("for 2 seconds. While enraged, your attacks may deal extra soulfire damage.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));

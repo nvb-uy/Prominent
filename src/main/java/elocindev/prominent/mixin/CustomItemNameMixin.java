@@ -24,10 +24,12 @@ public abstract class CustomItemNameMixin {
         Object item = (Object)stack.getItem();
 
 
+        if (!(item instanceof Artifact artifact)) return;
+
         NbtCompound nbtCompound = stack.getSubNbt("display");
 
-        if (item instanceof Artifact artifact) 
-            gradient = TextAPI.Styles.getGradient(bold, 1, artifact.getGradient()[0], artifact.getGradient()[1], 1.0F);
+         
+        gradient = TextAPI.Styles.getGradient(bold, 1, artifact.getGradient()[0], artifact.getGradient()[1], 1.0F);
         
 
         if (nbtCompound != null && nbtCompound.contains("Name", 8)) {
@@ -48,6 +50,5 @@ public abstract class CustomItemNameMixin {
         }
 
         cir.setReturnValue(gradient);
-        
     }
 }

@@ -3,14 +3,20 @@
         {
             "type": "bitmap",
             "file": "prominent:item/molten_core.png",
-            "ascent": 9, "height": 20,
+            "ascent": 9, "height": 10,
             "chars": ["\uF933"]
         },
         {
             "type": "bitmap",
-            "file": "prominent:icon/active.png",
+            "file": "prominent:gui/ability_plates/active.png",
             "ascent": 9, "height": 10,
             "chars": ["\uF934"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:gui/ability_plates/passive.png",
+            "ascent": 9, "height": 10,
+            "chars": ["\uF937"]
         },
         {
             "type": "bitmap",
@@ -28,7 +34,7 @@
             "type": "bitmap",
             "file": "prominent:item/void_hourglass.png",
             "ascent": 9, "height": 13,
-            "chars": ["\uF937"]
+            "chars": ["\uF938"]
         },
         {
             "type": "bitmap",

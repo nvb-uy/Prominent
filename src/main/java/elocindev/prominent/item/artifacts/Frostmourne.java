@@ -75,7 +75,7 @@ public class Frostmourne extends SwordItem implements Artifact {
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Text.literal("Obliterate").setStyle(Style.EMPTY.withColor(0x327da8))));
+        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Obliterate").setStyle(Style.EMPTY.withColor(0x327da8))));
         tooltip.add(Text.literal("Imbue your weapon with death, making your next attack deal").setStyle(TEXT));
         tooltip.add(Text.literal("soulfrost damage and extra physical damage to frozen targets.").setStyle(TEXT));
         tooltip.add(Text.literal(" Extends Remorseless Winter by 1 second.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
@@ -89,7 +89,7 @@ public class Frostmourne extends SwordItem implements Artifact {
         tooltip.add(Text.literal("Continuosly deal frost damage in a cone in front of you").setStyle(TEXT));
         tooltip.add(Text.literal("during 5 seconds.").setStyle(TEXT));        
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uB996 ").append(Text.literal("Curse of Agony").setStyle(Style.EMPTY.withColor(0x2d6180))));
+        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Curse of Agony").setStyle(Style.EMPTY.withColor(0x2d6180))));
         tooltip.add(Text.literal("Whoever wields the Frostmourne will become the next Lich King,").setStyle(TEXT));
         tooltip.add(Text.literal("abilities will deal extra frost damage while on cold biomes.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));

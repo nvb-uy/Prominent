@@ -123,7 +123,7 @@ public class Fyralath extends SwordItem implements Artifact {
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Text.literal("Greater Scorch").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Greater Scorch").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Set in flames your target and give yourself resistance for").setStyle(TEXT));
         tooltip.add(Text.literal("4 seconds. Attacks have a chance to extend the duration.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
@@ -135,7 +135,7 @@ public class Fyralath extends SwordItem implements Artifact {
         tooltip.add(Text.literal("Invoke a rain of meteors that will fall upon your target").setStyle(TEXT));
         tooltip.add(Text.literal("and deal fire damage to all close enemies.").setStyle(TEXT));        
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uB996 ").append(Text.literal("Fiery Core").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Fiery Core").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Fyr'alath can invoke improved fire spells that have instant").setStyle(TEXT));
         tooltip.add(Text.literal("cast times, more damage and improved effects.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));

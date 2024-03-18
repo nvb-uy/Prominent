@@ -100,7 +100,7 @@ public class MythicSummoner extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
-        MutableText ICON = Text.literal("\uF937 ").setStyle(Style.EMPTY.withColor(Formatting.WHITE));
+        MutableText ICON = Text.literal("\uF938 ").setStyle(Style.EMPTY.withColor(Formatting.WHITE));
 
         MutableText BOSS_ICON = Text.literal("\uF935 ").setStyle(Style.EMPTY.withColor(Formatting.WHITE));
 
@@ -137,6 +137,8 @@ public class MythicSummoner extends Item {
     private static String intToRoman(int num) {
         if (num < 1) {
             return "0";
+        } else if (num > 500) {
+            return String.valueOf(num);
         }
 
         String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"};

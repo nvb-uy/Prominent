@@ -77,7 +77,7 @@ public class Supernova extends Starforge implements Artifact {
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Text.literal("Astral Burst").setStyle(Style.EMPTY.withColor(0xb078de))));
+        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Astral Burst").setStyle(Style.EMPTY.withColor(0xb078de))));
         tooltip.add(Text.literal("Invoke all of the energy of Supernova into a single point,").setStyle(TEXT));
         tooltip.add(Text.literal("exploding in a lethal nova that damages all nearby enemies.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
@@ -93,7 +93,7 @@ public class Supernova extends Starforge implements Artifact {
         tooltip.add(Text.literal("Teleport behind a close enemy and strike with a flaming hit,").setStyle(TEXT));
         tooltip.add(Text.literal("dealing physical and fire damage. Can be channeleed.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uB996 ").append(Text.literal("Astral Echoing").setStyle(Style.EMPTY.withColor(0xb078de))));
+        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Astral Echoing").setStyle(Style.EMPTY.withColor(0xb078de))));
         tooltip.add(Text.literal("Your hits may resonate with extra elemental damage.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
     }

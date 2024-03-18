@@ -33,7 +33,9 @@ public class ProminentClient implements ClientModInitializer {
                     "prominent:thunderwrath",
                     "prominent:frostmourne",
                     "prominent:azhar",
-                    "prominent:fyralath"
+                    "prominent:fyralath",
+                    "prominent:ash",
+                    "prominent:edar"
                 )
             );
 

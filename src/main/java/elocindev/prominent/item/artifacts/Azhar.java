@@ -123,7 +123,7 @@ public class Azhar extends SwordItem implements Artifact {
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uA996 ").append(Text.literal("Soul Absorption").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Soul Absorption").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Absorb all Broken Souls, consuming them and healing 10% of your").setStyle(TEXT));
         tooltip.add(Text.literal("maximum health per broken soul stack.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
@@ -132,7 +132,7 @@ public class Azhar extends SwordItem implements Artifact {
         tooltip.add(Text.literal("large cone. If you don't have a broken soul stack, you will recieve").setStyle(TEXT));
         tooltip.add(Text.literal("continuous damage while the breath is active.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uB996 ").append(Text.literal("Broken Souls").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Broken Souls").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Broken Souls last 5 seconds, each stack will not reset the duration.").setStyle(TEXT));
         tooltip.add(Text.literal("When souls expire, you get healed 10% of your maximum health.").setStyle(TEXT));
         tooltip.add(Text.literal(" Attacks generate a Broken Soul, but damage you 10% of your health.").setStyle(SUBTEXT));
