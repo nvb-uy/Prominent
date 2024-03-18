@@ -10,13 +10,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import elocindev.necronomicon.api.text.TextAPI;
-import elocindev.prominent.item.artifacts.Azhar;
-import elocindev.prominent.item.artifacts.Frostmourne;
-import elocindev.prominent.item.artifacts.Fyralath;
-import elocindev.prominent.item.artifacts.Supernova;
-import elocindev.prominent.item.artifacts.ThousandFists;
-import elocindev.prominent.item.artifacts.Thunderwrath;
-import elocindev.prominent.item.mythic_bosses.MythicSummoner;
+import elocindev.prominent.item.artifacts.Artifact;
 
 @Mixin(ItemStack.class)
 public abstract class CustomItemNameMixin {
@@ -32,14 +26,9 @@ public abstract class CustomItemNameMixin {
 
         NbtCompound nbtCompound = stack.getSubNbt("display");
 
-        if (item instanceof Supernova) gradient = TextAPI.Styles.getGradient(bold, 1, 0x8e30ab, 0x2f4aad, 1.0F);
-        else if (item instanceof ThousandFists) gradient = TextAPI.Styles.getGradient(bold, 1, 0xd15a15, 0xad5724, 1.0F);
-        else if (item instanceof Thunderwrath) gradient = TextAPI.Styles.getGradient(bold, 1, 0xd15a15, 0x2f4aad, 1.0F);
-        else if (item instanceof Frostmourne) gradient = TextAPI.Styles.getGradient(bold, 1, 0x397a91, 0x287bbf, 1.0F);
-        else if (item instanceof Azhar) gradient = TextAPI.Styles.getGradient(bold, 1, 0xd15a15, 0xd13715, 1.0F);
-        else if (item instanceof Fyralath) gradient = TextAPI.Styles.getGradient(bold, 1, 0xd15a15, 0xad5724, 1.0F);
-        else if (item instanceof MythicSummoner) gradient = TextAPI.Styles.getGradient(bold, 1, 0x883db8, 0xac3db8, 1.0F);
-        else return;
+        if (item instanceof Artifact artifact) 
+            gradient = TextAPI.Styles.getGradient(bold, 1, artifact.getGradient()[0], artifact.getGradient()[1], 1.0F);
+        
 
         if (nbtCompound != null && nbtCompound.contains("Name", 8)) {
             try {

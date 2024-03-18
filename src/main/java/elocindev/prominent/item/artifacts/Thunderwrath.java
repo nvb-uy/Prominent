@@ -122,7 +122,7 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact {
         Style RIGHTCLICK = Style.EMPTY.withColor(14903072);
         Style ABILITY = HelperMethods.getStyle("ability");
         Style TEXT = Style.EMPTY.withColor(Formatting.GRAY);
-        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Emberstorm Artifact"), 1, 0x953d2e, 0x335eea, 2.0F);
+        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Emberstorm Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
@@ -141,4 +141,9 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact {
 
         tooltip.add(Text.translatable("item.simplyswords.compat.scaleLightning"));
    }
+
+    @Override
+    public int[] getGradient() {
+        return new int[] {0x953d2e, 0x335eea};
+    }
 }

@@ -118,7 +118,7 @@ public class Azhar extends SwordItem implements Artifact {
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         Style TEXT = Style.EMPTY.withColor(Formatting.GRAY);
         Style SUBTEXT = Style.EMPTY.withColor(Formatting.DARK_GRAY);
-        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, 0x953d2e, 0x7e40ad, 2.0F);
+        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
@@ -139,4 +139,9 @@ public class Azhar extends SwordItem implements Artifact {
         tooltip.add(Text.literal(" Killing an enemy will generate a Broken Soul without damaging you.").setStyle(SUBTEXT));
         tooltip.add(Text.literal(" "));
    }
+
+    @Override
+    public int[] getGradient() {
+        return new int[] {0x953d2e, 0x7e40ad};
+    }
 }

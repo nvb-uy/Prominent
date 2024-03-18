@@ -41,7 +41,7 @@ public class ThousandFists extends FistOfFuryItem implements Artifact {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         Style TEXT = Style.EMPTY.withColor(Formatting.GRAY);
-        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, 0x953d2e, 0x7e40ad, 2.0F);
+        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
@@ -132,5 +132,10 @@ public class ThousandFists extends FistOfFuryItem implements Artifact {
         if (ingredient.getItem() == Items.NETHERITE_BLOCK) return true;
     
         return false;
+    }
+
+    @Override
+    public int[] getGradient() {
+        return new int[] {0x953d2e, 0x7e40ad};
     }
 }

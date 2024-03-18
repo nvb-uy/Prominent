@@ -20,7 +20,7 @@ public class PlayerEntityMixin {
     @Inject(method = "onDeath", at = @At("TAIL"))
     public void prominent$removeMythicBosses(DamageSource damageSource, CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
-        if (!(player.getWorld() instanceof ServerWorld world)) return;
+        if (!(player.getWorld() instanceof ServerWorld)) return;
 
         if (damageSource.getSource() instanceof LivingEntity possibleBoss) {
             if (MythicBosses.isMythicBoss(possibleBoss)) {

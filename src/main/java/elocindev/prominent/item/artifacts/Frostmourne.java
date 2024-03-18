@@ -70,7 +70,7 @@ public class Frostmourne extends SwordItem implements Artifact {
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
         Style TEXT = Style.EMPTY.withColor(Formatting.GRAY);
-        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Runic Artifact"), 1, 0x327da8, 0x44bcc7, 2.0F);
+        MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Runic Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
@@ -126,5 +126,10 @@ public class Frostmourne extends SwordItem implements Artifact {
         if (ingredient.getItem() instanceof Starforge || ingredient.getItem() == Items.NETHER_STAR) return true;
     
         return false;
+    }
+
+    @Override
+    public int[] getGradient() {
+        return new int[] {0x327da8, 0x44bcc7};
     }
 }
