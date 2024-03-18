@@ -10,7 +10,8 @@
     "ArtifactTooltipFix",
     "ItemEntityExplodableMixin",
     "PlayerEntityMixin",
-    "LivingEntityMixin"
+    "LivingEntityMixin",
+    "AE2CrashFixMixin"
   ],
   "injectors": {
     "defaultRequire": 1
