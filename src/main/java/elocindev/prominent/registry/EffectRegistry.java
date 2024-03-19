@@ -1,5 +1,7 @@
 package elocindev.prominent.registry;
 
+import elocindev.prominent.effect.ashedar.Eclipse;
+import elocindev.prominent.effect.ashedar.Sunstrike;
 import elocindev.prominent.effect.azhar.BreathOfAzhar;
 import elocindev.prominent.effect.azhar.BrokenSoul;
 import elocindev.prominent.effect.azhar.SoulAbsorption;
@@ -23,6 +25,13 @@ public class EffectRegistry {
     public static final SoulAbsorption SOUL_ABSORPTION = new SoulAbsorption();
     public static final BreathOfAzhar BREATH_OF_AZHAR = new BreathOfAzhar();
 
+    // ASH'EDAR
+    public static final Sunstrike SUNSTRIKE = new Sunstrike();
+
+    public static final Eclipse INITIAL_ECLIPSE = new Eclipse(-1);
+    public static final Eclipse SOLAR_ECLIPSE = new Eclipse(0);
+    public static final Eclipse LUNAR_ECLIPSE = new Eclipse(1);
+
     // MISC
     public static final MinionsFate MINIONS_FATE = new MinionsFate();
     public static final OnCombat ON_COMAT = new OnCombat();
@@ -36,6 +45,12 @@ public class EffectRegistry {
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "broken_soul"), BROKEN_SOUL);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "soul_absorption"), SOUL_ABSORPTION);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "breath_of_azhar"), BREATH_OF_AZHAR);
+
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "sunstrike"), SUNSTRIKE);
+
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "initial_eclipse"), INITIAL_ECLIPSE);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "solar_eclipse"), SOLAR_ECLIPSE);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "lunar_eclipse"), LUNAR_ECLIPSE);
 
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "faceless_gift"), MINIONS_FATE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "combat"), ON_COMAT);

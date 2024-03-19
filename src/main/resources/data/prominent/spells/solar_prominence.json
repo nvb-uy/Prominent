@@ -1,0 +1,110 @@
+{
+  "school": "FIRE",
+  "range": 24,
+  "learn": {
+    "tier": 2
+  },
+  "cast": {
+    "duration": 0,
+    "animation": "spell_engine:two_handed_channeling",
+    "sound": {
+      "id": "spell_engine:generic_frost_casting",
+      "randomness": 0
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:flame",
+        "shape": "PIPE",
+        "origin": "FEET",
+        "count": 1.0,
+        "min_speed": 0.05,
+        "max_speed": 0.1
+      }
+    ]
+  },
+  "release": {
+    "target": {
+      "type": "AREA",
+      "area": {
+        "vertical_range_multiplier": 0.5
+      }
+    },
+    "particles": [
+      {
+        "particle_id": "spell_engine:flame",
+        "shape": "CIRCLE",
+        "origin": "CENTER",
+        "count": 120.0,
+        "min_speed": 1.9,
+        "max_speed": 1.9
+      },
+      {
+        "particle_id": "spell_engine:flame",
+        "shape": "SPHERE",
+        "origin": "CENTER",
+        "count": 200.0,
+        "min_speed": 1.6,
+        "max_speed": 1.6
+      },
+      {
+        "particle_id": "spell_engine:flame",
+        "shape": "SPHERE",
+        "origin": "CENTER",
+        "count": 100.0,
+        "min_speed": 1.0,
+        "max_speed": 1.0
+      },
+      {
+        "particle_id": "spell_engine:flame",
+        "shape": "CIRCLE",
+        "origin": "CENTER",
+        "count": 130.0,
+        "min_speed": 0.7,
+        "max_speed": 0.7
+      },
+      {
+        "particle_id": "minecraft:smoke",
+        "shape": "CIRCLE",
+        "origin": "CENTER",
+        "count": 120.0,
+        "min_speed": 0.4,
+        "max_speed": 0.32
+      }
+    ],
+    "sound": {
+      "id": "simplyswords:elemental_sword_fire_attack_03"
+    }
+  },
+  "impact": [
+    {
+      "action": {
+        "type": "DAMAGE",
+        "damage": {
+          "knockback": 1.0,
+          "spell_power_coefficient": 2.5
+        }
+      },
+      "particles": [
+        {
+          "particle_id": "spell_engine:flame",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 10,
+          "min_speed": 0.2,
+          "max_speed": 0.7
+        },
+        {
+          "particle_id": "minecraft:smoke",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 5,
+          "min_speed": 0.05,
+          "max_speed": 0.2
+        }
+      ]
+    }
+  ],
+  "cost": {
+    "cooldown_duration": 12
+  }
+}

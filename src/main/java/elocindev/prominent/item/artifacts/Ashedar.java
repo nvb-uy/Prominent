@@ -7,21 +7,28 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
+import elocindev.prominent.ProminentLoader;
+import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.soulbinding.Soulbind;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
 import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellDamageSource;
@@ -30,7 +37,30 @@ import net.spell_power.api.attributes.SpellAttributes;
 public class Ashedar extends SwordItem implements Artifact {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
     private int id;
+
+    public static final TagKey<Item> IS_ASHEDAR = TagKey.of(RegistryKeys.ITEM, new Identifier(ProminentLoader.MODID, "ashedar"));
     
+    public static boolean isUsingBoth(LivingEntity player) {
+        return player.getMainHandStack().isIn(IS_ASHEDAR) && player.getOffHandStack().isIn(IS_ASHEDAR);
+    }
+
+    public static boolean isEclipsed(LivingEntity player) {
+        return player.hasStatusEffect(EffectRegistry.SOLAR_ECLIPSE) || player.hasStatusEffect(EffectRegistry.LUNAR_ECLIPSE) 
+        && isUsingBoth(player);
+    }
+
+    public static boolean isAffectedByLunar(LivingEntity player) {
+        if (player.hasStatusEffect(EffectRegistry.LUNAR_ECLIPSE) && isUsingBoth(player)) return true;
+
+        return false;
+    }
+
+    public static boolean isAffectedBySolar(LivingEntity player) {
+        if (player.hasStatusEffect(EffectRegistry.SOLAR_ECLIPSE) && isUsingBoth(player)) return true;
+
+        return false;
+    }
+
     // 0 = Ash
     // 1 = Edar
     public int getType() {
@@ -93,27 +123,36 @@ public class Ashedar extends SwordItem implements Artifact {
 
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        MutableText Ability1; MutableText Ability1Desc; MutableText Ability2; MutableText Ability2Desc;
-        MutableText Ability1Passive1; MutableText Ability1Passive2;
+        MutableText Ability1; MutableText Ability1Desc; MutableText Ability2; MutableText Ability2Desc; MutableText Ability3; MutableText Ability3Desc;
+        MutableText Ability1Passive1; MutableText Ability1Passive2; MutableText Ability2Passive1; MutableText Ability2Passive2;
 
 
         if (isAsh()) {
             Ability1 = Text.literal("Sunstrike");
-            Ability1Desc = Text.literal("Deals a great amount of fire damage in an area.");
+            Ability1Desc = Text.literal("Focus a shockwave of pure solar power, dealing fire damage to all enemies in a frontal cone.");
             Ability1Passive1 = Text.literal(" Deals double damage while affected by Solar Eclipse");
             Ability1Passive2 = Text.literal(" Heals you the damaged amount while affected by Lunar Eclipse.");
 
+            Ability2 = Text.literal("Prominence");
+            Ability2Desc = Text.literal("Unleash the true power of Ash, erupting in fire AoE damage.");
+            Ability2Passive1 = Text.literal(" Sets targets on fire and blinds them while affected by Solar Eclipse");
+            Ability2Passive2 = Text.literal(" Deals double damage to stunned enemies while affected by Lunar Eclipse.");
 
-            Ability2 = Text.literal("Solar Eclipse");
-            Ability2Desc = Text.literal("Increases attack damage by 10% for 10 seconds.");
+            Ability3 = Text.literal("Solar Eclipse");
+            Ability3Desc = Text.literal("Increases attack damage by 10% for 10 seconds.");
         } else {
             Ability1 = Text.literal("Darkening");
-            Ability1Desc = Text.literal("Deals a great amount of arcane damage in an area.");
+            Ability1Desc = Text.literal("Swirls the inner arcane power of Edar, dealing AoE damage all around you.");
             Ability1Passive1 = Text.literal(" Extends the duration of your current Eclipse by 3 seconds.");
             Ability1Passive2 = Text.literal(" Heals you the damaged amount while affected by Lunar Eclipse.");
 
-            Ability2 = Text.literal("Lunar Eclipse");
-            Ability2Desc = Text.literal("Increases attack speed and movement speed by 10% for 10 seconds.");
+            Ability2 = Text.literal("Moonlight Nova");
+            Ability2Desc = Text.literal("Unleash a powerful nova of pure moonlight, damaging and stunning all enemies.");
+            Ability2Passive1 = Text.literal(" Deals double damage while affected by Solar Eclipse");
+            Ability2Passive2 = Text.literal(" Stun duration is doubled while affected by Lunar Eclipse.");
+
+            Ability3 = Text.literal("Lunar Eclipse");
+            Ability3Desc = Text.literal("Increases attack and movement speed by 10% for 10 seconds.");
         }
 
         tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
@@ -127,13 +166,20 @@ public class Ashedar extends SwordItem implements Artifact {
 
         tooltip.add(Text.literal("\uF934 ").append(Ability2.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Ability2Desc.setStyle(TEXT));
+        tooltip.add(Ability2Passive1.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+        tooltip.add(Ability2Passive2.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+
+        tooltip.add(Text.literal(" "));
+
+        tooltip.add(Text.literal("\uF934 ").append(Ability3.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Ability3Desc.setStyle(TEXT));
         tooltip.add(Text.literal(" Solar and Lunar Eclipses share their cooldown.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
 
         tooltip.add(Text.literal(" "));
 
         tooltip.add(Text.literal("\uF937 ").append(Text.literal("Astral Attunement").setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Text.literal("When dual wielding along with its twin, melee attacks deal double damage.").setStyle(TEXT));
-        tooltip.add(Text.literal(" The spells will change depending on which blade is in your main hand.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+        tooltip.add(Text.literal(" Available spells will change depending on which blade is in your main hand.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Text.literal(" "));
     }
 

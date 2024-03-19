@@ -71,7 +71,10 @@ public class ProminentLoader implements ModInitializer {
 			content.add(new ItemStack(ItemRegistry.FURY_OF_A_THOUSAND_FISTS));
 			content.add(new ItemStack(ItemRegistry.FROSTMOURNE));
 			content.add(new ItemStack(ItemRegistry.AZHAR));
-			content.add(new ItemStack(ItemRegistry.FYRALATH));			
+			content.add(new ItemStack(ItemRegistry.FYRALATH));
+
+			content.add(new ItemStack(ItemRegistry.ASH));
+			content.add(new ItemStack(ItemRegistry.EDAR));		
 		});
 
 		ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MODID, "mythic_bosses"))).register(content -> {

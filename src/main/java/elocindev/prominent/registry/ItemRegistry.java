@@ -56,10 +56,10 @@ public class ItemRegistry {
         reg(new Fyralath(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof()), "fyralath");
 
     public static final Item ASH =
-        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 9, -1.8f, 0), "ash");
+        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 9, -2.30f, 0), "ash");
     
     public static final Item EDAR =
-        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 6, -1.35f, 1), "edar");
+        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 6, -2.10f, 1), "edar");
     
 
     // essences
