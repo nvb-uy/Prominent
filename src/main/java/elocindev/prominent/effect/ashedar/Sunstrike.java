@@ -18,7 +18,7 @@ import net.spell_power.api.attributes.SpellAttributes;
 
 public class Sunstrike extends StatusEffect {
     public Sunstrike() {
-        super(StatusEffectCategory.NEUTRAL,
+        super(StatusEffectCategory.BENEFICIAL,
         0x330066); 
     }
     
@@ -30,12 +30,13 @@ public class Sunstrike extends StatusEffect {
 
         float damage = getDamage(entity);
 
-        if (entity.hasStatusEffect(EffectRegistry.SOLAR_ECLIPSE))
+        if (entity.hasStatusEffect(EffectRegistry.SOLAR_ECLIPSE)) {
             List.of(-3.0F, 3.0F).forEach((degOffset) -> {
                 Vec3d offset = MathUtils.vectorRotateY(new Vec3d(1.0, 0.0, 0.0), MathUtils.radians(entity.getYaw() + degOffset));
                 ShockwavePlacer placer = ShockwavePlacer.createLine(entity.getWorld(), entity.getPos(), entity.getPos().add(offset.multiply(8.0)), 1.5F, MineCellsBlocks.SHOCKWAVE_FLAME_PLAYER.getDefaultState(), entity.getUuid(), damage);
                 entity.getWorld().spawnEntity(placer);
-            });
+            });        
+        }
 
         if (Ashedar.isAffectedByLunar(entity))
             entity.heal(damage);

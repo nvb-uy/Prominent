@@ -134,7 +134,7 @@ public class Ashedar extends SwordItem implements Artifact {
             Ability1Passive2 = Text.literal(" Heals you the damaged amount while affected by Lunar Eclipse.");
 
             Ability2 = Text.literal("Prominence");
-            Ability2Desc = Text.literal("Unleash the true power of Ash, erupting in fire AoE damage.");
+            Ability2Desc = Text.literal("Unleash the true power of Ash, erupting fire damage in a large area.");
             Ability2Passive1 = Text.literal(" Sets targets on fire and blinds them while affected by Solar Eclipse");
             Ability2Passive2 = Text.literal(" Deals double damage to stunned enemies while affected by Lunar Eclipse.");
 
@@ -142,14 +142,14 @@ public class Ashedar extends SwordItem implements Artifact {
             Ability3Desc = Text.literal("Increases attack damage by 10% for 10 seconds.");
         } else {
             Ability1 = Text.literal("Darkening");
-            Ability1Desc = Text.literal("Swirls the inner arcane power of Edar, dealing AoE damage all around you.");
-            Ability1Passive1 = Text.literal(" Extends the duration of your current Eclipse by 3 seconds.");
+            Ability1Desc = Text.literal("Swirls the inner arcane power of Edar, dealing arcane damage all around you.");
+            Ability1Passive1 = Text.literal(" Extends the duration of your current Eclipse by 2 seconds.");
             Ability1Passive2 = Text.literal(" Heals you the damaged amount while affected by Lunar Eclipse.");
 
             Ability2 = Text.literal("Moonlight Nova");
             Ability2Desc = Text.literal("Unleash a powerful nova of pure moonlight, damaging and stunning all enemies.");
             Ability2Passive1 = Text.literal(" Deals double damage while affected by Solar Eclipse");
-            Ability2Passive2 = Text.literal(" Stun duration is doubled while affected by Lunar Eclipse.");
+            Ability2Passive2 = Text.literal(" Increases attack and movement speed while affected by Lunar Eclipse.");
 
             Ability3 = Text.literal("Lunar Eclipse");
             Ability3Desc = Text.literal("Increases attack and movement speed by 10% for 10 seconds.");

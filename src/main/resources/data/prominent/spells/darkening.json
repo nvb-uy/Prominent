@@ -50,7 +50,8 @@
         }
       },
       "sound": {
-        "id": "minecraft:entity.player.attack.sweep"
+        "id": "simplyswords:elemental_sword_holy_attack_01",
+        "pitch": 0.9
       }
     },
     {
@@ -63,14 +64,25 @@
       },
       "particles": [
         {
-          "particle_id": "sweep_attack",
+          "particle_id": "spell_engine:arcane_hit",
           "shape": "SPHERE",
           "origin": "CENTER",
-          "count": 1
+          "count": 10.0,
+          "min_speed": 0.2,
+          "max_speed": 0.6
+        },
+        {
+          "particle_id": "firework",
+          "shape": "SPHERE",
+          "origin": "CENTER",
+          "count": 20.0,
+          "min_speed": 0.2,
+          "max_speed": 0.4
         }
       ],
       "sound": {
-        "id": "minecraft:entity.player.attack.sweep"
+        "id": "simplyswords:elemental_sword_holy_attack_01",
+        "pitch": 0.7
       }
     }
 

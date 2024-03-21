@@ -4,8 +4,6 @@ import elocindev.prominent.item.artifacts.Ashedar;
 import elocindev.prominent.registry.EffectRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributes;
-import net.minecraft.entity.attribute.EntityAttributeModifier.Operation;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -18,13 +16,6 @@ public class Eclipse extends StatusEffect {
         0x330066);
 
         this.type = type;
-
-        if (type == 1) {
-            this.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF3", 0.1, Operation.MULTIPLY_TOTAL);
-            this.addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF4", 0.1, Operation.MULTIPLY_TOTAL);
-        } else if (type == 0) {
-            this.addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF5", 0.1, Operation.MULTIPLY_TOTAL);
-        }
     }
 
     // 0 : Solar Eclipse

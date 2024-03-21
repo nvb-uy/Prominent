@@ -29,6 +29,7 @@
         "vertical_range_multiplier": 0.5
       }
     },
+    "animation": "spell_engine:one_handed_area_release",
     "particles": [
       {
         "particle_id": "spell_engine:flame",
@@ -81,7 +82,7 @@
         "type": "DAMAGE",
         "damage": {
           "knockback": 1.0,
-          "spell_power_coefficient": 2.5
+          "spell_power_coefficient": 1.3
         }
       },
       "particles": [
@@ -102,6 +103,19 @@
           "max_speed": 0.2
         }
       ]
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "ADD",
+          "duration": 1,
+          "amplifier": 0,
+          "effect_id": "prominent:solar_prominence",
+          "show_particles": false
+        },
+        "apply_to_caster": true
+      }
     }
   ],
   "cost": {

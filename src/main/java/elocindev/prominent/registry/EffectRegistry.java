@@ -1,6 +1,7 @@
 package elocindev.prominent.registry;
 
 import elocindev.prominent.effect.ashedar.Eclipse;
+import elocindev.prominent.effect.ashedar.Prominence;
 import elocindev.prominent.effect.ashedar.Sunstrike;
 import elocindev.prominent.effect.azhar.BreathOfAzhar;
 import elocindev.prominent.effect.azhar.BrokenSoul;
@@ -10,6 +11,9 @@ import elocindev.prominent.effect.frostmourne.ObliteratedAgony;
 import elocindev.prominent.effect.frostmourne.RemorselessWinter;
 import elocindev.prominent.effect.misc.OnCombat;
 import elocindev.prominent.effect.mythic.MinionsFate;
+import net.minecraft.entity.attribute.EntityAttributeModifier.Operation;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 import net.minecraft.util.Identifier;
@@ -29,8 +33,14 @@ public class EffectRegistry {
     public static final Sunstrike SUNSTRIKE = new Sunstrike();
 
     public static final Eclipse INITIAL_ECLIPSE = new Eclipse(-1);
-    public static final Eclipse SOLAR_ECLIPSE = new Eclipse(0);
-    public static final Eclipse LUNAR_ECLIPSE = new Eclipse(1);
+    public static final StatusEffect SOLAR_ECLIPSE = new Eclipse(0)
+        .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_DAMAGE, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF2", 0.1, Operation.MULTIPLY_TOTAL);
+
+    public static final StatusEffect LUNAR_ECLIPSE = new Eclipse(1)
+        .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF3", 0.1, Operation.MULTIPLY_TOTAL)
+        .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF4", 0.1, Operation.MULTIPLY_TOTAL);
+
+    public static final Prominence SOL_PROMINENCE = new Prominence();
 
     // MISC
     public static final MinionsFate MINIONS_FATE = new MinionsFate();
@@ -47,13 +57,12 @@ public class EffectRegistry {
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "breath_of_azhar"), BREATH_OF_AZHAR);
 
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "sunstrike"), SUNSTRIKE);
-
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "initial_eclipse"), INITIAL_ECLIPSE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "solar_eclipse"), SOLAR_ECLIPSE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "lunar_eclipse"), LUNAR_ECLIPSE);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "solar_prominence"), SOL_PROMINENCE);
 
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "faceless_gift"), MINIONS_FATE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "combat"), ON_COMAT);
-
     }
 }

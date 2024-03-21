@@ -26,7 +26,7 @@
       "target": {
         "type": "SELF"
       },
-      "animation": "spell_engine:one_handed_area_release",
+      "animation": "spell_engine:two_handed_area_release",
       "sound": {
         "id": "simplyswords:elemental_sword_earth_attack_02"
       },

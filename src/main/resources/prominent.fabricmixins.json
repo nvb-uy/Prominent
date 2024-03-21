@@ -11,7 +11,8 @@
     "ItemEntityExplodableMixin",
     "PlayerEntityMixin",
     "LivingEntityMixin",
-    "AE2CrashFixMixin"
+    "AE2CrashFixMixin",
+    "AshedarDamageMixin"
   ],
   "injectors": {
     "defaultRequire": 1

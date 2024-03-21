@@ -93,8 +93,8 @@
         "type": "STATUS_EFFECT",
         "status_effect": {
           "apply_mode": "ADD",
-          "duration": 2,
-          "amplifier": 1,
+          "duration": 1,
+          "amplifier": 0,
           "effect_id": "prominent:sunstrike",
           "show_particles": false
         },
