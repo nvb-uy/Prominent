@@ -2,6 +2,7 @@
   "required": true,
   "minVersion": "0.8",
   "package": "elocindev.prominent.mixin",
+  "plugin": "elocindev.prominent.mixin.ProminentMixin",
   "compatibilityLevel": "JAVA_17",
   "mixins": [
     "RageMixin",
