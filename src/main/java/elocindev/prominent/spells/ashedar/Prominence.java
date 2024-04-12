@@ -1,4 +1,4 @@
-package elocindev.prominent.effect.ashedar;
+package elocindev.prominent.spells.ashedar;
 
 import com.github.mim1q.minecells.registry.MineCellsStatusEffects;
 

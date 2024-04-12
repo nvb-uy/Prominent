@@ -1,4 +1,4 @@
-package elocindev.prominent.effect.frostmourne;
+package elocindev.prominent.spells.frostmourne;
 
 import elocindev.prominent.registry.EffectRegistry;
 import net.minecraft.entity.LivingEntity;

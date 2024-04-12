@@ -1,4 +1,4 @@
-package elocindev.prominent.effect.misc;
+package elocindev.prominent.spells.misc;
 
 import elocindev.prominent.registry.EffectRegistry;
 import net.fabricmc.fabric.api.entity.event.v1.ServerLivingEntityEvents;

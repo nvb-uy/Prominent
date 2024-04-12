@@ -1,4 +1,4 @@
-package elocindev.prominent.effect.azhar;
+package elocindev.prominent.spells.azhar;
 
 import elocindev.prominent.registry.EffectRegistry;
 import net.minecraft.entity.LivingEntity;

@@ -7,8 +7,8 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
-import elocindev.prominent.effect.azhar.BrokenSoul;
 import elocindev.prominent.soulbinding.Soulbind;
+import elocindev.prominent.spells.azhar.BrokenSoul;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;

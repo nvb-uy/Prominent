@@ -1,4 +1,4 @@
-package elocindev.prominent.effect.ashedar;
+package elocindev.prominent.spells.ashedar;
 
 import elocindev.prominent.item.artifacts.Ashedar;
 import elocindev.prominent.registry.EffectRegistry;

@@ -22,11 +22,11 @@ import elocindev.necronomicon.api.config.v1.NecConfigAPI;
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.commands.CommandRegistry;
 import elocindev.prominent.config.ServerConfig;
-import elocindev.prominent.effect.misc.OnCombat;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.registry.ItemRegistry;
 import elocindev.prominent.registry.SoundRegistry;
+import elocindev.prominent.spells.misc.OnCombat;
 
 public class ProminentLoader implements ModInitializer {
 	public static final String MODID = "prominent";

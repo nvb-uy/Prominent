@@ -1,4 +1,4 @@
-package elocindev.prominent.effect.mythic;
+package elocindev.prominent.spells.mythic;
 
 import elocindev.prominent.mythicbosses.MythicBosses;
 import net.minecraft.entity.LivingEntity;
