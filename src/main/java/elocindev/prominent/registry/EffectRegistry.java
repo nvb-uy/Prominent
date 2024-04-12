@@ -2,8 +2,10 @@ package elocindev.prominent.registry;
 
 import net.minecraft.entity.attribute.EntityAttributeModifier.Operation;
 import net.minecraft.entity.effect.StatusEffect;
+import elocindev.prominent.spells.ashedar.Darkening;
 import elocindev.prominent.spells.ashedar.Eclipse;
-import elocindev.prominent.spells.ashedar.Prominence;
+import elocindev.prominent.spells.ashedar.MoonlightNova;
+import elocindev.prominent.spells.ashedar.ProminenceNova;
 import elocindev.prominent.spells.ashedar.Sunstrike;
 import elocindev.prominent.spells.azhar.BreathOfAzhar;
 import elocindev.prominent.spells.azhar.BrokenSoul;
@@ -40,28 +42,35 @@ public class EffectRegistry {
         .addAttributeModifier(EntityAttributes.GENERIC_ATTACK_SPEED, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF3", 0.1, Operation.MULTIPLY_TOTAL)
         .addAttributeModifier(EntityAttributes.GENERIC_MOVEMENT_SPEED, "BE63FC3A-3428-4C8A-AA36-2CE2BA9DBEF4", 0.1, Operation.MULTIPLY_TOTAL);
 
-    public static final Prominence SOL_PROMINENCE = new Prominence();
+    public static final ProminenceNova SOL_PROMINENCE = new ProminenceNova();
+    public static final Darkening DARKENING = new Darkening();
+    public static final MoonlightNova MOONLIGHT_NOVA = new MoonlightNova();
 
     // MISC
     public static final MinionsFate MINIONS_FATE = new MinionsFate();
     public static final OnCombat ON_COMAT = new OnCombat();
 
     public static void register() {
+        // Frostmourne
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "remorseless_winter"), REMORSELESS_WINTER);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "agonizing_breath"), AGONIZING_BREATH);
-
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "obliterated_agony"), OBLITERATED_AGONY);
 
+        // A'zhar
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "broken_soul"), BROKEN_SOUL);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "soul_absorption"), SOUL_ABSORPTION);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "breath_of_azhar"), BREATH_OF_AZHAR);
 
+        // Ash'edar
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "sunstrike"), SUNSTRIKE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "initial_eclipse"), INITIAL_ECLIPSE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "solar_eclipse"), SOLAR_ECLIPSE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "lunar_eclipse"), LUNAR_ECLIPSE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "solar_prominence"), SOL_PROMINENCE);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "darkening"), DARKENING);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "moonlight_nova"), MOONLIGHT_NOVA);
 
+        // Misc
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "faceless_gift"), MINIONS_FATE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "combat"), ON_COMAT);
     }

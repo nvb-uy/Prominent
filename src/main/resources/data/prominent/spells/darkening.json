@@ -35,7 +35,7 @@
       }
     ],
     "sound": {
-      "id": "minecraft:entity.player.attack.knockback"
+      "id": "simplyswords:elemental_sword_holy_attack_01"
     },
     "animation": "spellbladenext:flourish"
   },
@@ -84,8 +84,20 @@
         "id": "simplyswords:elemental_sword_holy_attack_01",
         "pitch": 0.7
       }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "ADD",
+          "duration": 1,
+          "amplifier": 0,
+          "effect_id": "prominent:darkening",
+          "show_particles": false
+        },
+        "apply_to_caster": true
+      }
     }
-
   ],
   "cost": {
     "cooldown_duration": 6

@@ -116,6 +116,19 @@
         },
         "apply_to_caster": false
       }
+    },
+    {
+      "action": {
+        "type": "STATUS_EFFECT",
+        "status_effect": {
+          "apply_mode": "ADD",
+          "duration": 1,
+          "amplifier": 0,
+          "effect_id": "prominent:moonlight_nova",
+          "show_particles": false
+        },
+        "apply_to_caster": true
+      }
     }
   ],
   "cost": {

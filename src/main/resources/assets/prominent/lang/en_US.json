@@ -45,6 +45,14 @@
     "effect.prominent.agonizing_breath": "Agonizing Breath",
     "effect.prominent.broken_soul": "Broken Soul",
     "effect.prominent.soul_absorption": "Absorbing Souls",
+
+    "effect.prominent.solar_eclipse": "Solar Eclipse",
+    "effect.prominent.lunar_eclipse": "Lunar Eclipse",
+    "effect.prominent.darkening": "Darkening",
+    "effect.prominent.sunstrike": "Sunstrike",
+    "effect.prominent.moonlight_nova": "Moonlight Expel",
+    "effect.prominent.prominence": "Prominence Expel",
+
     "effect.prominent.faceless_gift": "Faceless Gift",
     "effect.prominent.combat": "In Combat",
 
