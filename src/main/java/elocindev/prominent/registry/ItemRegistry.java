@@ -4,8 +4,8 @@ import elocindev.prominent.ProminentLoader;
 import elocindev.prominent.item.EssenceItem;
 import elocindev.prominent.item.MainMenuDisc;
 import elocindev.prominent.item.MoltenCore;
-import elocindev.prominent.item.ScrollItem;
 import elocindev.prominent.item.artifacts.Ashedar;
+import elocindev.prominent.item.artifacts.AshedarSpawner;
 import elocindev.prominent.item.artifacts.Azhar;
 import elocindev.prominent.item.artifacts.Frostmourne;
 import elocindev.prominent.item.artifacts.Fyralath;
@@ -61,6 +61,8 @@ public class ItemRegistry {
     public static final Item EDAR =
         reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 6, -2.10f, 1), "edar");
     
+    public static final Item ASHEDAR_ESSENCE = 
+        reg(new AshedarSpawner(new Item.Settings()), "ashedar_essence");
 
     // essences
     public static final Item DEMON_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "Full of hatred and demonic presences."), "demon_essence");
@@ -69,7 +71,7 @@ public class ItemRegistry {
         
     // misc
     public static final Item ENCASED_REMNANT = reg(new EssenceItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(16), "Can be used to re-roll and repair artifact weapons."), "encased_remnant");
-    public static final Item RESPEC_SCROLL = reg(new ScrollItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)), "knowledge_scroll");
+    public static final Item RESPEC_SCROLL = reg(new elocindev.prominent.item.ScrollItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)), "knowledge_scroll");
 
 
     // mythic stuff

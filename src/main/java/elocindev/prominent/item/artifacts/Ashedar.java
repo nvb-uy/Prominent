@@ -9,9 +9,9 @@ import com.google.common.collect.Multimap;
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.ProminentLoader;
 import elocindev.prominent.registry.EffectRegistry;
-import elocindev.prominent.soulbinding.Soulbind;
+import elocindev.prominent.soulbinding.Soulbound;
+import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
@@ -31,10 +31,9 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.spell_power.api.MagicSchool;
-import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.attributes.SpellAttributes;
 
-public class Ashedar extends SwordItem implements Artifact {
+public class Ashedar extends SwordItem implements Artifact, Soulbound {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
     private int id;
 
@@ -155,29 +154,29 @@ public class Ashedar extends SwordItem implements Artifact {
             Ability3Desc = Text.literal("Increases attack and movement speed by 10%. Applies for 10 seconds.");
         }
 
-        tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF934 ").append(Ability1.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Ability1.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Ability1Desc.setStyle(TEXT));
         tooltip.add(Ability1Passive1.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Ability1Passive2.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
 
         tooltip.add(Text.literal(" "));
 
-        tooltip.add(Text.literal("\uF934 ").append(Ability2.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Ability2.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Ability2Desc.setStyle(TEXT));
         tooltip.add(Ability2Passive1.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Ability2Passive2.setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
 
         tooltip.add(Text.literal(" "));
 
-        tooltip.add(Text.literal("\uF934 ").append(Ability3.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Ability3.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Ability3Desc.setStyle(TEXT));
         tooltip.add(Text.literal(" Solar and Lunar Eclipses share their cooldown.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
 
         tooltip.add(Text.literal(" "));
 
-        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Astral Attunement").setStyle(Style.EMPTY.withColor(getGradient()[0]))));
+        tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Astral Attunement").setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Text.literal("When dual wielding along with its twin, melee attacks deal double damage.").setStyle(TEXT));
         tooltip.add(Text.literal(" Available spells will change depending on which blade is in your main hand.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Text.literal(" "));
@@ -185,28 +184,9 @@ public class Ashedar extends SwordItem implements Artifact {
 
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-        if (!Soulbind.isSoulbinded(stack) && !world.isClient()) {
-            Soulbind.soulbind(stack, player);
-            player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
-        }
+        Soulbound.onCraft(stack, world, player);
 
         super.onCraft(stack, world, player);
-    }
-    
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity player && !world.isClient() && world.getTime() % 20 == 0) {
-            if (Soulbind.isSoulbinded(stack) && !Soulbind.isSoulbindedTo(stack, player) && !player.isCreative()) {
-                player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is soulbound to someone else.").setStyle(Style.EMPTY.withColor(Formatting.RED))), true);
-
-                player.damage(SpellDamageSource.player(MagicSchool.FIRE, player), player.getMaxHealth()*0.20f);
-            } else if (!world.isClient() && !Soulbind.isSoulbinded(stack)) {
-                Soulbind.soulbind(stack, player);
-                player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
-            }
-        }
-
-        super.inventoryTick(stack, world, entity, slot, selected);
     }
 
     @Override
@@ -218,7 +198,7 @@ public class Ashedar extends SwordItem implements Artifact {
 
     @Override
     public int[] getGradient() {
-        if (isAsh()) return new int[] { 0xECB464, 0xEACF34 };
+        if (this.isAsh()) return new int[] { 0xECB464, 0xEACF34 };
         else return new int[] { 0x6A4E9E, 0x8A6E9E };
     }
 }

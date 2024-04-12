@@ -1,0 +1,15 @@
+{
+    "type": "minecraft:smithing_transform",
+    "addition": {
+      "item": "prominent:edar"
+    },
+    "base": {
+      "item": "prominent:ash"
+    },
+    "result": {
+      "item": "prominent:ashedar_essence"
+    },
+    "template": {
+      "item": "prominent:knowledge_scroll"
+    }
+}

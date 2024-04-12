@@ -7,8 +7,9 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
-import elocindev.prominent.soulbinding.Soulbind;
+import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.spells.azhar.BrokenSoul;
+import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
@@ -26,13 +27,12 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.spell_power.api.MagicSchool;
-import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.attributes.SpellAttributeEntry;
 import net.spell_power.api.attributes.SpellAttributes;
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.util.HelperMethods;
 
-public class Azhar extends SwordItem implements Artifact {
+public class Azhar extends SwordItem implements Artifact, Soulbound {
     private static int stepMod = 0;    
 
     public Azhar(ToolMaterial toolMaterial, Settings settings) {
@@ -58,17 +58,6 @@ public class Azhar extends SwordItem implements Artifact {
 
         if (stepMod <= 0) {
             stepMod = 7;
-        }
-
-        if (entity instanceof PlayerEntity player && !world.isClient() && world.getTime() % 20 == 0) {
-            if (Soulbind.isSoulbinded(stack) && !Soulbind.isSoulbindedTo(stack, player) && !player.isCreative()) {
-                player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is soulbound to someone else.").setStyle(Style.EMPTY.withColor(Formatting.RED))), true);
-
-                player.damage(SpellDamageSource.player(MagicSchool.FIRE, player), player.getMaxHealth()*0.20f);
-            } else if (!Soulbind.isSoulbinded(stack)) {
-                Soulbind.soulbind(stack, player);
-                player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
-            }
         }
 
         HelperMethods.createFootfalls(entity, stack, world, stepMod, ParticleTypes.FLAME, ParticleTypes.FLAME, ParticleTypes.FLAME, true);
@@ -106,10 +95,7 @@ public class Azhar extends SwordItem implements Artifact {
 
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-        if (!Soulbind.isSoulbinded(stack) && !world.isClient()) {
-            Soulbind.soulbind(stack, player);
-            player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
-        }
+        Soulbound.onCraft(stack, world, player);
 
         super.onCraft(stack, world, player);
     }
@@ -121,18 +107,18 @@ public class Azhar extends SwordItem implements Artifact {
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Soul Absorption").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Soul Absorption").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Absorb all Broken Souls, consuming them and healing 10% of your").setStyle(TEXT));
         tooltip.add(Text.literal("maximum health per broken soul stack.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Breath of A'zhar").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Breath of A'zhar").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Unleash the breath of A'zhar, dealing high soulfire damage on a").setStyle(TEXT));
         tooltip.add(Text.literal("large cone. If you don't have a broken soul stack, you will recieve").setStyle(TEXT));
         tooltip.add(Text.literal("continuous damage while the breath is active.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Broken Souls").setStyle(Style.EMPTY.withColor(0xe6a667))));
+        tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Broken Souls").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Broken Souls last 5 seconds, each stack will not reset the duration.").setStyle(TEXT));
         tooltip.add(Text.literal("When souls expire, you get healed 10% of your maximum health.").setStyle(TEXT));
         tooltip.add(Text.literal(" Attacks generate a Broken Soul, but damage you 10% of your health.").setStyle(SUBTEXT));

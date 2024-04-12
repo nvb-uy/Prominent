@@ -1,7 +1,7 @@
 {
     "type": "minecraft:smelting",
     "ingredient": {
-        "tag": "prominent:artifacts"
+        "tag": "prominent:smeltable_artifacts"
     },
     "result": "prominent:molten_core",
     "experience": 0,

@@ -8,9 +8,9 @@ import com.google.common.collect.Multimap;
 import com.spellbladenext.items.Starforge;
 
 import elocindev.necronomicon.api.text.TextAPI;
-import elocindev.prominent.soulbinding.Soulbind;
+import elocindev.prominent.soulbinding.Soulbound;
+import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
-import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
@@ -25,10 +25,9 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.spell_power.api.MagicSchool;
-import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.attributes.SpellAttributes;
 
-public class Frostmourne extends SwordItem implements Artifact {
+public class Frostmourne extends SwordItem implements Artifact, Soulbound {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
     
     public Frostmourne(ToolMaterial material, Settings settings, int damage, float speed) {
@@ -73,23 +72,23 @@ public class Frostmourne extends SwordItem implements Artifact {
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Runic Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal("\uF933 ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Obliterate").setStyle(Style.EMPTY.withColor(0x327da8))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Obliterate").setStyle(Style.EMPTY.withColor(0x327da8))));
         tooltip.add(Text.literal("Imbue your weapon with death, making your next attack deal").setStyle(TEXT));
         tooltip.add(Text.literal("soulfrost damage and extra physical damage to frozen targets.").setStyle(TEXT));
         tooltip.add(Text.literal(" Extends Remorseless Winter by 1 second.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Text.literal(" Extends Agonizing Breath by 2 seconds.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Remorseless Winter").setStyle(Style.EMPTY.withColor(0x327da8))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Remorseless Winter").setStyle(Style.EMPTY.withColor(0x327da8))));
         tooltip.add(Text.literal("Drain the warmth of life from all nearby enemies,").setStyle(TEXT));
         tooltip.add(Text.literal("dealing soulfrost damage every second for 10 seconds.").setStyle(TEXT));        
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF934 ").append(Text.literal("Agonizing Breath").setStyle(Style.EMPTY.withColor(0x327da8))));
+        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Agonizing Breath").setStyle(Style.EMPTY.withColor(0x327da8))));
         tooltip.add(Text.literal("Continuosly deal frost damage in a cone in front of you").setStyle(TEXT));
         tooltip.add(Text.literal("during 5 seconds.").setStyle(TEXT));        
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal("\uF937 ").append(Text.literal("Curse of Agony").setStyle(Style.EMPTY.withColor(0x2d6180))));
+        tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Curse of Agony").setStyle(Style.EMPTY.withColor(0x2d6180))));
         tooltip.add(Text.literal("Whoever wields the Frostmourne will become the next Lich King,").setStyle(TEXT));
         tooltip.add(Text.literal("abilities will deal extra frost damage while on cold biomes.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
@@ -97,29 +96,11 @@ public class Frostmourne extends SwordItem implements Artifact {
 
     @Override
     public void onCraft(ItemStack stack, World world, PlayerEntity player) {
-        if (!Soulbind.isSoulbinded(stack) && !world.isClient()) {
-            Soulbind.soulbind(stack, player);
-            player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
-        }
+        Soulbound.onCraft(stack, world, player);
 
         super.onCraft(stack, world, player);
     }
     
-    @Override
-    public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (entity instanceof PlayerEntity player && !world.isClient() && world.getTime() % 20 == 0) {
-            if (Soulbind.isSoulbinded(stack) && !Soulbind.isSoulbindedTo(stack, player) && !player.isCreative()) {
-                player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is soulbound to someone else.").setStyle(Style.EMPTY.withColor(Formatting.RED))), true);
-
-                player.damage(SpellDamageSource.player(MagicSchool.FIRE, player), player.getMaxHealth()*0.20f);
-            } else if (!world.isClient() && !Soulbind.isSoulbinded(stack)) {
-                Soulbind.soulbind(stack, player);
-                player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
-            }
-        }
-
-        super.inventoryTick(stack, world, entity, slot, selected);
-    }
 
     @Override
     public boolean canRepair(ItemStack stack, ItemStack ingredient) {
