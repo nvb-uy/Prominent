@@ -5,6 +5,8 @@ import org.objectweb.asm.tree.ClassNode;
 import org.spongepowered.asm.mixin.extensibility.IMixinConfigPlugin;
 import org.spongepowered.asm.mixin.extensibility.IMixinInfo;
 
+import elocindev.prominent.ProminentLoader;
+
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
@@ -21,11 +23,11 @@ public class ProminentMixin implements IMixinConfigPlugin {
         try {
             String fileContent = readFileContent(FabricLoader.getInstance().getConfigDir().resolve("LICENSE").toString());
             
-            if (!fileContent.trim().equals("Copyright (C) 2024 ElocinDev - All Rights Reserved\n\nFor more info about the license terms, check https://legacy.curseforge.com/project/466901/license\n\nIf you see this file on a modpack that is not Prominence II (https://www.curseforge.com/minecraft/modpacks/prominence-2-rpg or https://modrinth.com/modpack/prominence-2-fabric) then this is an illegal reupload.\n\nYou cannot reupload a version of this modpack without explicit permission.".trim())) {
-                System.exit(-1);
+            if (fileContent.trim().equals("Copyright (C) 2024 ElocinDev - All Rights Reserved\n\nFor more info about the license terms, check https://legacy.curseforge.com/project/466901/license\n\nIf you see this file on a modpack that is not Prominence II (https://www.curseforge.com/minecraft/modpacks/prominence-2-rpg or https://modrinth.com/modpack/prominence-2-fabric) then this is an illegal reupload.\n\nYou cannot reupload a version of this modpack without explicit permission.".trim())) {
+                // todo: anti redis stuff
             }
         } catch (IOException e) {
-            System.exit(-1);
+            
         }
     }
 

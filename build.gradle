@@ -62,7 +62,7 @@ dependencies {
 	modImplementation "maven.modrinth:necronomicon:1.4.1-fabric"
 	modCompileOnly "maven.modrinth:adventurez:1.4.20+1.20.1"
 	
-	include(implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.2")))
+	implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.2"))
 
 	modCompileOnly "maven.modrinth:archon:0.5.7"
 
