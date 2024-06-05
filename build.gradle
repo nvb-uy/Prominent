@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.3-SNAPSHOT'
+	id 'fabric-loom' version '1.6-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -59,10 +59,9 @@ dependencies {
 	modImplementation "curse.maven:better-combat-by-daedelus-639842:4780848"
 	modImplementation "curse.maven:playeranimator-658587:4587215"
 
-	modImplementation "maven.modrinth:necronomicon:1.4.1-fabric"
+	modImplementation "maven.modrinth:necronomicon:1.4.2-fabric"
+	modImplementation "maven.modrinth:eldritch-end:0.2.31-fabric"
 	modCompileOnly "maven.modrinth:adventurez:1.4.20+1.20.1"
-	
-	implementation(annotationProcessor("io.github.llamalad7:mixinextras-fabric:0.2.2"))
 
 	modCompileOnly "maven.modrinth:archon:0.5.7"
 
