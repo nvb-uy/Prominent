@@ -94,11 +94,9 @@ public class MythicBosses {
         });
     }
 
-    public static String getRandomBoss() {        
-        Random random = new Random();
-
+    public static String getRandomBoss() {
         List<String> bosses = ProminentLoader.Config.mythic_bosses;
-        return bosses.get(random.nextInt(bosses.size()));
+        return bosses.get(ProminentLoader.RANDOM.nextInt(bosses.size()));
     }
 
     private static Entity getEntityByUUID(ServerWorld world, UUID uuid) {

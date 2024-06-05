@@ -14,6 +14,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 
+import java.util.Random;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +32,9 @@ import elocindev.prominent.spells.misc.OnCombat;
 public class ProminentLoader implements ModInitializer {
 	public static final String MODID = "prominent";
 	public static final Logger LOGGER = LoggerFactory.getLogger(MODID);
-	
+
+	public static Random RANDOM = new Random();
+
 	public static ServerConfig Config;
 
 	public static final ItemGroup ProminentTab = FabricItemGroup.builder()
