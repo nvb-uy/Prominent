@@ -5,10 +5,12 @@ import java.util.List;
 import org.jetbrains.annotations.Nullable;
 
 import elocindev.necronomicon.api.text.TextAPI;
+import elocindev.prominent.corruption.ICorruptable;
 import elocindev.prominent.registry.ItemRegistry;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
+import net.minecraft.entity.EquipmentSlot;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -20,13 +22,17 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 
-public class AshedarSpawner extends Item implements Artifact, Soulbound {
+public class AshedarSpawner extends Item implements Artifact, Soulbound, ICorruptable {
 
-    public AshedarSpawner(Settings settings) {
+    private boolean corrupted;
+
+    public AshedarSpawner(Settings settings, boolean corrupted) {
         super(settings
             .maxCount(1)
             .fireproof()
         );
+
+        this.corrupted = corrupted;
     }
     
     @Override
@@ -42,8 +48,13 @@ public class AshedarSpawner extends Item implements Artifact, Soulbound {
             return TypedActionResult.fail(user.getStackInHand(hand));
         }
 
-        ItemStack ASH = new ItemStack(ItemRegistry.ASH);
-        ItemStack EDAR = new ItemStack(ItemRegistry.EDAR);
+        ItemStack ASH; ItemStack EDAR;
+
+        if (!isCorrupted()) {
+            ASH = new ItemStack(ItemRegistry.ASH); EDAR = new ItemStack(ItemRegistry.EDAR);
+        } else {
+            ASH = new ItemStack(ItemRegistry.ASH); EDAR = new ItemStack(ItemRegistry.EDAR); //TODO: REPLACE THIS
+        }
 
         user.setStackInHand(Hand.MAIN_HAND, ASH);
         user.setStackInHand(Hand.OFF_HAND, EDAR);
@@ -78,5 +89,21 @@ public class AshedarSpawner extends Item implements Artifact, Soulbound {
     @Override
     public int[] getGradient() {
         return new int[] { 0xECB464, 0x8A6E9E };
+    }
+
+    
+    @Override
+    public boolean isCorrupted() {
+        return this.corrupted;
+    }
+
+    @Override
+    public int corruptionAmount() {
+        return 0;
+    }
+
+    @Override
+    public EquipmentSlot[] getSlots() {
+        return null;
     }
 }

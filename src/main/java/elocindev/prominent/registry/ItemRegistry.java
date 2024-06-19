@@ -35,7 +35,7 @@ public class ItemRegistry {
 
     public static final Item ICON = reg(new Item(new Item.Settings()), "icon");
 
-    // ARTIFACTS
+    // NORMAL ARTIFACTS
 
     public static final Item THUNDERWRATH = 
         reg(new Thunderwrath(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof()), "thunderwrath");
@@ -56,13 +56,13 @@ public class ItemRegistry {
         reg(new Fyralath(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof()), "fyralath");
 
     public static final Item ASH =
-        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 9, -2.30f, 0), "ash");
+        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 9, -2.30f, 0, false), "ash");
     
     public static final Item EDAR =
-        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 6, -2.10f, 1), "edar");
+        reg(new Ashedar(ProminentMaterials.ARTIFACT, new Item.Settings().fireproof(), 6, -2.10f, 1, false), "edar");
     
     public static final Item ASHEDAR_ESSENCE = 
-        reg(new AshedarSpawner(new Item.Settings()), "ashedar_essence");
+        reg(new AshedarSpawner(new Item.Settings(), false), "ashedar_essence");
 
     // essences
     public static final Item DEMON_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "Full of hatred and demonic presences."), "demon_essence");

@@ -8,6 +8,7 @@ import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.ProminentLoader;
+import elocindev.prominent.corruption.ICorruptable;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
@@ -33,9 +34,10 @@ import net.minecraft.world.World;
 import net.spell_power.api.MagicSchool;
 import net.spell_power.api.attributes.SpellAttributes;
 
-public class Ashedar extends SwordItem implements Artifact, Soulbound {
+public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorruptable {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
     private int id;
+    private boolean corrupted;
 
     public static final TagKey<Item> IS_ASHEDAR = TagKey.of(RegistryKeys.ITEM, new Identifier(ProminentLoader.MODID, "ashedar"));
     
@@ -74,10 +76,11 @@ public class Ashedar extends SwordItem implements Artifact, Soulbound {
         return getType() == 1;
     }
 
-    public Ashedar(ToolMaterial material, Settings settings, int damage, float speed, int id) {
+    public Ashedar(ToolMaterial material, Settings settings, int damage, float speed, int id, boolean corrupted) {
         super(material, damage, speed, settings);
 
         this.id = id;
+        this.corrupted = corrupted;
     }
 
     @Override
@@ -200,5 +203,20 @@ public class Ashedar extends SwordItem implements Artifact, Soulbound {
     public int[] getGradient() {
         if (this.isAsh()) return new int[] { 0xECB464, 0xEACF34 };
         else return new int[] { 0x6A4E9E, 0x8A6E9E };
+    }
+
+    @Override
+    public boolean isCorrupted() {
+        return this.corrupted;
+    }
+
+    @Override
+    public int corruptionAmount() {
+        return 15;
+    }
+
+    @Override
+    public EquipmentSlot[] getSlots() {
+        return new EquipmentSlot[] { EquipmentSlot.MAINHAND, EquipmentSlot.OFFHAND };
     }
 }

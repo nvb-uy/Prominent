@@ -10,7 +10,7 @@ import net.minecraft.util.Lazy;
 
 public enum ProminentMaterials implements ToolMaterial {
 
-    ARTIFACT(1, 16984, 4.0F, 1.0F, 5, () -> {
+    ARTIFACT(1, 36984, 4.0F, 1.0F, 5, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{ItemRegistry.ENCASED_REMNANT});
     });
 
