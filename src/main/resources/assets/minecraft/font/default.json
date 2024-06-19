@@ -154,6 +154,12 @@
             "file": "prominent:icon/talent_tree/magic_type/unholy.png",
             "ascent": 9, "height": 10,
             "chars": ["\uF954"]
+        },
+        {
+            "type": "bitmap",
+            "file": "prominent:icon/talent_tree/archery.png",
+            "ascent": 9, "height": 10,
+            "chars": ["\uF955"]
         }
     ]
 }
