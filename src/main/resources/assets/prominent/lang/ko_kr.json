@@ -1,0 +1,61 @@
+{
+    "itemGroup.prominent.tab":"Prominence 사용자 지정 콘텐츠",
+    "itemGroup.prominent.mythic":"Prominence 신화 보스",
+    "item.prominent.icon":"Prominent",
+
+    "item.prominent.music_disc_coniferus_forest":"음반",
+    "item.prominent.music_disc_coniferus_forest.desc":"Orangery - Coniferus Forest (Main Menu Theme)",
+    "item.prominent.music_disc_festivities":"음반",
+    "item.prominent.music_disc_festivities.desc":"Sideralis Music - Prominent Festivities (Original Soundtrack)",
+    
+    "item.prominent.knowledge_scroll": "지식의 두루마리",
+    "item.prominent.molten_core": "녹은 코어",
+
+    "item.prominent.thunderwrath": "용암 폭풍, 썬더래스",
+    "item.prominent.supernova": "별의 죽음, 초신성",
+    "item.prominent.fury_of_a_thousand_fists": "천 개의 주먹의 분노",
+    "item.prominent.frostmourne": "타락한 왕의 검, 서리한",
+    "item.prominent.azhar": "저주받은 낫, 아즈하르",
+    "item.prominent.fyralath": "불타는 고통, 피랄라스",
+
+    "item.prominent.ashedar": "우주의 쌍둥이, 애쉬에다르",
+    "item.prominent.ash": "태양의 잔해, 애쉬",
+    "item.prominent.edar": "어둠의 그림자, 에다르",
+    "item.prominent.ashedar_essence": "우주의 쌍둥이, 애쉬에다르의 정수",
+
+    "spell.prominent.supernova.name": "별의 폭발",
+    "spell.prominent.supernova.description": "초신성의 모든 에너지를 한 점에 집중시켜 치명적인 폭발로 변환하여 주변의 모든 적에게 불가사의한 피해를 입힙니다.",
+    "spell.prominent.rage.name": "분노",
+    "spell.prominent.rage.description": "내면의 분노를 발산하여 짧은 시간 동안 공격 속도를 500% 증가시킵니다. 천 개의 주먹의 분노가 필요합니다.",
+
+    "item.prominent.demon_essence": "악마의 정수",
+    "item.prominent.glory_essence": "영광의 정수",
+    "item.prominent.wrath_essence": "분노의 정수",
+    
+    "item.prominent.cosmic_essence": "우주의 정수",
+    "item.prominent.encased_remnant": "봉인된 잔해",
+
+    "item.prominent.empty_vessel": "잿돌 용기",
+    "item.prominent.void_hourglass": "공허의 모래시계",
+    "item.prominent.lesser_mythical_essence": "하급 신화의 정수",
+    "item.prominent.greater_mythical_essence": "상급 신화의 정수",
+    "effect.prominent.mythic": "신화",
+
+    "effect.prominent.obliterated_agony": "파괴된 고통",
+    "effect.prominent.remorseless_winter": "무자비한 겨울",
+    "effect.prominent.agonizing_breath": "고통스러운 숨결",
+    "effect.prominent.broken_soul": "부서진 영혼",
+    "effect.prominent.soul_absorption": "영혼 흡수",
+
+    "effect.prominent.solar_eclipse": "일식",
+    "effect.prominent.lunar_eclipse": "월식",
+    "effect.prominent.darkening": "암화",
+    "effect.prominent.sunstrike": "태양일격",
+    "effect.prominent.moonlight_nova": "달빛 폭발",
+    "effect.prominent.prominence": "돌출 폭발",
+
+    "effect.prominent.faceless_gift": "얼굴 없는 선물",
+    "effect.prominent.combat": "전투 중",
+
+    "attribute.prominent.mythic_level": "신화 레벨"
+}
