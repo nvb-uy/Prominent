@@ -19,8 +19,8 @@ import net.minecraft.util.Identifier;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.World;
 import net.spell_engine.particle.Particles;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellPowerMechanics;
+import net.spell_power.api.SpellSchools;
 
 public class RemorselessWinter extends StatusEffect {
     public static final RegistryKey<DamageType> DAMAGE = RegistryKey.of(RegistryKeys.DAMAGE_TYPE, new Identifier(ProminentLoader.MODID, "remorseless_winter"));
@@ -69,8 +69,8 @@ public class RemorselessWinter extends StatusEffect {
                 world.addParticle(particleEffect, entity.getX() + xOffset2+off*-1, entity.getY() + randomYOffset/2, entity.getZ() + zOffset2+off, velocityX, 0, velocityZ);
         }
 
-        float damage = 1f + (float)(entity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.FROST).attribute)*0.20f) + (float)(entity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute)*0.15f);
-        double critChance = entity.getAttributeValue(SpellAttributes.CRITICAL_CHANCE.attribute) / 100;
+        float damage = 1f + (float)(entity.getAttributeValue(SpellSchools.FROST.attribute)*0.20f) + (float) (entity.getAttributeValue(SpellSchools.SOUL.attribute) * 0.15f);
+        double critChance = entity.getAttributeValue(SpellPowerMechanics.CRITICAL_CHANCE.attribute) / 100;
 
         if (random.nextDouble() < critChance) damage *= 2;
 

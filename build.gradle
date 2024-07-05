@@ -50,9 +50,10 @@ dependencies {
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
 	
 	modImplementation "curse.maven:simply-swords-659887:${project.simplyswords}"
-	modImplementation "curse.maven:spellblade-next-811662:${project.spellblade}"
 	modCompileOnly "curse.maven:spell-engine-807653:${project.spell_engine}"
 	modCompileOnly "curse.maven:spell-power-771265:${project.spell_power}"
+
+	modImplementation "curse.maven:spellblade-next-811662:${project.spellblades}"
 
 	modImplementation "curse.maven:architectury-api-419699:4663009"
 	modImplementation "curse.maven:cloth-config-348521:4633442"
@@ -61,6 +62,9 @@ dependencies {
 
 	modImplementation "maven.modrinth:necronomicon:1.4.2-fabric"
 	modImplementation "maven.modrinth:eldritch-end:0.2.31-fabric"
+
+	modImplementation "maven.modrinth:skills:0.12.2-fabric"
+
 	modCompileOnly "maven.modrinth:adventurez:1.4.20+1.20.1"
 
 	modCompileOnly "maven.modrinth:archon:0.5.7"

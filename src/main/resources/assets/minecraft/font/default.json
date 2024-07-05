@@ -44,12 +44,6 @@
         },
         {
             "type": "bitmap",
-            "file": "prominent:gui/cdu.png",
-            "ascent": 34, "height": 39,
-            "chars": ["\uA736"]
-        },
-        {
-            "type": "bitmap",
             "file": "prominent:gui/mmcn.png",
             "ascent": 34, "height": 39,
             "chars": ["\uA737"]
@@ -60,24 +54,22 @@
             "ascent": 13, "height": 52,
             "chars": ["\uA835"]
         },
-
-
         {
             "type": "bitmap",
             "file": "prominent:icon/talent_tree/passive.png",
-            "ascent": 9, "height": 10,
+            "ascent": 9, "height": 12,
             "chars": ["\uF940"]
         },
         {
             "type": "bitmap",
             "file": "prominent:icon/talent_tree/active.png",
-            "ascent": 9, "height": 10,
+            "ascent": 9, "height": 12,
             "chars": ["\uF941"]
         },
         {
             "type": "bitmap",
             "file": "prominent:icon/talent_tree/fate.png",
-            "ascent": 9, "height": 10,
+            "ascent": 9, "height": 12,
             "chars": ["\uF942"]
         },
         
@@ -123,8 +115,6 @@
             "ascent": 9, "height": 10,
             "chars": ["\uF949"]
         },
-        
-
         {
             "type": "bitmap",
             "file": "prominent:icon/talent_tree/magic_type/fire.png",
@@ -160,6 +150,12 @@
             "file": "prominent:icon/talent_tree/archery.png",
             "ascent": 9, "height": 10,
             "chars": ["\uF955"]
+        },
+        {
+            "type": "bitmap",
+            "file": "simplyskills:icons/prom_compat/rune_of_stars.png",
+            "ascent": 9, "height": 10,
+            "chars": ["\uF956"]
         }
     ]
 }

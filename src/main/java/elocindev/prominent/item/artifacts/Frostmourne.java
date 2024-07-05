@@ -24,8 +24,7 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchools;
 
 public class Frostmourne extends SwordItem implements Artifact, Soulbound {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
@@ -42,7 +41,7 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
 
         modifiers.put(
-            SpellAttributes.POWER.get(MagicSchool.FROST).attribute,
+            SpellSchools.FROST.attribute,
             new EntityAttributeModifier(
                 UUID.fromString("157ee278-8f64-115a-b9d1-0242ac320231"), 
                 "Frostmourne Frost Modifier", 
@@ -52,7 +51,7 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
         );
 
         modifiers.put(
-                SpellAttributes.POWER.get(MagicSchool.SOUL).attribute,
+                SpellSchools.SOUL.attribute,
                 new EntityAttributeModifier(
                     UUID.fromString("157ee278-8f64-115a-b9d1-0242ac320232"), 
                     "Soul Frostmourne Modifier", 

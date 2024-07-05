@@ -13,8 +13,7 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.util.math.Vec3d;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchools;
 
 public class Sunstrike extends StatusEffect {
     public Sunstrike() {
@@ -43,7 +42,7 @@ public class Sunstrike extends StatusEffect {
     }
 
     public float getDamage(LivingEntity entity) {
-        return (float) entity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute) * 1.8f;
+        return (float) entity.getAttributeValue(SpellSchools.FIRE.attribute) * 1.8f;
     }
 
     @Override

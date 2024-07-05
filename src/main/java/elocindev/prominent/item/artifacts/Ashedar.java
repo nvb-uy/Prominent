@@ -31,8 +31,7 @@ import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchools;
 
 public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorruptable {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
@@ -92,7 +91,7 @@ public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorrupta
 
         if (isAsh())
         modifiers.put(
-            SpellAttributes.POWER.get(MagicSchool.FIRE).attribute,
+            SpellSchools.FIRE.attribute,
             new EntityAttributeModifier(
                 UUID.fromString("c57ee278-8f64-115a-b9d1-02a2be32023"+getType()), 
                 "Ashedar Fire Modifier", 
@@ -103,7 +102,7 @@ public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorrupta
 
         if (isEdar())
         modifiers.put(
-                SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute,
+                SpellSchools.ARCANE.attribute,
                 new EntityAttributeModifier(
                     UUID.fromString("c57ee278-8f64-115a-b9d1-0242ac32a23"+getType()), 
                     "Ashedar Arcane Modifier", 

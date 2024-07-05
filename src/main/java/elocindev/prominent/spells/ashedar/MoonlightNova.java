@@ -9,9 +9,8 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
 import net.spell_power.api.SpellDamageSource;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchools;
 
 public class MoonlightNova extends StatusEffect {
     public MoonlightNova() {
@@ -31,7 +30,7 @@ public class MoonlightNova extends StatusEffect {
          
         for (LivingEntity e : world.getEntitiesByClass(LivingEntity.class, entity.getBoundingBox().expand(12.0, 8.0, 12.0), (e) -> e != entity)) {            
             if (entity.hasStatusEffect(EffectRegistry.SOLAR_ECLIPSE)) {
-                e.damage(SpellDamageSource.create(MagicSchool.ARCANE, entity), damage);
+                e.damage(SpellDamageSource.create(SpellSchools.ARCANE, entity), damage);
             }
 
             if (entity.hasStatusEffect(EffectRegistry.LUNAR_ECLIPSE)) {
@@ -44,7 +43,7 @@ public class MoonlightNova extends StatusEffect {
     }
 
     public float getDamage(LivingEntity entity) {
-        return (float) entity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute) * 0.7f;
+        return (float) entity.getAttributeValue(SpellSchools.ARCANE.attribute) * 0.7f;
     }
 
     @Override

@@ -26,9 +26,8 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributeEntry;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchool;
+import net.spell_power.api.SpellSchools;
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.util.HelperMethods;
 
@@ -72,9 +71,9 @@ public class Azhar extends SwordItem implements Artifact, Soulbound {
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
         int i = 0;
 
-        SpellAttributeEntry[] attributeList = {
-            SpellAttributes.POWER.get(MagicSchool.FIRE),
-            SpellAttributes.POWER.get(MagicSchool.SOUL)
+        SpellSchool[] attributeList = {
+            SpellSchools.FIRE,
+            SpellSchools.SOUL
         };
 
         for (var attribute : attributeList) {
@@ -82,7 +81,7 @@ public class Azhar extends SwordItem implements Artifact, Soulbound {
                 attribute.attribute,
                 new EntityAttributeModifier(
                     UUID.fromString("697ae3c8-8f54-11e4-b9d1-0242e332074"+i), 
-                    attribute.name+" A'zhar Modifier", 
+                    attribute.id+" A'zhar Modifier", 
                     0.30,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL
                 )
