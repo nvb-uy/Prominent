@@ -10,6 +10,7 @@
     "ArtifactTooltipFix",
     "ItemEntityExplodableMixin",
     "PlayerEntityMixin",
+    "ServerPlayerEntityMixin",
     "LivingEntityMixin",
     "AE2CrashFixMixin",
     "AshedarDamageMixin"
