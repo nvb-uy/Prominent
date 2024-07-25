@@ -17,7 +17,10 @@ public class PlayerEntityMixin {
     @Inject(method = "setAbsorptionAmount", at = @At("HEAD"), cancellable = true)
     private void checkSetAbsorbtionEntity(float f, CallbackInfo ci){
         if (Float.isNaN(f)){
-            new Throwable().printStackTrace();
+            for (StackTraceElement element : Thread.currentThread().getStackTrace()) {
+                ProminentLoader.LOGGER.warn(element.toString());
+            }
+            
             ProminentLoader.LOGGER.warn("A mod tried to set NaN absorption to entity {}!", ((LivingEntity) (Object) this));
             if (((LivingEntity) (Object) this).getServer() != null) {
                 ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
