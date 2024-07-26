@@ -16,7 +16,7 @@ public class PlayerLevelAPI {
         
         int level = calculateLevel(spentTalents + remainingTalents);
 
-        return level > MAX_LEVEL ? MAX_LEVEL : level; // TODO: reset the skill tree and set it to 32 in the case of the level of the player being greater than 65
+        return level > MAX_LEVEL ? MAX_LEVEL : level;
     }
 
     private static int calculateLevel(int talentLevels) {

@@ -148,14 +148,6 @@ public class MythicBosses {
                 ProminentLoader.Config.mythic_hp_multiplier + (level * ProminentLoader.Config.mythic_hp_multiplier), 
                 EntityAttributeModifier.Operation.MULTIPLY_BASE
             )
-        );;
-
-        entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(
-            new EntityAttributeModifier(
-                "360f2807-d2cd-4d0e-9040-b0d511d484bc", 
-                ProminentLoader.Config.mythic_damage_multiplier + (level * ProminentLoader.Config.mythic_damage_multiplier), 
-                EntityAttributeModifier.Operation.MULTIPLY_BASE
-            )
         );
 
         return entity;
@@ -175,7 +167,7 @@ public class MythicBosses {
                 ProminentLoader.Config.mythic_hp_multiplier + (level * ProminentLoader.Config.mythic_hp_multiplier), 
                 EntityAttributeModifier.Operation.MULTIPLY_BASE
             )
-        );;
+        );
 
         entity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(
             new EntityAttributeModifier(

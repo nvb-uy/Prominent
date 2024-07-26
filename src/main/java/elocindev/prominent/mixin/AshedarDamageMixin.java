@@ -5,7 +5,9 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
+import elocindev.prominent.config.ServerConfig;
 import elocindev.prominent.item.artifacts.Ashedar;
+import elocindev.prominent.mythicbosses.MythicBosses;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -31,6 +33,13 @@ public abstract class AshedarDamageMixin {
         if (source.getAttacker() instanceof PlayerEntity src)
             if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR))
                 return original / 2;
+
+        if (source.getAttacker() != null && source.getAttacker() instanceof LivingEntity attacker) {
+            if (!MythicBosses.isMythicBoss(attacker)) return original;
+
+            float multiplier = 1.0f + (MythicBosses.getMythicLevel(attacker) * ServerConfig.INSTANCE.mythic_damage_multiplier);
+            return original * multiplier;
+        }
             
         return original;
     }
