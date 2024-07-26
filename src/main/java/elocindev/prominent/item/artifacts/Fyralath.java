@@ -85,8 +85,8 @@ public class Fyralath extends SwordItem implements Artifact, Soulbound {
                 Registries.ATTRIBUTE.get(new Identifier("extraspellattributes:reabsorption")),
                 new EntityAttributeModifier(
                     UUID.fromString("697ae3c8-df64-11e4-b9d1-0242e332074"+i), 
-                    "Warding Fyr'alath Modifier", 
-                    4,
+                    "Reabsorption Fyr'alath Modifier", 
+                    10,
                     EntityAttributeModifier.Operation.ADDITION
                 )
             );
