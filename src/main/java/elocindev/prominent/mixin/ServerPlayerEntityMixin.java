@@ -39,7 +39,7 @@ public class ServerPlayerEntityMixin {
 
                 possibleBoss.remove(RemovalReason.DISCARDED);
 
-                player.sendMessage(Text.literal("The Faceless whispers: You're weak.").setStyle(Style.EMPTY.withColor(0xb86bbf).withItalic(true)));
+                player.sendMessage(Text.literal("The Faceless whispers: You've failed. Embrace the void.").setStyle(Style.EMPTY.withColor(0xb86bbf).withItalic(true)));
                 
                 int finalLevel = MythicBosses.getMythicLevel(possibleBoss) - 1;
                 if (finalLevel < 1) finalLevel = 1;
