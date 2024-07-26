@@ -1,8 +1,4 @@
 {
-"is_proxy": false,
-"spell_ids": [
-    "prominent:obliterate",
-    "prominent:remorseless_winter",
-    "prominent:agonizing_breath"
-]
+"is_proxy": true,
+"spell_ids": []
 }
