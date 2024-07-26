@@ -12,7 +12,6 @@
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "LivingEntityMixin",
-    "AE2CrashFixMixin",
     "AshedarDamageMixin"
   ],
   "injectors": {
