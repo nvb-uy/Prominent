@@ -1,7 +1,7 @@
 package elocindev.prominent.registry;
 
 import elocindev.prominent.ProminentLoader;
-import elocindev.prominent.item.EssenceItem;
+import elocindev.prominent.item.DescriptiveItem;
 import elocindev.prominent.item.MainMenuDisc;
 import elocindev.prominent.item.MoltenCore;
 import elocindev.prominent.item.artifacts.Ashedar;
@@ -65,18 +65,18 @@ public class ItemRegistry {
         reg(new AshedarSpawner(new Item.Settings(), false), "ashedar_essence");
 
     // essences
-    public static final Item DEMON_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "Full of hatred and demonic presences."), "demon_essence");
-    public static final Item GLORY_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "A shining light full of concentrated raw power."), "glory_essence");
-    public static final Item WRATH_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "Holds wrathful souls."), "wrath_essence");
+    public static final Item DEMON_ESSENCE = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "Full of hatred and demonic presences."), "demon_essence");
+    public static final Item GLORY_ESSENCE = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "A shining light full of concentrated raw power."), "glory_essence");
+    public static final Item WRATH_ESSENCE = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.RARE).fireproof().maxCount(1), "Holds wrathful souls."), "wrath_essence");
         
     // misc
-    public static final Item ENCASED_REMNANT = reg(new EssenceItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(16), "Can be used to re-roll and repair artifact weapons."), "encased_remnant");
+    public static final Item ENCASED_REMNANT = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(16), "Can be used to re-roll and repair artifact weapons."), "encased_remnant");
     public static final Item RESPEC_SCROLL = reg(new elocindev.prominent.item.ScrollItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)), "knowledge_scroll");
-
+    public static final Item CINDERSTONE_TROPHY = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.UNCOMMON).fireproof().maxCount(1), "A reward from S'kellak for aiding him in defeating the threats of the realms, used to craft useful relics."), "cinderstone_trophy");
 
     // mythic stuff
-    public static final Item LESSER_MYTHICAL_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(64), "\uF935 Loot from Mythic 10+ Bosses"), "lesser_mythical_essence");
-    public static final Item GREATER_MYTHICAL_ESSENCE = reg(new EssenceItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(16), "\uF935 Loot from Mythic 20+ Bosses"), "greater_mythical_essence");
+    public static final Item LESSER_MYTHICAL_ESSENCE = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(64), "\uF935 Loot from Mythic 10+ Bosses"), "lesser_mythical_essence");
+    public static final Item GREATER_MYTHICAL_ESSENCE = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(16), "\uF935 Loot from Mythic 20+ Bosses"), "greater_mythical_essence");
     
     public static final Item EMPTY_VESSEL = reg(new Item(new Item.Settings().fireproof().maxCount(1)), "empty_vessel");
     public static final Item VOID_HOURGLASS = reg(new MythicSummoner(new Item.Settings().maxCount(1).fireproof()), "void_hourglass");

@@ -61,6 +61,7 @@ public class ProminentLoader implements ModInitializer {
 		CommandRegistry.register();
 		
 		ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MODID, "tab"))).register(content -> {
+			content.add(new ItemStack(ItemRegistry.CINDERSTONE_TROPHY));
 			content.add(new ItemStack(ItemRegistry.RESPEC_SCROLL));
 			content.add(new ItemStack(ItemRegistry.MOLTEN_CORE));
 			content.add(new ItemStack(ItemRegistry.MAINMENU_DISC));

@@ -8,10 +8,10 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
-public class EssenceItem extends Item {
+public class DescriptiveItem extends Item {
     String description;
 
-    public EssenceItem(Settings settings, String description) {
+    public DescriptiveItem(Settings settings, String description) {
         super(settings);
 
         this.description = description;
