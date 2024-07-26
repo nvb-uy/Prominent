@@ -33,7 +33,7 @@ import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import net.spell_power.api.SpellSchools;
 
-public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorruptable {
+public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorruptable, IPartOfSet {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
     private int id;
     private boolean corrupted;
