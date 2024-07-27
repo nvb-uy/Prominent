@@ -35,10 +35,12 @@ public interface Soulbound {
         UUID uuid = player.getUuid();
         
         var item = stack.getItem();
-        stack.getOrCreateNbt().putUuid("soulboundTo", uuid);
-
-        if (item instanceof Artifact && player instanceof ServerPlayerEntity playerEntity) {
+        
+        if (item instanceof Artifact) {
+            if (!(player instanceof ServerPlayerEntity playerEntity)) return;
             if (item instanceof IPartOfSet) return;
+
+            stack.getOrCreateNbt().putUuid("boundArtifact", uuid);
             
             var identifier = Registries.ITEM.getId(stack.getItem());
             
@@ -58,6 +60,8 @@ public interface Soulbound {
                     inst.lockCategory(playerEntity, tree);
                 }
             }
+        } else {
+            stack.getOrCreateNbt().putUuid("soulboundTo", uuid);
         }
     }
 
@@ -65,11 +69,24 @@ public interface Soulbound {
         UUID uuid = player.getUuid();
         if (!isSoulbinded(stack)) return false;
 
-        UUID soulboundTo = stack.getOrCreateNbt().getUuid("soulboundTo");
-        return uuid.equals(soulboundTo);
+        if (stack.getOrCreateNbt().contains("soulboundTo") && uuid.equals(stack.getOrCreateNbt().getUuid("soulboundTo"))) {
+            return true;
+        }
+
+        if (stack.getOrCreateNbt().contains("boundArtifact") && uuid.equals(stack.getOrCreateNbt().getUuid("boundArtifact"))) {
+            return true;
+        }
+
+        if (stack.getItem() instanceof Artifact && stack.getOrCreateNbt().contains("soulboundTo") && uuid.equals(stack.getOrCreateNbt().getUuid("soulboundTo"))) {
+            stack.getOrCreateNbt().remove("soulboundTo");
+
+            soulbind(stack, player);
+        }
+
+        return false;
     }
 
     public static boolean isSoulbinded(ItemStack stack) {
-        return stack.getOrCreateNbt().contains("soulboundTo");
+        return stack.getOrCreateNbt().contains("soulboundTo") || stack.getOrCreateNbt().contains("boundArtifact");
     }
 }
