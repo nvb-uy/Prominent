@@ -32,10 +32,10 @@ public interface Soulbound {
         
         if (item instanceof Artifact) {
             if (!(player instanceof ServerPlayerEntity playerEntity)) return;
+            
+            stack.getOrCreateNbt().putUuid("boundArtifact", uuid);
             if (item instanceof IPartOfSet) return;
 
-            stack.getOrCreateNbt().putUuid("boundArtifact", uuid);
-            
             var identifier = Registries.ITEM.getId(stack.getItem());
             
             var category = SkillsAPI.getCategory(new Identifier("puffish_skills", identifier.getPath()));

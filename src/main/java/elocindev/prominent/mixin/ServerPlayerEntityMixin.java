@@ -5,7 +5,7 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
-import elocindev.eldritch_end.item.artifacts.base.Artifact;
+import elocindev.prominent.item.artifacts.Artifact;
 import elocindev.prominent.item.artifacts.IPartOfSet;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.soulbinding.Soulbound;
@@ -57,25 +57,25 @@ public class ServerPlayerEntityMixin {
         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
         if (!(player.getWorld() instanceof ServerWorld)) return;
         World world = player.getWorld();
-
+    
         int ownedArtifactCount = 0;
         boolean hasDualArtifacts = false;
-
+    
         if (!world.isClient() && world.getTime() % 20 == 0) {
             for (ItemStack stack : player.getInventory().main) {
                 if (!(stack.getItem() instanceof Soulbound))
                     continue;
-
+    
                 if (Soulbound.isSoulbinded(stack)) {
                     if (player.isCreative()) continue;
-
+    
                     if (!Soulbound.isSoulbindedTo(stack, player)) {
                         player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is soulbound to someone else.").setStyle(Style.EMPTY.withColor(Formatting.RED))), true);
-
+    
                         player.damage(player.getDamageSources().genericKill(), player.getMaxHealth() * 0.40f);
                     } else if (stack.getItem() instanceof Artifact) {
                         if (stack.getItem() instanceof IPartOfSet) hasDualArtifacts = true;
-
+    
                         ownedArtifactCount++;
                     }
                 } else if (!world.isClient() && !Soulbound.isSoulbinded(stack)) {
@@ -83,10 +83,10 @@ public class ServerPlayerEntityMixin {
                     player.sendMessage(Text.empty().append(stack.getName()).append(Text.literal(" is now soulbound to you.").setStyle(Style.EMPTY.withColor(Formatting.GOLD))), false);
                 }
             }
-
+    
             if (ownedArtifactCount > 1 && !player.isCreative()) {
                 if (hasDualArtifacts && ownedArtifactCount <= 2) return;
-
+    
                 player.sendMessage(Text.literal("Your body is overwhelmed by the power of multiple artifacts").setStyle(Style.EMPTY.withColor(Formatting.RED)), true);
                 player.damage(player.getDamageSources().genericKill(), player.getMaxHealth() * 0.45f);
             }
