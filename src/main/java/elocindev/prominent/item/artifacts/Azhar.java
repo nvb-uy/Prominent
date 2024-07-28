@@ -7,6 +7,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
+import elocindev.prominent.player.artifact.ClientArtifactHolder;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.spells.azhar.BrokenSoul;
 import elocindev.prominent.text.ICONS;
@@ -106,7 +107,7 @@ public class Azhar extends SwordItem implements Artifact, Soulbound {
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("azhar")));
         tooltip.add(Text.literal(" "));
         tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Soul Absorption").setStyle(Style.EMPTY.withColor(0xe6a667))));
         tooltip.add(Text.literal("Absorb all Broken Souls, consuming them and healing 10% of your").setStyle(TEXT));

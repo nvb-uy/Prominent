@@ -14,7 +14,10 @@
     "LivingEntityMixin",
     "AshedarDamageMixin"
   ],
-  "injectors": {
+  "client": [
+    "client.UpdateArtifactClientMixin"
+  ],
+    "injectors": {
     "defaultRequire": 1
   }
 }

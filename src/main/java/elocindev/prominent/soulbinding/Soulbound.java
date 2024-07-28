@@ -4,6 +4,7 @@ import java.util.UUID;
 
 import elocindev.prominent.item.artifacts.Artifact;
 import elocindev.prominent.item.artifacts.IPartOfSet;
+import elocindev.prominent.player.artifact.ArtifactAPI;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.registry.Registries;
@@ -17,13 +18,6 @@ import net.puffish.skillsmod.SkillsMod;
 import net.puffish.skillsmod.api.SkillsAPI;
 
 public interface Soulbound {
-    Identifier[] ARTIFACT_TREES = new Identifier[] {
-        new Identifier("puffish_skills", "frostmourne"),
-        new Identifier("puffish_skills", "fyralath"),
-        new Identifier("puffish_skills", "ashedar_essence"),
-        new Identifier("puffish_skills", "supernova")
-    };
-
     public static void onCraft(ItemStack stack, World world, PlayerEntity player) {
         if (!Soulbound.isSoulbinded(stack) && !world.isClient()) {
             Soulbound.soulbind(stack, player);
@@ -53,7 +47,7 @@ public interface Soulbound {
             inst.setExperience(playerEntity, category.get().getId(), 0);
             inst.resetSkills(playerEntity, category.get().getId());
 
-            for (var tree : ARTIFACT_TREES) {
+            for (var tree : ArtifactAPI.ARTIFACT_TREES) {
                 if (!tree.equals(category.get().getId())) {
                     inst.resetSkills(playerEntity, tree);
                     inst.setExperience(playerEntity, tree, 0);

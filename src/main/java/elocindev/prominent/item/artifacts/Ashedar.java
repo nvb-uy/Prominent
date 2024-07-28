@@ -9,6 +9,7 @@ import com.google.common.collect.Multimap;
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.ProminentLoader;
 import elocindev.prominent.corruption.ICorruptable;
+import elocindev.prominent.player.artifact.ClientArtifactHolder;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
@@ -156,7 +157,7 @@ public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorrupta
             Ability3Desc = Text.literal("Increases attack and movement speed by 10%. Applies for 10 seconds.");
         }
 
-        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("ashedar_essence")));
         tooltip.add(Text.literal(" "));
         tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Ability1.setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Ability1Desc.setStyle(TEXT));
@@ -181,7 +182,7 @@ public class Ashedar extends SwordItem implements Artifact, Soulbound, ICorrupta
         tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Astral Attunement").setStyle(Style.EMPTY.withColor(getGradient()[0]))));
         tooltip.add(Text.literal("When dual wielding along with its twin, melee attacks deal double damage.").setStyle(TEXT));
         tooltip.add(Text.literal(" Available spells will change depending on which blade is in your main hand.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
-        tooltip.add(Text.literal(" "));
+        tooltip.add(Text.literal(" "));        
     }
 
     @Override

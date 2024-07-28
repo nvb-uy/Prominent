@@ -8,6 +8,7 @@ import com.google.common.collect.Multimap;
 import com.spellbladenext.items.Starforge;
 
 import elocindev.necronomicon.api.text.TextAPI;
+import elocindev.prominent.player.artifact.ClientArtifactHolder;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
@@ -75,7 +76,7 @@ public class Supernova extends Starforge implements Artifact, Soulbound {
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Cosmic Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("supernova")));
         tooltip.add(Text.literal(" "));
         tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Astral Burst").setStyle(Style.EMPTY.withColor(0xb078de))));
         tooltip.add(Text.literal("Invoke all of the energy of Supernova into a single point,").setStyle(TEXT));

@@ -8,6 +8,7 @@ import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.ProminentLoader;
+import elocindev.prominent.player.artifact.ClientArtifactHolder;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
@@ -110,7 +111,7 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact {
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Emberstorm Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("thunderwrath")));
         tooltip.add(Text.literal(" "));
         tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Thunder's Fury").setStyle(RIGHTCLICK)));
         tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip3").setStyle(TEXT));

@@ -9,6 +9,7 @@ import com.google.common.collect.HashMultimap;
 import com.google.common.collect.Multimap;
 
 import elocindev.necronomicon.api.text.TextAPI;
+import elocindev.prominent.player.artifact.ClientArtifactHolder;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
@@ -43,7 +44,7 @@ public class ThousandFists extends FistOfFuryItem implements Artifact, Soulbound
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Soulfire Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("fury_of_a_thousand_fists")));
         tooltip.add(Text.literal(" "));
         tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Enraging").setStyle(Style.EMPTY.withColor(14903072))));
         tooltip.add(Text.literal("Enrage yourself, imbuing your fists with 500% attack speed").setStyle(TEXT));

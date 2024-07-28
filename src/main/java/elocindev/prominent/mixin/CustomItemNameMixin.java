@@ -11,6 +11,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.item.artifacts.Artifact;
+import elocindev.prominent.item.artifacts.IMoltenItem;
 
 @Mixin(ItemStack.class)
 public abstract class CustomItemNameMixin {
@@ -23,13 +24,13 @@ public abstract class CustomItemNameMixin {
         MutableText gradient = Text.empty();
         Object item = (Object)stack.getItem();
 
-
-        if (!(item instanceof Artifact artifact)) return;
-
         NbtCompound nbtCompound = stack.getSubNbt("display");
 
-         
-        gradient = TextAPI.Styles.getGradient(bold, 1, artifact.getGradient()[0], artifact.getGradient()[1], 1.0F);
+        if (item instanceof Artifact artifact)
+            gradient = TextAPI.Styles.getGradient(bold, 1, artifact.getGradient()[0], artifact.getGradient()[1], 1.0F);
+        else if (item instanceof IMoltenItem)
+            gradient = TextAPI.Styles.getGradient(name.setStyle(name.getStyle().withBold(false)), 1, 0xd1611f, 0xd1802a, 1.0F);
+        else return;
         
 
         if (nbtCompound != null && nbtCompound.contains("Name", 8)) {
@@ -37,8 +38,6 @@ public abstract class CustomItemNameMixin {
                 Text text = Text.Serializer.fromJson(nbtCompound.getString("Name"));
 
                 if (text != null) {
-                    
-                    
                     cir.setReturnValue(gradient.setStyle(gradient.getStyle().withBold(true)));
                     return;
                 }

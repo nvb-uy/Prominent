@@ -64,6 +64,8 @@ public class ProminentLoader implements ModInitializer {
 			content.add(new ItemStack(ItemRegistry.CINDERSTONE_TROPHY));
 			content.add(new ItemStack(ItemRegistry.RESPEC_SCROLL));
 			content.add(new ItemStack(ItemRegistry.MOLTEN_CORE));
+			content.add(new ItemStack(ItemRegistry.MOLTEN_REMNANT));
+			content.add(new ItemStack(ItemRegistry.INFUSED_MOLTEN_REMNANT));
 			content.add(new ItemStack(ItemRegistry.MAINMENU_DISC));
 			content.add(new ItemStack(ItemRegistry.FESTIVITIES_DISC));
 			content.add(new ItemStack(ItemRegistry.DEMON_ESSENCE));

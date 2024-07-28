@@ -8,6 +8,7 @@ import com.google.common.collect.Multimap;
 import com.spellbladenext.items.Starforge;
 
 import elocindev.necronomicon.api.text.TextAPI;
+import elocindev.prominent.player.artifact.ClientArtifactHolder;
 import elocindev.prominent.soulbinding.Soulbound;
 import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
@@ -93,7 +94,7 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Runic Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
-        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE));
+        tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("frostmourne")));
         tooltip.add(Text.literal(" "));
         tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Curse of Agony").setStyle(Style.EMPTY.withColor(0x2d6180))));
         tooltip.add(Text.literal("Whoever wields the Frostmourne will become the next Lich King.").setStyle(TEXT));

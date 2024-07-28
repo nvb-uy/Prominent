@@ -1,6 +1,7 @@
 package elocindev.prominent.registry;
 
 import elocindev.prominent.ProminentLoader;
+import elocindev.prominent.item.ArtifactUpgrader;
 import elocindev.prominent.item.DescriptiveItem;
 import elocindev.prominent.item.MainMenuDisc;
 import elocindev.prominent.item.MoltenCore;
@@ -71,7 +72,13 @@ public class ItemRegistry {
         
     // misc
     public static final Item ENCASED_REMNANT = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.EPIC).fireproof().maxCount(16), "Can be used to re-roll and repair artifact weapons."), "encased_remnant");
+    
+    public static final Item MOLTEN_REMNANT = reg(new ArtifactUpgrader(new Item.Settings().rarity(Rarity.UNCOMMON), 50, false), "molten_remnant");
+    public static final Item INFUSED_MOLTEN_REMNANT = reg(new ArtifactUpgrader(new Item.Settings().rarity(Rarity.UNCOMMON), 100, true), "infused_molten_remnant");
+
+    
     public static final Item RESPEC_SCROLL = reg(new elocindev.prominent.item.ScrollItem(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)), "knowledge_scroll");
+    
     public static final Item CINDERSTONE_TROPHY = reg(new DescriptiveItem(new Item.Settings().rarity(Rarity.UNCOMMON).fireproof().maxCount(1), "A reward from S'kellak for aiding him in defeating the threats of the realms, used to craft useful relics."), "cinderstone_trophy");
 
     // mythic stuff
