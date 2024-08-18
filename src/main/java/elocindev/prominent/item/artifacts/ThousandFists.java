@@ -3,6 +3,7 @@ package elocindev.prominent.item.artifacts;
 import java.util.List;
 import java.util.UUID;
 
+import net.spell_power.api.SpellSchool;
 import org.jetbrains.annotations.Nullable;
 
 import com.google.common.collect.HashMultimap;
@@ -25,10 +26,9 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
+import net.spell_power.api.SpellSchools;
 import net.spell_power.api.SpellDamageSource;
-import net.spell_power.api.attributes.SpellAttributeEntry;
-import net.spell_power.api.attributes.SpellAttributes;
+
 import safro.archon.item.earth.FistOfFuryItem;
 import safro.archon.registry.EffectRegistry;
 
@@ -61,9 +61,9 @@ public class ThousandFists extends FistOfFuryItem implements Artifact, Soulbound
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
         int i = 0;
 
-        SpellAttributeEntry[] attributeList = {
-            SpellAttributes.POWER.get(MagicSchool.FIRE),
-            SpellAttributes.POWER.get(MagicSchool.SOUL)
+        SpellSchool[] attributeList = {
+            SpellSchools.FIRE,
+            SpellSchools.SOUL
         };
 
         for (var attribute : attributeList) {
@@ -71,7 +71,7 @@ public class ThousandFists extends FistOfFuryItem implements Artifact, Soulbound
                 attribute.attribute,
                 new EntityAttributeModifier(
                     UUID.fromString("697ae378-8f64-11e4-b9d1-0242ac32074"+i), 
-                    attribute.name+" Fury of a Thousand Fists Modifier", 
+                    attribute.id.getPath()+" Fury of a Thousand Fists Modifier", 
                     0.10, 
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL
                 )
@@ -84,11 +84,11 @@ public class ThousandFists extends FistOfFuryItem implements Artifact, Soulbound
 
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (attacker.hasStatusEffect(EffectRegistry.RAGE) && attacker.getRandom().nextBoolean()) {
-            var source = MagicSchool.FIRE;
+            var source = SpellSchools.FIRE;
             if (attacker.getRandom().nextBoolean())
-                source = MagicSchool.SOUL;
+                source = SpellSchools.SOUL;
 
-            var soulfire = attacker.getAttributeBaseValue(SpellAttributes.POWER.get(MagicSchool.FIRE).attribute) + attacker.getAttributeBaseValue(SpellAttributes.POWER.get(MagicSchool.SOUL).attribute) / 4; 
+            var soulfire = attacker.getAttributeBaseValue(SpellSchools.FIRE.attribute) + attacker.getAttributeBaseValue(SpellSchools.SOUL.attribute) / 4; 
             
             if (attacker instanceof PlayerEntity player)
                 target.damage(SpellDamageSource.player(source, player), (float)(1.0F + 2.0F * soulfire));

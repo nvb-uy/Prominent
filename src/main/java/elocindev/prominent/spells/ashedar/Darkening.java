@@ -7,8 +7,8 @@ import net.minecraft.entity.attribute.AttributeContainer;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchools;
+
 
 public class Darkening extends StatusEffect {
     public Darkening() {
@@ -44,7 +44,7 @@ public class Darkening extends StatusEffect {
     }
 
     public float getDamage(LivingEntity entity) {
-        return (float) entity.getAttributeValue(SpellAttributes.POWER.get(MagicSchool.ARCANE).attribute) * 1.5f;
+        return (float) entity.getAttributeValue(SpellSchools.ARCANE.attribute) * 1.5f;
     }
 
     @Override

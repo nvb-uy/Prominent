@@ -24,15 +24,15 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributeEntry;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchool;
+import net.spell_power.api.SpellSchools;
+
 
 public class Supernova extends Starforge implements Artifact, Soulbound {
     private Multimap<EntityAttribute, EntityAttributeModifier> attributes;
     
     public Supernova(ToolMaterial material, Settings settings, int damage, float speed) {
-        super(material, settings, damage, speed, MagicSchool.PHYSICAL_MELEE);
+        super(material, settings, damage, speed, SpellSchools.FROST);
     }
 
     @Override
@@ -43,12 +43,12 @@ public class Supernova extends Starforge implements Artifact, Soulbound {
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
         int i = 0;
 
-        SpellAttributeEntry[] attributeList = {
-            SpellAttributes.POWER.get(MagicSchool.FIRE),
-            SpellAttributes.POWER.get(MagicSchool.FROST),
-            SpellAttributes.POWER.get(MagicSchool.ARCANE),
-            SpellAttributes.POWER.get(MagicSchool.SOUL),
-            SpellAttributes.POWER.get(MagicSchool.LIGHTNING)
+        SpellSchool[] attributeList = {
+            SpellSchools.FIRE,
+            SpellSchools.FROST,
+            SpellSchools.ARCANE,
+            SpellSchools.SOUL,
+            SpellSchools.LIGHTNING
         };
 
         for (var attribute : attributeList) {
@@ -56,7 +56,7 @@ public class Supernova extends Starforge implements Artifact, Soulbound {
                 attribute.attribute,
                 new EntityAttributeModifier(
                     UUID.fromString("697fe278-8f64-11e4-b9d1-0242ac32074"+i), 
-                    attribute.name+" Supernova Modifier", 
+                    attribute.id.getPath()+" Supernova Modifier", 
                     5.0, 
                     EntityAttributeModifier.Operation.ADDITION
                 )

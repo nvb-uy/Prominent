@@ -25,9 +25,9 @@ import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
-import net.spell_power.api.MagicSchool;
-import net.spell_power.api.attributes.SpellAttributeEntry;
-import net.spell_power.api.attributes.SpellAttributes;
+import net.spell_power.api.SpellSchool;
+import net.spell_power.api.SpellSchools;
+
 import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.util.HelperMethods;
 
@@ -63,17 +63,17 @@ public class Fyralath extends SwordItem implements Artifact, Soulbound {
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
         int i = 0;
 
-        SpellAttributeEntry[] attributeList = {
-            SpellAttributes.POWER.get(MagicSchool.FIRE),
-            SpellAttributes.POWER.get(MagicSchool.SOUL)
+        SpellSchool[] attributeList = {
+            SpellSchools.FIRE,
+            SpellSchools.SOUL
         };
 
         for (var attribute : attributeList) {
             modifiers.put(
                 attribute.attribute,
                 new EntityAttributeModifier(
-                    UUID.fromString("697ae3c8-df64-11e4-b9d1-0242e332074"+i), 
-                    attribute.name+" Fyr'alath Modifier", 
+                    UUID.fromString("697ae3c8-df64-11e4-b9d1-0242e332074"+i),
+                        attribute.id.getPath()+" Fyr'alath Modifier", 
                     0.10,
                     EntityAttributeModifier.Operation.MULTIPLY_TOTAL
                 )
@@ -82,10 +82,10 @@ public class Fyralath extends SwordItem implements Artifact, Soulbound {
         }
 
         modifiers.put(
-                Spellblades.WARDING,
+                SpellSchools.ARCANE.attribute,
                 new EntityAttributeModifier(
                     UUID.fromString("697ae3c8-df64-11e4-b9d1-0242e332074"+i), 
-                    "Warding Fyr'alath Modifier", 
+                        SpellSchools.ARCANE.id.getPath()+" Fyr'alath Modifier", 
                     4,
                     EntityAttributeModifier.Operation.ADDITION
                 )
