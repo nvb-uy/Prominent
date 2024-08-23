@@ -24,6 +24,7 @@ import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.commands.CommandRegistry;
 import elocindev.prominent.config.ServerConfig;
 import elocindev.prominent.mythicbosses.MythicBosses;
+import elocindev.prominent.player.artifact.AritfactAttributes;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.registry.ItemRegistry;
 import elocindev.prominent.registry.SoundRegistry;
@@ -109,5 +110,6 @@ public class ProminentLoader implements ModInitializer {
 		MythicBosses.registerDrops();
 		MythicBosses.registerBuff();
 		OnCombat.regsiter();
+		AritfactAttributes.register();
 	}
 }

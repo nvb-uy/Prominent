@@ -19,7 +19,10 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.collection.DefaultedList;
 import net.minecraft.world.World;
+
+import java.util.ArrayList;
 
 @Mixin(ServerPlayerEntity.class)
 public class ServerPlayerEntityMixin {
@@ -60,9 +63,17 @@ public class ServerPlayerEntityMixin {
     
         int ownedArtifactCount = 0;
         boolean hasDualArtifacts = false;
+
+        ArrayList<ItemStack> inventory = new ArrayList<>();
+        for (int i = 0; i < player.getInventory().size(); i++) {
+            inventory.add(player.getInventory().getStack(i));
+        }
+
+        // if (!player.getOffHandStack().isEmpty())
+        //     inventory.add(player.getOffHandStack());
     
         if (!world.isClient() && world.getTime() % 20 == 0) {
-            for (ItemStack stack : player.getInventory().main) {
+            for (ItemStack stack : inventory) {
                 if (!(stack.getItem() instanceof Soulbound))
                     continue;
     

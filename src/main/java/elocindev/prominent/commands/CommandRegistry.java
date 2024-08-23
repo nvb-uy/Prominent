@@ -14,16 +14,16 @@ public class CommandRegistry {
 
     public static void register() {
         CommandRegistrationCallback.EVENT.register((dispatcher, registryAccess, environment) -> {
-            dispatcher.register(literal("reloadprominent")
+            dispatcher.register(literal("reload_prominent")
             .then(argument("target", EntityArgumentType.player()))
             .requires(source -> source.hasPermissionLevel(3))
             .executes(ctx -> {
                 NecConfigAPI.registerConfig(ServerConfig.class);
 		        ProminentLoader.Config = ServerConfig.INSTANCE;	
                 
-                ctx.getSource().sendFeedback(() -> Text.literal("Reloaded Prominent config"), false);
-
-            return -1;
+                ctx.getSource().sendFeedback(() -> Text.literal("Reloaded Prominent config"), true);
+            
+                return -1;
             }));
 
         });

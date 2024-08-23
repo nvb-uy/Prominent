@@ -27,9 +27,7 @@ public class LivingEntityMixin {
         if (entity.age % 600 == 0) {   
             if (MythicBosses.isMythicBoss(entity))
                 for (int i = 0; i < 3; i++) {
-                    String aberrationId = "eldritch_end:aberration";
-
-                    Entity aberrationEntity = EntityType.get(aberrationId).get().create(entity.getWorld());
+                    Entity aberrationEntity = EntityType.get("eldritch_end:aberration").get().create(entity.getWorld());
                     aberrationEntity.setPos(entity.getBlockPos().getX(), entity.getBlockPos().getY() + 2, entity.getBlockPos().getZ());
 
                     if (aberrationEntity instanceof LivingEntity aberrationLiving) {
