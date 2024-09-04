@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shaped",
+    "group": "tools",
+    "pattern": [
+      "WTW",
+      "TCT",
+      "WSW"
+    ],
+    "key": {
+      "W": {
+        "item": "minecraft:cobweb"
+      },
+      "S":{
+        "item": "minecraft:cracked_stone_bricks"
+      },
+      "C":{
+        "item": "minecraft:compass"
+      },
+      "T":{
+        "item": "prominent:cinderstone_trophy"
+      }
+    },
+    "result": {
+      "item": "explorerscompass:explorerscompass"
+    }
+}

@@ -9,9 +9,9 @@ import net.minecraft.text.Text;
 import net.minecraft.world.World;
 
 public class DescriptiveItem extends Item {
-    String description;
+    List<Text> description;
 
-    public DescriptiveItem(Settings settings, String description) {
+    public DescriptiveItem(Settings settings, List<Text> description) {
         super(settings);
 
         this.description = description;
@@ -19,7 +19,9 @@ public class DescriptiveItem extends Item {
 
     @Override
     public void appendTooltip(ItemStack stack, World world, List<Text> tooltip, TooltipContext context) {
-        tooltip.add(Text.literal("\u00A77"+description));
+        for (Text line : description) {
+            tooltip.add(line);
+        }
     }
     
 }

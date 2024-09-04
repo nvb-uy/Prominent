@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "PPP",
+        "PEP",
+        "PPP"
+    ],
+    "key": {
+        "E": {
+            "item": "prominent:encased_remnant"
+        },
+        "P": {
+            "item": "prominent:greater_mythical_essence"
+        }
+    },
+    "result": {
+        "item": "prominent:cinderstone_trophy",
+        "count": 1
+    }
+}
