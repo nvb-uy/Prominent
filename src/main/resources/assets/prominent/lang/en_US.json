@@ -61,5 +61,6 @@
     "effect.prominent.faceless_gift": "Faceless Gift",
     "effect.prominent.combat": "In Combat",
 
-    "attribute.prominent.mythic_level": "Mythic Level"
+    "attribute.prominent.mythic_level": "Mythic Level",
+    "attribute.prominent.artifact_damage": "Artifact Damage"
 }
