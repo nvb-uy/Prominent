@@ -1,0 +1,20 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " P ",
+        "PEP",
+        " P "
+    ],
+    "key": {
+        "E": {
+            "item": "prominent:cinderstone_trophy"
+        },
+        "P": {
+            "item": "prominent:lesser_mythical_essence"
+        }
+    },
+    "result": {
+        "item": "prominent:molten_remnant",
+        "count": 2
+    }
+}
