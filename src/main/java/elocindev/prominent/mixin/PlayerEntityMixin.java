@@ -8,9 +8,9 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import elocindev.prominent.ProminentLoader;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+// import net.minecraft.text.Style;
+// import net.minecraft.text.Text;
+// import net.minecraft.util.Formatting;
 
 @Mixin(PlayerEntity.class)
 public class PlayerEntityMixin {
@@ -22,12 +22,14 @@ public class PlayerEntityMixin {
             }
             
             ProminentLoader.LOGGER.warn("A mod tried to set NaN absorption to entity {}!", ((LivingEntity) (Object) this));
-            if (((LivingEntity) (Object) this).getServer() != null) {
-                ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
-                    if (player.hasPermissionLevel(4))
-                        player.sendMessageToClient(Text.literal("Something tried to set a non number absorption, this is bad! Check server logs for more info!").setStyle(Style.EMPTY.withColor(Formatting.RED)), false);
-                });
-            }
+
+            // if (((LivingEntity) (Object) this).getServer() != null) {
+            //     ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
+            //         if (player.hasPermissionLevel(4))
+            //             player.sendMessageToClient(Text.literal("Something tried to set a non number absorption, this is bad! Check server logs for more info!").setStyle(Style.EMPTY.withColor(Formatting.RED)), false);
+            //     });
+            // }
+
             ci.cancel();
         }
     }

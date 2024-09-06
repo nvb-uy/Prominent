@@ -12,7 +12,8 @@
     "PlayerEntityMixin",
     "ServerPlayerEntityMixin",
     "LivingEntityMixin",
-    "AshedarDamageMixin"
+    "ArtifactDamageModifiersMixin",
+    "attribute.AttributeApplyMixin"
   ],
   "client": [
     "client.UpdateArtifactClientMixin"

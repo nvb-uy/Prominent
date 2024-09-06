@@ -1,12 +1,14 @@
 # Prominence II RPG: Hasturian Era
 **v3.0.0 - A New Beginning**
 
+This update does NOT need a world reset, but it is encouraged due to how much stuff has changed, but it is ultimately up to you!
+
 ## Important Changes
 - **The Hasturian Era Begins.** This update introduces both the final chapter of Void's Invasion, and the start of Hasturian Era.
 - **Complete Talent Tree Overhaul**, featuring 15 passives, 8 active abilities and +100 stat talents!
-- **Player Leveling!** With talent points earned every 2 levels
+- **Player Leveling!** With talent points earned every 2 levels! The maximum level in Hasturian Era is 65, if you update from void's invasion, your level will be set automatically.
 - **Artifact Upgrade Trees.** Upgrade your artifact with its own upgrade tree that contains stat increases and passives!
-- **Mob Scaling**, tied to player levels with multiplayer support
+- **Mob Scaling**, tied to player levels with multiplayer support.
 - **New Ability Books:**
   - Warrior's Codex (Melee Burst Skills)
   - Rogue Handbook (Melee DPS Skills)
@@ -14,12 +16,12 @@
 - **Corruption System.** A high risk high reward system where you get stronger but fall into madness. With integration between talents & artifact tree passives.
 - **Infusion System.** Find infusion smithing templates to infuse Etyr and Corruption into any weapon, armor, or tool.
 - **Cinderstone Trophies.** A new item has been added that allows you to craft QoL items such as the Explorer's Compass, among others. Their recipes were adjusted to require this item, which is dropped by campaign bosses or made using mythical essences! Making these useful items accessible later on in the gameplay.
-- **A rewritten Void's Invasion.** Following an Elden Ring inspired writing style, and focusing more on the story with cryptic indications.
+- **A rewritten Void's Invasion.** Following an Elden Ring inspired writing style, and focusing more on the story with slightly cryptic indications.
 - **Spanish Translations!** The Void's Invasion and Hasturian Era storylines are now also in Spanish. This does not apply to other questlines due to it being a very time consuming task for me. Other languages aren't planned as of now, as I only speak english and spanish.
 
 ## What's coming next?
 - v3.0.5 - Hasturian Era's First Boss, New ||Class :smirk:||
-Coming shortly after v3.0.0, this update will add the first boss of Hasturian Era.
+Coming shortly after v3.0.0, this update will add the first boss of Hasturian Era, along with the first quests leading up to it.
 - v3.1.0 - Cinderstone Depths
 This update will bring the new Cinderstone Depths dimension, and for the first time in Prominence, the main hub city, Vaaz!
 
@@ -33,6 +35,10 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Disabled Resistance Potion Charm
 - Nerfed XP gain from Ancient Knowledge by 50%
 - Made the Warden a level 65 boss
+- Unique Drop Changes:
+  - Ender Dragon's chance reduced from 50% to 35%
+  - Wither's chance increased from 5% to 10%
+- Reduced unique weapon loot chances by ~40%
 
 ## Artifact Changes
 - Fyr'alath now gives 10 reabsorption instead of 4
@@ -43,6 +49,7 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Added player leveling quest on tutorial questline
 - Added Chapter III of Void's Invasion
 - Void's Invasion questline was revamped to follow the same writing style as Hasturian Era
+- Added initial starting chapter of Hasturian Era
 
 ## Lore Changes
 - The previously known Kingdown of Chorbia is now Kingdom of Ly'rell

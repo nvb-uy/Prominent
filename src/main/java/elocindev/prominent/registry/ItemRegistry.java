@@ -23,7 +23,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.Rarity;
 
-import java.text.Format;
 import java.util.List;
 
 import org.slf4j.Logger;

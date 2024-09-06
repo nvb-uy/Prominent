@@ -12,9 +12,9 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffectInstance;
-import net.minecraft.text.Style;
-import net.minecraft.text.Text;
-import net.minecraft.util.Formatting;
+// import net.minecraft.text.Style;
+// import net.minecraft.text.Text;
+// import net.minecraft.util.Formatting;
 
 @Mixin(LivingEntity.class)
 public class LivingEntityMixin {
@@ -63,12 +63,14 @@ public class LivingEntityMixin {
             }
 
             ProminentLoader.LOGGER.warn("A mod tried to set NaN absorption to entity {}!", ((LivingEntity) (Object) this));
-            if (((LivingEntity) (Object) this).getServer() != null) {
-                ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
-                    if (player.hasPermissionLevel(4))
-                        player.sendMessageToClient(Text.literal("Something tried to set a non number absorption, this is bad! Check server logs for more info!").setStyle(Style.EMPTY.withColor(Formatting.RED)), false);
-                });
-            }
+            
+            // if (((LivingEntity) (Object) this).getServer() != null) {
+            //     ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
+            //         if (player.hasPermissionLevel(4))
+            //             player.sendMessageToClient(Text.literal("Something tried to set a non number absorption, this is bad! Check server logs for more info!").setStyle(Style.EMPTY.withColor(Formatting.RED)), false);
+            //     });
+            // }
+
             ci.cancel();
         }
     }
@@ -81,12 +83,14 @@ public class LivingEntityMixin {
             }
             
             ProminentLoader.LOGGER.warn("A mod tried to set NaN health to entity {}!", ((LivingEntity) (Object) this));
-            if (((LivingEntity) (Object) this).getServer() != null) {
-                ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
-                    if (player.hasPermissionLevel(4))
-                        player.sendMessageToClient(Text.literal("Something tried to set a non number health, this is bad! Check server logs for more info!").setStyle(Style.EMPTY.withColor(Formatting.RED)), false);
-                });
-            }
+
+            // if (((LivingEntity) (Object) this).getServer() != null) {
+            //     ((LivingEntity) (Object) this).getServer().getPlayerManager().getPlayerList().forEach(player -> {
+            //         if (player.hasPermissionLevel(4))
+            //             player.sendMessageToClient(Text.literal("Something tried to set a non number health, this is bad! Check server logs for more info!").setStyle(Style.EMPTY.withColor(Formatting.RED)), false);
+            //     });
+            // }
+
             ci.cancel();
         }
     }

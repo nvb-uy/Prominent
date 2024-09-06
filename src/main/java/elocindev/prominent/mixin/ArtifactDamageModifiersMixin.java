@@ -6,8 +6,10 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
 import elocindev.prominent.config.ServerConfig;
+import elocindev.prominent.item.artifacts.Artifact;
 import elocindev.prominent.item.artifacts.Ashedar;
 import elocindev.prominent.mythicbosses.MythicBosses;
+import elocindev.prominent.registry.AttributeRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -18,7 +20,7 @@ import net.minecraft.util.Hand;
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
 @Mixin(value = LivingEntity.class, priority = 10)
-public abstract class AshedarDamageMixin {
+public abstract class ArtifactDamageModifiersMixin {
     
     @Shadow protected float lastDamageTaken;
     @Shadow private long lastDamageTime;
@@ -29,10 +31,7 @@ public abstract class AshedarDamageMixin {
 
     @ModifyReturnValue(method = "modifyAppliedDamage", at = @At("RETURN"))
     protected float prominent$reduceDamageOnAshedar(float original, DamageSource source, float amount) {
-
-        if (source.getAttacker() instanceof PlayerEntity src)
-            if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR))
-                return original / 2;
+        if (source.getAttacker() instanceof PlayerEntity src) if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR)) return original / 2;
 
         if (source.getAttacker() != null && source.getAttacker() instanceof LivingEntity attacker) {
             if (!MythicBosses.isMythicBoss(attacker)) return original;
@@ -40,8 +39,18 @@ public abstract class AshedarDamageMixin {
             float multiplier = 1.0f + (MythicBosses.getMythicLevel(attacker) * ServerConfig.INSTANCE.mythic_damage_multiplier);
             return original * multiplier;
         }
-            
+
+        if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity playerAttacker && isUsingArtifact(playerAttacker)) {
+            double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
+
+            return original * (float) multiplier;
+        }
+        
         return original;
+    }
+
+    private boolean isUsingArtifact(LivingEntity source) {
+        return source.getStackInHand(Hand.MAIN_HAND).getItem() instanceof Artifact || source.getStackInHand(Hand.OFF_HAND).getItem() instanceof Artifact;
     }
 
     private boolean isItemInHand(LivingEntity source, Hand hand, TagKey<Item> item) {
