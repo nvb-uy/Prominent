@@ -50,6 +50,9 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Added Chapter III of Void's Invasion
 - Void's Invasion questline was revamped to follow the same writing style as Hasturian Era
 - Added initial starting chapter of Hasturian Era
+- Updated The Prison Questline (Made by Ascens)
+- Adjusted Spellcasting Questline (Made By Ascens)
+- Adjusted AE2 Questline (Made By Ascens)
 
 ## Lore Changes
 - The previously known Kingdown of Chorbia is now Kingdom of Ly'rell
