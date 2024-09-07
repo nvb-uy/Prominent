@@ -1,5 +1,5 @@
 {
-"is_proxy": false,
+"is_proxy": true,
 "spell_ids": [
     "prominent:soul_absorption",
     "prominent:azhar_breath"
