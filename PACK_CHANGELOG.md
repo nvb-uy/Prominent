@@ -42,8 +42,9 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 
 ## Artifact Changes
 - Fyr'alath now gives 10 reabsorption instead of 4
-- Frostmourne now can use any death knights skills and gives +25% of blood, unholy and frost powers
+- Frostmourne now can use any death knights skills and gives +25% of blood, unholy and frost powers. Has the obliterate ability by default.
 - Fury of a Thousand Fists can now use skills and spells from tomes
+- Thunderwrath can now use skills from tomes (Such as Warrior's Codex)
 
 ## Quest Changes
 - Added player leveling quest on tutorial questline
