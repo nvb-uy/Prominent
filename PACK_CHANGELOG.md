@@ -53,6 +53,8 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Updated The Prison Questline (Made by Ascens)
 - Adjusted Spellcasting Questline (Made By Ascens)
 - Adjusted AE2 Questline (Made By Ascens)
+- Fixed description on some tech reborn quests
+- Removed obliterated items from Powah questline
 
 ## Lore Changes
 - The previously known Kingdown of Chorbia is now Kingdom of Ly'rell
