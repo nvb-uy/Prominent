@@ -33,7 +33,7 @@ import net.sweenus.simplyswords.config.ConfigDefaultValues;
 import net.sweenus.simplyswords.item.custom.ThunderbrandSwordItem;
 import net.sweenus.simplyswords.util.HelperMethods;
 
-public class Thunderwrath extends ThunderbrandSwordItem implements Artifact {
+public class Thunderwrath extends ThunderbrandSwordItem implements Artifact, Soulbound {
     private static int stepMod = 0;
     float abilityDamage;
     float spellScalingModifier;
