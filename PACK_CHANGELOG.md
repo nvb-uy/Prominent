@@ -49,6 +49,7 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Thunderwrath can now use skills from tomes (Such as Warrior's Codex)
 
 ## Quest Changes
+- Addded Infused Molten Remnants as rewards for hard non-campaign quests
 - Added player leveling quest on tutorial questline
 - Added Chapter III of Void's Invasion
 - Void's Invasion questline was revamped to follow the same writing style as Hasturian Era
