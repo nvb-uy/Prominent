@@ -1,0 +1,18 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "bTb",
+        " b "
+    ],
+    "key": {
+        "b": {
+            "item": "minecraft:water_bucket"
+        },
+        "T": {
+            "item": "prominent:cinderstone_trophy"
+        }
+    },
+    "result": {
+        "item": "things:bater_wucket"
+    }
+}
