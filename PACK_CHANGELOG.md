@@ -76,7 +76,10 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Fixed MI systems randomly losing power
 - Fixed crash when fighting the Fallen Icon
 - Fixed soul sand spawning stupidly rarely
+- Fixed end biomes having a square placement
+- Fixed a ton of bugs from mod updates
 - Removed Peridot, Sapphire, Ruby, Steel and Bronze armors/tools from Tech Reborn (Replaced by other sets)
+- Removed Botania's cloaks
 
 ## Recipe Changes
 - Nature's Compass now requires 1 Cinderstone Trophy to craft.
