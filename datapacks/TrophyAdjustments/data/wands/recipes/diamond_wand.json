@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        "DDD",
+        "ATB",
+        "DDD"
+    ],
+    "key": {
+        "A": {
+            "item": "wands:stone_wand"
+        },
+        "B": {
+            "item": "wands:iron_wand"
+        },
+        "D": {
+            "item": "minecraft:diamond"
+        },
+        "T": {
+            "item": "prominent:cinderstone_trophy"
+        }
+    },
+    "result": {
+        "item": "wands:diamond_wand",
+        "count": 1
+    }
+}

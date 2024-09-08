@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " T ",
+        " # ",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:cobblestone"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "prominent:cinderstone_trophy"
+        }
+    },
+    "result": {
+        "item": "wands:stone_wand",
+        "count": 1
+    }
+}

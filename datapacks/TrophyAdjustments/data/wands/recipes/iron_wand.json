@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+        " T ",
+        " # ",
+        " / "
+    ],
+    "key": {
+        "#": {
+            "item": "minecraft:iron_ingot"
+        },
+        "/": {
+            "item": "minecraft:stick"
+        },
+        "T": {
+            "item": "prominent:cinderstone_trophy"
+        }
+    },
+    "result": {
+        "item": "wands:iron_wand",
+        "count": 1
+    }
+}

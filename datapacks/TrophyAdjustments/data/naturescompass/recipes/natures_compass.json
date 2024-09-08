@@ -1,0 +1,26 @@
+{
+    "type": "crafting_shaped",
+    "group": "tools",
+    "pattern": [
+      "STS",
+      "LCL",
+      "SLS"
+    ],
+    "key": {
+      "S": {
+        "tag": "saplings"
+      },
+      "C":{
+        "item": "minecraft:compass"
+      },
+      "L":{
+        "tag": "logs"
+      },
+      "T":{
+        "item": "prominent:cinderstone_trophy"
+      }
+    },
+    "result": {
+      "item": "explorerscompass:explorerscompass"
+    }
+}

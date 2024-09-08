@@ -9,6 +9,7 @@ This update does NOT need a world reset, but it is encouraged due to how much st
 - **Player Leveling!** With talent points earned every 2 levels! The maximum level in Hasturian Era is 65, if you update from void's invasion, your level will be set automatically.
 - **Artifact Upgrade Trees.** Upgrade your artifact with its own upgrade tree that contains stat increases and passives!
 - **Mob Scaling**, tied to player levels with multiplayer support.
+- **New Class: The Bard**, a new custom class that buffs allies by playing music, with different buffs depending on the instrument, and they can even ANY song too, by just drag and dropping the MIDI files! This class will be expanded further in updates with custom armor sets and spells too!
 - **New Ability Books:**
   - Warrior's Codex (Melee Burst Skills)
   - Rogue Handbook (Melee DPS Skills)
@@ -18,12 +19,13 @@ This update does NOT need a world reset, but it is encouraged due to how much st
 - **Cinderstone Trophies.** A new item has been added that allows you to craft QoL items such as the Explorer's Compass, among others. Their recipes were adjusted to require this item, which is dropped by campaign bosses or made using mythical essences! Making these useful items accessible later on in the gameplay.
 - **A rewritten Void's Invasion.** Following an Elden Ring inspired writing style, and focusing more on the story with slightly cryptic indications.
 - **Spanish Translations!** The Void's Invasion and Hasturian Era storylines are now also in Spanish. This does not apply to other questlines due to it being a very time consuming task for me. Other languages aren't planned as of now, as I only speak english and spanish.
+- **A lot more!** The changelog is too big for it to fit in a Discord message, so go read the full changelog in CurseForge or Modrinth!
 
 ## What's coming next?
-- v3.0.5 - Hasturian Era's First Boss, New ||Class :smirk:||
+- v3.0.5 - Hasturian Era's First Boss
 Coming shortly after v3.0.0, this update will add the first boss of Hasturian Era, along with the first quests leading up to it.
 - v3.1.0 - Cinderstone Depths
-This update will bring the new Cinderstone Depths dimension, and for the first time in Prominence, the main hub city, Vaaz!
+This update will bring the new Cinderstone Depths dimension, and for the first time in Prominence, the capital city of Vaaz.
 
 ## Balance Changes
 - Sharpness and Smite enchantments now go up to level VI
@@ -74,7 +76,15 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Fixed MI systems randomly losing power
 - Fixed crash when fighting the Fallen Icon
 - Fixed soul sand spawning stupidly rarely
-- Removed Peridot, Sapphire, Ruby, Steel and Bronze armors from Tech Reborn (Replaced by other sets)
+- Removed Peridot, Sapphire, Ruby, Steel and Bronze armors/tools from Tech Reborn (Replaced by other sets)
+
+## Recipe Changes
+- Nature's Compass now requires 1 Cinderstone Trophy to craft.
+- Explorer's Compass now requires 3 Cinderstone Trophies to craft.
+- Stone & Iron Building Wands now require 1 Cinderstone Trophy to craft.
+- Diamond Building Wand now requires a Stone and Iron wand, plus a Cindestone Trophy and 6 diamonds to craft.
+- Bater Wucket now requires a Cinderstone Trophy to craft.
+
 
 ## Mods
 - Added Faster Random
@@ -108,3 +118,34 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Removed HTP Deep Aether (Redundant, no use)
 - Removed HTP Aether Redux (Redundant, no use)
 - Removed Repurposed Structures Datapacks (Removed main mod)
+
+## Credits <3
+All the people that helped me work on this update, without them this would've taken wayyy longer. Thank you so much guys <3
+
+### Artists
+- Mim1q, for doing most of the new textures and models from the custom content, including on Death Knights and Eldritch End.
+- Sideralis Music, for doing music and sound design.
+- Aim_boot, for working tirelessly to support most mods from the modpack for his Ashen resourcepack.
+
+### Development
+- Sweeney, for developing various passives and the Bard class for the Talent Tree.
+- Joespeph, for co-authoring Eldritch End and developing it.
+- Roost_er, for developing an addon with future custom content for Hasturian Era.
+- Mim1q, for aiding in some development of Eldritch End.
+- Ascens, for providing quest changes and some new questlines!
+
+### Testers
+- Lady Fool
+- Almdudlerking
+- ChaoticJen
+- Sideralis Music
+- HiddenTides
+- Sweeeney
+- Roost_er
+- Blaze_Warfare
+- And the rest of Hastur Cultists <3 that tested both in the test server and privately.
+
+### The Hall of Fame
+- ChaoticJen, for testing profoundly and reporting countless bugs, giving feedback, and more. With a playtime of over 500 hours in the test server!
+- Lady Fool (d9ze), being the first to hit Level 65, and even doing so *3 times*. With a playtime of over 900 hours in the test server!
+- AlmdudlerKing, for testing and reporting a lot of bugs, giving feedback, and more. With a playtime of over 160 hours in the test server!
