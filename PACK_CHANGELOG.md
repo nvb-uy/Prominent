@@ -5,7 +5,7 @@ This update does NOT need a world reset, but it is encouraged due to how much st
 
 ## Important Changes
 - **The Hasturian Era Begins.** This update introduces both the final chapter of Void's Invasion, and the start of Hasturian Era.
-- **Complete Talent Tree Overhaul**, featuring 15 passives, 8 active abilities and +100 stat talents!
+- **Complete Talent Tree Overhaul**, featuring 16 passives, 9 active abilities and +100 stat talents!
 - **Player Leveling!** With talent points earned every 2 levels! The maximum level in Hasturian Era is 65, if you update from void's invasion, your level will be set automatically.
 - **Artifact Upgrade Trees.** Upgrade your artifact with its own upgrade tree that contains stat increases and passives!
 - **Mob Scaling**, tied to player levels with multiplayer support.
