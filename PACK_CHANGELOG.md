@@ -110,6 +110,7 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Added Rogues & Warriors (RPG Series)
 - Added Ranged Weapon API
 - Added SDRP
+- Added Wither Spawn Fix
 - Removed Dungeons and Taverns (Issues)
 - Removed Shoulder Surfing (Replaced)
 - Removed Fish of Thieves (Issues)
