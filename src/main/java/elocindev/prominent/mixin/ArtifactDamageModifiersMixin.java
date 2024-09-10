@@ -9,8 +9,10 @@ import elocindev.necronomicon.api.NecUtilsAPI;
 import elocindev.prominent.config.ServerConfig;
 import elocindev.prominent.item.artifacts.Artifact;
 import elocindev.prominent.item.artifacts.Ashedar;
+import elocindev.prominent.item.artifacts.Azhar;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.registry.AttributeRegistry;
+import elocindev.prominent.registry.EffectRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
@@ -48,6 +50,13 @@ public abstract class ArtifactDamageModifiersMixin {
         }
 
         if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity playerAttacker && isUsingArtifact(playerAttacker)) {
+            if (isArtifactAzhar(playerAttacker)) {
+                double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
+                double souls = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL).getAmplifier() + 1;
+
+                return original * (float) (multiplier * souls);
+            }
+
             double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
 
             return original * (float) multiplier;
@@ -58,6 +67,10 @@ public abstract class ArtifactDamageModifiersMixin {
 
     private boolean isUsingArtifact(LivingEntity source) {
         return source.getStackInHand(Hand.MAIN_HAND).getItem() instanceof Artifact || source.getStackInHand(Hand.OFF_HAND).getItem() instanceof Artifact;
+    }
+
+    private boolean isArtifactAzhar(LivingEntity source) {
+        return source.getStackInHand(Hand.MAIN_HAND).getItem() instanceof Azhar || source.getStackInHand(Hand.OFF_HAND).getItem() instanceof Azhar;
     }
 
     private boolean isItemInHand(LivingEntity source, Hand hand, TagKey<Item> item) {
