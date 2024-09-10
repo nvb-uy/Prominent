@@ -89,6 +89,7 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 ## Recipe Changes
 - Nature's Compass now requires 1 Cinderstone Trophy to craft.
 - Explorer's Compass now requires 3 Cinderstone Trophies to craft.
+- Pocket Wormhole now requires 1 Cinderstone Trophy to craft.
 - Stone & Iron Building Wands now require 1 Cinderstone Trophy to craft.
 - Diamond Building Wand now requires a Stone and Iron wand, plus a Cindestone Trophy and 6 diamonds to craft.
 - Bater Wucket now requires a Cinderstone Trophy to craft.
