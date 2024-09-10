@@ -1,0 +1,26 @@
+{
+    "type": "minecraft:crafting_shaped",
+    "pattern": [
+      " # ",
+      "PTP",
+      " S "
+    ],
+    "key": {
+      "P": {
+        "item": "minecraft:blaze_powder"
+      },
+      "S": {
+        "item": "minecraft:nether_star"
+      },
+      "#": {
+        "item": "fwaystones:abyss_watcher"
+      },
+      "T": {
+        "item": "prominent:cinderstone_trophy"
+      }
+    },
+    "result": {
+      "id": "fwaystones:pocket_wormhole",
+      "count": 1
+    }
+}
