@@ -43,6 +43,10 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Reduced unique weapon loot chances by ~40%
 
 ## Artifact Changes
+- Added Upgrade Tree for Fyr'alath
+- Added Upgrade Tree for Supernova
+- Added Upgrade Tree for Ash'edar
+- Added Upgrade Tree for Frostmourne
 - Fyr'alath now gives 10 reabsorption instead of 4
 - Frostmourne now can use any death knights skills and gives +25% of blood, unholy and frost powers. Has the obliterate ability by default.
 - Fury of a Thousand Fists can now use skills and spells from tomes
