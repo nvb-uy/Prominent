@@ -5,6 +5,7 @@ import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 
+import elocindev.necronomicon.api.NecUtilsAPI;
 import elocindev.prominent.config.ServerConfig;
 import elocindev.prominent.item.artifacts.Artifact;
 import elocindev.prominent.item.artifacts.Ashedar;
@@ -30,11 +31,17 @@ public abstract class ArtifactDamageModifiersMixin {
     @Shadow public abstract boolean damage(DamageSource source, float amount);
 
     @ModifyReturnValue(method = "modifyAppliedDamage", at = @At("RETURN"))
-    protected float prominent$reduceDamageOnAshedar(float original, DamageSource source, float amount) {
+    protected float prominent$modifyDamage(float original, DamageSource source, float amount) {
         if (source.getAttacker() instanceof PlayerEntity src) if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR)) return original / 2;
 
         if (source.getAttacker() != null && source.getAttacker() instanceof LivingEntity attacker) {
-            if (!MythicBosses.isMythicBoss(attacker)) return original;
+            if (!MythicBosses.isMythicBoss(attacker)) {
+                if (NecUtilsAPI.getEntityId(attacker).equals("bosses_of_mass_destruction:gauntlet")) {
+                    return original * 0.5f;
+                }
+
+                return original;
+            }
 
             float multiplier = 1.0f + (MythicBosses.getMythicLevel(attacker) * ServerConfig.INSTANCE.mythic_damage_multiplier);
             return original * multiplier;
