@@ -23,7 +23,7 @@ This update does NOT need a world reset, but it is encouraged due to how much st
 
 ## What's coming next?
 - v3.0.5 - Hasturian Era's First Boss
-Coming shortly after v3.0.0, this update will add the first boss of Hasturian Era, along with the first quests leading up to it.
+Coming shortly after v3.0.0, this update will add the first boss of Hasturian Era, along with the first quests leading up to it, and Thunderwrath's Overhaul (Including Upgrade Tree).
 - v3.1.0 - Cinderstone Depths
 This update will bring the new Cinderstone Depths dimension, and for the first time in Prominence, the capital city of Vaaz.
 
@@ -47,6 +47,8 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Added Upgrade Tree for Supernova
 - Added Upgrade Tree for Ash'edar
 - Added Upgrade Tree for Frostmourne
+- Added Upgrade Tree for A'zhar
+- Added Upgrade Tree for Fury of a Thousand Fists
 - Fyr'alath now gives 10 reabsorption instead of 4
 - Frostmourne now can use any death knights skills and gives +25% of blood, unholy and frost powers. Has the obliterate ability by default.
 - Fury of a Thousand Fists can now use skills and spells from tomes
@@ -68,13 +70,13 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - The previously known Kingdown of Chorbia is now Kingdom of Ly'rell
 - The Night Lich is now seen as the agglomeration of the souls of all kings from the Kingdom of Ly'rell
 
-## Other Changes
+## Other Changes & Fixes
 - Power level is now Item level, and the max item level was readjusted to 1050
 - Added new texture for the Molten Core
 - Buttons now have a glow when hovering, and lava drips out of the cracks
 - Default main resourcepack is now Ashen (Excluding UI)
 - Added new fancier plates for tool tiers
-- Added new RPC with new logo. This new RPC also shows the player's level and item level
+- Added new Discord Rich Presence with new logo. This new RPC also shows the player's level and item level
 - Fixed various loot tables with invalid loot
 - Fixed cryptic eye being unobtainable, now it's enchantable (thanks muon!)
 - Fixed damage scaling of mythic bosses
@@ -82,6 +84,8 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Fixed crash when fighting the Fallen Icon
 - Fixed soul sand spawning stupidly rarely
 - Fixed end biomes having a square placement
+- Fixed end crashed ships and other BetterEnd structures having no loot
+- Fixed end cities' chests not being integrated with lootr
 - Fixed a ton of bugs from mod updates
 - Removed Peridot, Sapphire, Ruby, Steel and Bronze armors/tools from Tech Reborn (Replaced by other sets)
 - Removed Botania's cloaks
@@ -149,6 +153,7 @@ All the people that helped me work on this update, without them this would've ta
 - Lady Fool
 - Almdudlerking
 - ChaoticJen
+- Eden
 - Sideralis Music
 - HiddenTides
 - Sweeeney
@@ -160,3 +165,4 @@ All the people that helped me work on this update, without them this would've ta
 - ChaoticJen, for testing profoundly and reporting countless bugs, giving feedback, and more. With a playtime of over 500 hours in the test server!
 - Lady Fool (d9ze), being the first to hit Level 65, and even doing so *3 times*. With a playtime of over 900 hours in the test server!
 - AlmdudlerKing, for testing and reporting a lot of bugs, giving feedback, and more. With a playtime of over 160 hours in the test server!
+- Eden, for testing, reporting bugs, and forgetting to send their playtime. 
