@@ -12,11 +12,11 @@ public class ArtifactAPI {
     public static final Identifier[] ARTIFACT_TREES = new Identifier[] {
         artifact("frostmourne"),
         artifact("supernova"),
-        //artifact("thunderwrath"),
-        //artifact("fury_of_a_thousand_fists"),
-        //artifact("azhar"),
+        artifact("fury_of_a_thousand_fists"),
+        artifact("azhar"),
         artifact("fyralath"),
-        artifact("ashedar_essence")
+        artifact("ashedar_essence"),
+        artifact("thunderwrath")
         //artifact("orion"),
         //artifact("ekavar")
     };
