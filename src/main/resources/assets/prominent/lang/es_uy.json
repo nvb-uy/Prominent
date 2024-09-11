@@ -1,0 +1,66 @@
+{
+    "itemGroup.prominent.tab": "Contenido Personalizado de Prominence",
+    "itemGroup.prominent.mythic": "Jefes Míticos de Prominence",
+    "item.prominent.icon": "Prominent",
+
+    "item.prominent.music_disc_coniferus_forest": "Disco de Música",
+    "item.prominent.music_disc_coniferus_forest.desc": "Orangería - Bosque Coniferus (Tema del Menú Principal)",
+    "item.prominent.music_disc_festivities": "Disco de Música",
+    "item.prominent.music_disc_festivities.desc": "Música Sideralis - Festividades Prominent (Banda Sonora Original)",
+    
+    "item.prominent.knowledge_scroll": "Pergamino de Conocimiento",
+    "item.prominent.molten_core": "Núcleo Fundido",
+    "item.prominent.cinderstone_trophy": "Trofeo Piedraceniza",
+
+    "item.prominent.molten_remnant": "Restos Fundidos",
+    "item.prominent.infused_molten_remnant": "Restos Fundidos Infundidos",
+
+    "item.prominent.thunderwrath": "Thunderwrath, la Tormenta de Lava",
+    "item.prominent.supernova": "Supernova, Muerte de una Estrella",
+    "item.prominent.fury_of_a_thousand_fists": "Furia de Mil Puños",
+    "item.prominent.frostmourne": "Frostmourne, la Hoja del Rey Caído",
+    "item.prominent.azhar": "A'zhar, la Guadaña de los Condenados",
+    "item.prominent.fyralath": "Fyr'alath, la Agonía Carbonizada",
+
+    "item.prominent.ashedar": "Ash'edar, Los Gemelos Cósmicos",
+    "item.prominent.ash": "Ash, Restos del Sol",
+    "item.prominent.edar": "Edar, La Penumbra",
+    "item.prominent.ashedar_essence": "Esencia de Ash'edar, los Gemelos Cósmicos",
+
+    "spell.prominent.supernova.name": "Explosión Astral",
+    "spell.prominent.supernova.description": "Invoca toda la energía de Supernova en un solo punto, explotando en una nova letal que inflige daño arcano a todos los enemigos cercanos.",
+    "spell.prominent.rage.name": "Enfurecer",
+    "spell.prominent.rage.description": "Libera tu rabia interior, aumentando tu velocidad de ataque en un 500% durante un corto período. Requiere un puño de furia y el puño de mil furias.",
+
+    "item.prominent.demon_essence": "Esencia Demoníaca",
+    "item.prominent.glory_essence": "Esencia de Gloria",
+    "item.prominent.wrath_essence": "Esencia de Ira",
+    
+    "item.prominent.cosmic_essence": "Esencia Cósmica",
+    "item.prominent.encased_remnant": "Restos Envueltos",
+
+    "item.prominent.empty_vessel": "Vasija Piedraceniza",
+    "item.prominent.void_hourglass": "Reloj de Arena del Vacío",
+    "item.prominent.lesser_mythical_essence": "Esencia Mítica Menor",
+    "item.prominent.greater_mythical_essence": "Esencia Mítica Mayor",
+    "effect.prominent.mythic": "Mítico",
+
+    "effect.prominent.obliterated_agony": "Agonía Obliterada",
+    "effect.prominent.remorseless_winter": "Invierno Implacable",
+    "effect.prominent.agonizing_breath": "Aliento Agonizante",
+    "effect.prominent.broken_soul": "Alma Rota",
+    "effect.prominent.soul_absorption": "Absorción de Almas",
+
+    "effect.prominent.solar_eclipse": "Eclipse Solar",
+    "effect.prominent.lunar_eclipse": "Eclipse Lunar",
+    "effect.prominent.darkening": "Oscurecimiento",
+    "effect.prominent.sunstrike": "Golpe Solar",
+    "effect.prominent.moonlight_nova": "Expulsión Lunar",
+    "effect.prominent.prominence": "Expulsión de Prominence",
+
+    "effect.prominent.faceless_gift": "Don del Ignoto",
+    "effect.prominent.combat": "En Combate",
+
+    "attribute.prominent.mythic_level": "Nivel Mítico",
+    "attribute.prominent.artifact_damage": "Daño de Artefacto"
+}

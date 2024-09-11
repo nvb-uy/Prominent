@@ -111,6 +111,7 @@ This update will bring the new Cinderstone Depths dimension, and for the first t
 - Added Ranged Weapon API
 - Added SDRP
 - Added Wither Spawn Fix
+- Added BetterEnd Crashed Ships Tweaks
 - Removed Dungeons and Taverns (Issues)
 - Removed Shoulder Surfing (Replaced)
 - Removed Fish of Thieves (Issues)
