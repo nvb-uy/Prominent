@@ -79,7 +79,7 @@ public abstract class ArtifactDamageModifiersMixin {
 
     @ModifyReturnValue(method = "modifyAppliedDamage", at = @At("RETURN"))
     protected float prominent$applyDifficultyDamageModifiers(float original, DamageSource source, float amount) {
-        if (source.getAttacker() == null || !(source.getAttacker() instanceof LivingEntity)) return original;
+        if (source.getAttacker() == null || !(source.getAttacker() instanceof LivingEntity) || source.getAttacker() instanceof PlayerEntity) return original;
 
         var diff = source.getAttacker().getWorld().getDifficulty();
 
