@@ -14,46 +14,45 @@ import elocindev.prominent.text.ICONS;
 import net.minecraft.client.item.TooltipContext;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EquipmentSlot;
+import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
+import net.minecraft.entity.attribute.EntityAttributes;
+import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.particle.ParticleTypes;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
-import net.spell_power.api.SpellSchool;
 import net.spell_power.api.SpellSchools;
-import net.sweenus.simplyswords.api.SimplySwordsAPI;
-import net.sweenus.simplyswords.config.Config;
-import net.sweenus.simplyswords.config.ConfigDefaultValues;
-import net.sweenus.simplyswords.item.custom.ThunderbrandSwordItem;
 import net.sweenus.simplyswords.util.HelperMethods;
 
-public class Thunderwrath extends ThunderbrandSwordItem implements Artifact, Soulbound {
+public class Thunderwrath extends SwordItem implements Artifact, Soulbound {
     private static int stepMod = 0;
-    float abilityDamage;
-    float spellScalingModifier;
-    
+    float physicalScaleFactor = 0.85F;
+    float thunderScaleFactor = 1.25F;
+
+    Entity holder = null;
 
     public Thunderwrath(ToolMaterial toolMaterial, Settings settings) {
         super(toolMaterial, 
         (int)ProminentLoader.Config.thunderwrath_damage, ProminentLoader.Config.thunderwrath_attackSpeed,
         settings);
-
-        this.abilityDamage = Config.getFloat("thunderBlitzDamage", "UniqueEffects", ConfigDefaultValues.thunderBlitzDamage) * 1.25f;
-        this.spellScalingModifier = Config.getFloat("thunderBlitzSpellScaling", "UniqueEffects", ConfigDefaultValues.thunderBlitzSpellScaling);
     }
     
     @Override
     public void inventoryTick(ItemStack stack, World world, Entity entity, int slot, boolean selected) {
-        if (HelperMethods.commonSpellAttributeScaling(this.spellScalingModifier, entity, "lightning") > 0.0F) {
-            this.abilityDamage = HelperMethods.commonSpellAttributeScaling(this.spellScalingModifier, entity, "lightning");
-            scalesWithSpellPower = true;
-        }
+        holder = entity;
 
         if (stepMod > 0) {
             --stepMod;
@@ -64,34 +63,49 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact, Sou
         }
 
         HelperMethods.createFootfalls(entity, stack, world, stepMod, ParticleTypes.FLAME, ParticleTypes.FLAME, ParticleTypes.FLAME, true);
-        SimplySwordsAPI.inventoryTickGemSocketLogic(stack, world, entity, 100, 100);
-   }
+    }
+
+    @Override
+    public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
+        if (target.getWorld().isClient()) return super.postHit(stack, target, attacker);
+
+        float chance = 0.25f;
+
+        if (attacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
+            chance = 0.35f;
+        }
+        
+        if (Math.random() < chance) {
+            double damage = (attacker.getAttributeInstance(SpellSchools.LIGHTNING.attribute).getValue() * thunderScaleFactor) 
+                + attacker.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).getValue() * physicalScaleFactor;
+
+            target.damage(attacker.getDamageSources().create(SpellSchools.LIGHTNING.damageType), (float) damage);
+            
+            for (int i = 0; i < 4; i++) {
+                target.getWorld().addParticle(ParticleTypes.ELECTRIC_SPARK, target.getX() + (Math.random() * 0.8), target.getY(), target.getZ() + (Math.random() * 0.8), 0.0D, -0.1D, 0.0D);
+            }
+
+            target.getWorld().playSound(null, target.getBlockPos(), SoundEvents.BLOCK_LAVA_EXTINGUISH, SoundCategory.PLAYERS, 0.8F, 1.8F);
+        }
+
+        return super.postHit(stack, target, attacker);
+    }
 
     @Override
     public Multimap<EntityAttribute, EntityAttributeModifier> getAttributeModifiers(EquipmentSlot slot) {
-        
         if (slot != EquipmentSlot.MAINHAND) return super.getAttributeModifiers(slot);
 
         Multimap<EntityAttribute, EntityAttributeModifier> modifiers = HashMultimap.create(super.getAttributeModifiers(slot));
-        int i = 0;
 
-        SpellSchool[] attributeList = {
-            SpellSchools.FIRE,
-            SpellSchools.LIGHTNING
-        };
-
-        for (var attribute : attributeList) {
-            modifiers.put(
-                attribute.attribute,
-                new EntityAttributeModifier(
-                    UUID.fromString("697ae378-8f64-11e4-b9d1-0242ac32074"+i), 
-                    attribute.id+" Thunderwrath Modifier", 
-                    0.10, 
-                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL
-                )
-            );
-        i++;
-        }
+        modifiers.put(
+            SpellSchools.LIGHTNING.attribute,
+            new EntityAttributeModifier(
+                UUID.fromString("697ae378-8f64-11e4-b9d1-0242ac320741"), 
+                "Lightning Thunderwrath Modifier", 
+                5, 
+                EntityAttributeModifier.Operation.ADDITION
+            )
+        );
 
         return modifiers;
     }
@@ -105,27 +119,25 @@ public class Thunderwrath extends ThunderbrandSwordItem implements Artifact, Sou
 
     @Override
     public void appendTooltip(ItemStack itemStack, World world, List<Text> tooltip, TooltipContext tooltipContext) {
-        Style RIGHTCLICK = Style.EMPTY.withColor(14903072);
-        Style ABILITY = HelperMethods.getStyle("ability");
+        if (world == null || !world.isClient()) return;
+        double damage = -1;
+
+        if (holder != null && holder instanceof PlayerEntity player) {
+            damage = (player.getAttributeInstance(SpellSchools.LIGHTNING.attribute).getValue() * thunderScaleFactor) 
+                + player.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).getValue() * physicalScaleFactor;
+        }
+
+        Style ABILITY = Style.EMPTY.withColor(0xf59e42);
         Style TEXT = Style.EMPTY.withColor(Formatting.GRAY);
         MutableText ARTIFACT = TextAPI.Styles.getGradient(Text.literal("Emberstorm Artifact"), 1, getGradient()[0], getGradient()[1], 2.0F);
         MutableText ARTIFACT_TYPE = ARTIFACT.setStyle(ARTIFACT.getStyle().withUnderline(true));
 
         tooltip.add(Text.literal(ICONS.MOLTEN_CORE+" ").append(ARTIFACT_TYPE).append(ClientArtifactHolder.getPowerText("thunderwrath")));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal(ICONS.ACTIVE_ABILITY+" ").append(Text.literal("Thunder's Fury").setStyle(RIGHTCLICK)));
-        tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip3").setStyle(TEXT));
-        tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip4").setStyle(TEXT));
+        tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Serkonid Heritage").setStyle(ABILITY)));
+        tooltip.add(Text.literal("Attacks have a 25% chance of striking again with "+ (damage > 0 ? (int) damage+" " : "") +"lightning damage.").setStyle(TEXT));
+        tooltip.add(Text.literal(" Being fated to the Warrior's Devotion increases its chance to 35%.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
         tooltip.add(Text.literal(" "));
-        tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip5").setStyle(TEXT));
-        tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip6").setStyle(TEXT));
-        tooltip.add(Text.translatable("item.simplyswords.thunderbrandsworditem.tooltip7").setStyle(TEXT));
-        tooltip.add(Text.literal(" "));
-        tooltip.add(Text.literal(ICONS.PASSIVE_ABILITY+" ").append(Text.literal("Pyroclastic Flow").setStyle(ABILITY)));
-        tooltip.add(Text.literal("Chance on hit to refresh Thunder Fury's cooldown").setStyle(TEXT));
-        tooltip.add(Text.literal(" "));
-
-        tooltip.add(Text.translatable("item.simplyswords.compat.scaleLightning"));
    }
 
     @Override

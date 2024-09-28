@@ -52,9 +52,9 @@ public abstract class ArtifactDamageModifiersMixin {
         if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity playerAttacker && isUsingArtifact(playerAttacker)) {
             if (isArtifactAzhar(playerAttacker)) {
                 double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
-                double souls = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL).getAmplifier() + 1;
+                int souls = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL).getAmplifier() + 1;
 
-                return original * (float) (multiplier * souls);
+                return original * ((float) (multiplier * souls));
             }
 
             double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
