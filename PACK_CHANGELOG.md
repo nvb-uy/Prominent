@@ -1,4 +1,57 @@
 # Prominence II RPG: Hasturian Era
+**3.0.5 - Chapter I: The Shadow Beneath The Horizon**
+
+## Important Changes
+- **Chapter I of the Hasturian Era campaign is out!**
+- **The New Thunderwrath.** Enjoy the new remastered Thunderwrath artifact meant for physical damage (Warrior) builds!
+- **Difficulty Changes**. World difficulty is now more impactful in damage dealt to players, with easy having less damage and removing oneshots from bosses, normal being as it was previous to this update, and hard having a global +30% damage increase.
+- **Balance Changes**. From adjustements to talents to new disabled items and enchants.
+- **Fixed crash on Linux if using an NVIDIA GPU!** (Some Debian-based distros with outdated packages might still be affected)
+
+## Artifact Changes
+- The overhauled Thunderwrath is here. New model, upgrade tree, new passive, and more!
+- Fixed A'zhar damage increase per stack being an additive value instead of a percentile increase
+
+## Balance Changes
+- Easy difficulty has 15% reduced damage dealt to players and removes oneshots from bosses (Except Mythic Bosses).
+- Normal difficulty stays with the same values as it was previously
+- Hard difficulty increases damage dealt to players by +30%
+- Of Runes and Stars no longer reduces ranged damage by -15%
+- Nerfed attack damage and scaling of Starforge
+- Fixed Warrior's Devotion not actually removing elemental spell power
+- Fixed Void Strike, Void Shot and Enigma Resonator not being disabled
+- Reduced maximum effect stacks from spellblades from 10 to 3 (Haste/Strength)
+- Disabled Sundering Potion
+- Disabled Pale Gold Amulet
+- Disabled Fin Cutter, Sea Stew, Poseidon's Breakfast
+
+## Quest Changes
+- Added initial Chapter I quests
+- Removed banned items from quests that previously had them
+- Replaced Poseidon's Breakfast with a Protection IV book
+- Misc formatting changes to tutorial questline
+
+## Other Changes
+- Re-added Overflowing Bars and fixed the empty heart bug (Thanks Fuzs <3)
+- Changed A Bard's Tale description to explain that you need to in a party (or allied) with the players that you want to buff
+- Gray UI Text is now orange to improve readability (Thanks Vindocel for the original shader implementation)
+- UI now supports EMI (Thanks Arssenic)
+- Fixed crafting table not being shown in backpacks
+
+## Mods
+- Added Overflowing Bars
+- Removed Colorful Hearts (Replaced)
+- Updated AAAParticles, Accessories, Trinkets Compat Layer for Accessories, Grass Overhaul, Extra RPG Attributes, Spellblades and Such, SimplySkills
+
+## Credits
+- Mr. Reksiu for reporting damage exploits
+- Sideralis Music for balance suggestions
+- Mim1q for making the Thunderwrath model
+- Tornadoisback for making a concept model of Thunderwrath which the new model was based from
+
+------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+# Prominence II RPG: Hasturian Era
 **v3.0.0 - A New Beginning**
 
 This update does NOT need a world reset, but it is encouraged due to how much stuff has changed, but it is ultimately up to you!
