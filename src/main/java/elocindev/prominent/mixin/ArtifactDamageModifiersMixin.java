@@ -76,4 +76,24 @@ public abstract class ArtifactDamageModifiersMixin {
     private boolean isItemInHand(LivingEntity source, Hand hand, TagKey<Item> item) {
         return source.getStackInHand(hand).isIn(item);
     }
+
+    @ModifyReturnValue(method = "modifyAppliedDamage", at = @At("RETURN"))
+    protected float prominent$applyDifficultyDamageModifiers(float original, DamageSource source, float amount) {
+        var diff = source.getAttacker().getWorld().getDifficulty();
+
+        if (!(source.getAttacker() instanceof PlayerEntity)) return original;
+
+        switch (diff) {
+            case PEACEFUL:
+                return original * 0.5f;
+            case EASY:
+                return original * 0.75f;
+            case NORMAL:
+                return original;
+            case HARD:
+                return original * 1.30f;
+            default:
+                return original;
+        }
+    }
 }
