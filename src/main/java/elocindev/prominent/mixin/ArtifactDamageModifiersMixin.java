@@ -36,7 +36,7 @@ public abstract class ArtifactDamageModifiersMixin {
     protected float prominent$modifyDamage(float original, DamageSource source, float amount) {
         if (source.getAttacker() instanceof PlayerEntity src) if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR)) return original / 2;
 
-        if (source.getAttacker() != null && source.getAttacker() instanceof LivingEntity attacker) {
+        if (source.getAttacker() != null && source.getAttacker() instanceof LivingEntity attacker && !(attacker instanceof PlayerEntity)) {
             if (!MythicBosses.isMythicBoss(attacker)) {
                 if (NecUtilsAPI.getEntityId(attacker).equals("bosses_of_mass_destruction:gauntlet")) {
                     return original * 0.5f;
@@ -79,9 +79,9 @@ public abstract class ArtifactDamageModifiersMixin {
 
     @ModifyReturnValue(method = "modifyAppliedDamage", at = @At("RETURN"))
     protected float prominent$applyDifficultyDamageModifiers(float original, DamageSource source, float amount) {
-        var diff = source.getAttacker().getWorld().getDifficulty();
+        if (source.getAttacker() == null || !(source.getAttacker() instanceof LivingEntity)) return original;
 
-        if (!(source.getAttacker() instanceof PlayerEntity)) return original;
+        var diff = source.getAttacker().getWorld().getDifficulty();
 
         switch (diff) {
             case PEACEFUL:
