@@ -1,0 +1,26 @@
+{
+    "display": {
+      "icon": {
+        "item": "prominent:beacon_of_hope"
+      },
+      "title": "A Call of Hope",
+      "description": "Call upon S'kellak's Aid to travel to Vaaz",
+      "hidden": true,
+      "frame": "goal",
+      "show_toast": true,
+      "announce_to_chat": true
+    },
+    "parent": "prominent:molten_core",
+    "criteria": {
+      "requirement": {
+        "trigger": "minecraft:effects_changed",
+          "conditions": {
+            "effects": {
+              "prominent:beacon_of_hope": {
+                "amplifier": 2
+              }
+            }
+        }
+      }
+    }
+}

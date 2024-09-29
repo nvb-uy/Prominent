@@ -10,6 +10,7 @@ import elocindev.prominent.spells.ashedar.Sunstrike;
 import elocindev.prominent.spells.azhar.BreathOfAzhar;
 import elocindev.prominent.spells.azhar.BrokenSoul;
 import elocindev.prominent.spells.azhar.SoulAbsorption;
+import elocindev.prominent.spells.beacon_of_hope.BeaconOfHope;
 import elocindev.prominent.spells.frostmourne.AgonizingBreath;
 import elocindev.prominent.spells.frostmourne.ObliteratedAgony;
 import elocindev.prominent.spells.frostmourne.RemorselessWinter;
@@ -49,6 +50,7 @@ public class EffectRegistry {
     // MISC
     public static final MinionsFate MINIONS_FATE = new MinionsFate();
     public static final OnCombat ON_COMAT = new OnCombat();
+    public static final BeaconOfHope BEACON_OF_HOPE = new BeaconOfHope();
 
     public static void register() {
         // Frostmourne
@@ -73,5 +75,6 @@ public class EffectRegistry {
         // Misc
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "faceless_gift"), MINIONS_FATE);
         Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "combat"), ON_COMAT);
+        Registry.register(Registries.STATUS_EFFECT, new Identifier("prominent", "beacon_of_hope"), BEACON_OF_HOPE);
     }
 }

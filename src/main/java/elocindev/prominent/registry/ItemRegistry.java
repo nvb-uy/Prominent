@@ -2,6 +2,7 @@ package elocindev.prominent.registry;
 
 import elocindev.prominent.ProminentLoader;
 import elocindev.prominent.item.ArtifactUpgrader;
+import elocindev.prominent.item.BeaconOfHope;
 import elocindev.prominent.item.DescriptiveItem;
 import elocindev.prominent.item.MainMenuDisc;
 import elocindev.prominent.item.MoltenCore;
@@ -98,6 +99,9 @@ public class ItemRegistry {
     
     public static final Item EMPTY_VESSEL = reg(new Item(new Item.Settings().fireproof().maxCount(1)), "empty_vessel");
     public static final Item VOID_HOURGLASS = reg(new MythicSummoner(new Item.Settings().maxCount(1).fireproof()), "void_hourglass");
+
+    public static final Item BEACON_OF_HOPE = reg(new BeaconOfHope(new Item.Settings().rarity(Rarity.UNCOMMON).maxCount(1)), "beacon_of_hope");
+    public static final Item BROKEN_BEACON_OF_HOPE = reg(new Item(new Item.Settings().rarity(Rarity.COMMON).maxCount(1)), "broken_beacon_of_hope");
 
     public static void registerItems() { 
         LOGGER.info("Registered Prominent Items");

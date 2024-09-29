@@ -40,8 +40,9 @@
 
 ## Mods
 - Added Overflowing Bars
+- Added [HTP] Accessories | Spanish Translation Pack
 - Removed Colorful Hearts (Replaced)
-- Updated AAAParticles, Accessories, Trinkets Compat Layer for Accessories, Grass Overhaul, Extra RPG Attributes, Spellblades and Such, SimplySkills
+- Updated AAAParticles, Accessories, Trinkets Compat Layer for Accessories, Grass Overhaul, Extra RPG Attributes, Spellblades and Such, SimplySkills, Death Knights, BetterTrims to 2.3.2
 
 ## Credits
 - Mr. Reksiu for reporting damage exploits
