@@ -2,6 +2,7 @@ package elocindev.prominent.spells.beacon_of_hope;
 
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.registry.ItemRegistry;
+import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementProgress;
 import net.minecraft.entity.EntityType;
@@ -26,6 +27,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.random.Random;
+import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
 
 public class BeaconOfHope extends StatusEffect {
@@ -56,36 +58,50 @@ public class BeaconOfHope extends StatusEffect {
         // Gotta ensure the chunk is loaded while effect is on, otherwise the player will take an eternity to load.
         glassocean.getChunk(new BlockPos((int) this.randomX, 66, (int) this.randomZ));
 
+        var strangevoice = Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY).withItalic(true));
+        var gumasSpeakStyle = Style.EMPTY.withColor(0xc9af57);
+
         switch (instance.getDuration()) {
-            case 960:
+            case 460:
                 MutableText text1 = Text.literal("\"Do you really think you can kill me?\"");
-                text1.setStyle(Style.EMPTY.withColor(Formatting.GRAY));
+                text1.setStyle(gumasSpeakStyle);
 
-                entity.sendMessage(text1.append(Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.GRAY).withItalic(true))));
+                entity.sendMessage(text1.append(strangevoice.copy()));
                 break;
 
-            case 900:
-                MutableText text2 = Text.literal("\"You will be very useful to our king\"");
-                text2.setStyle(Style.EMPTY.withColor(Formatting.GRAY));
+            case 400:
+                MutableText text2 = Text.literal("\"You will be very useful to the new king\"");
+                text2.setStyle(gumasSpeakStyle);
 
-                entity.sendMessage(text2.append(Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.GRAY).withItalic(true))));
+                entity.sendMessage(text2.append(strangevoice.copy()));
                 break;
 
-            case 860:
+            case 340:
                 MutableText text3 = Text.literal("\"But I'll have to kill you first\"");
-                text3.setStyle(Style.EMPTY.withColor(Formatting.GRAY));
+                text3.setStyle(gumasSpeakStyle);
 
-                entity.sendMessage(text3.append(Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.GRAY).withItalic(true))));
+                entity.sendMessage(text3.append(strangevoice.copy()));
+                break;
+
+            case 320:
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 30, 0));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7));
+                entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.ENTITY_WARDEN_EMERGE, SoundCategory.PLAYERS, 1.0f, 2.0f);
                 break;
             
-            case 800:
-                if (entity.getWorld().getRegistryKey().getValue().equals(World.OVERWORLD.getValue())) {
+            case 300:
+                if (entity instanceof ServerPlayerEntity player && player.getWorld().getRegistryKey().getValue().equals(World.OVERWORLD.getValue())) {
         
                     if (server != null) {
                         if (glassocean != null) {
-                            entity.moveToWorld(glassocean);
+                            TeleportTarget target = new TeleportTarget(
+                                new net.minecraft.util.math.Vec3d(this.randomX, 66, this.randomZ),
+                                net.minecraft.util.math.Vec3d.ZERO,
+                                0.0F,
+                                0.0F
+                            );
 
-                            entity.teleport(this.randomX, 66, this.randomZ);
+                            FabricDimensions.teleport(player, glassocean, target);
                         }
                     }
                 }
@@ -93,24 +109,24 @@ public class BeaconOfHope extends StatusEffect {
 
             case 140:
                 MutableText text4 = Text.literal("\"You thought you killed me...\"");
-                text4.setStyle(Style.EMPTY.withColor(Formatting.GRAY));
+                text4.setStyle(gumasSpeakStyle);
 
-                entity.sendMessage(text4.append(Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.GRAY).withItalic(true))));
+                entity.sendMessage(text4.append(strangevoice.copy()));
                 break;
             case 90:
                 MutableText text5 = Text.literal("\"But the King in Yellow made be reborn stronger\"");
-                text5.setStyle(Style.EMPTY.withColor(Formatting.GRAY));
+                text5.setStyle(gumasSpeakStyle);
 
-                entity.sendMessage(text5.append(Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.GRAY).withItalic(true))));
+                entity.sendMessage(text5.append(strangevoice.copy()));
                 break;
             case 60:
-                MutableText text6 = Text.literal("\"And now, it's your turn\"");
-                text6.setStyle(Style.EMPTY.withColor(Formatting.GRAY));
+                MutableText text6 = Text.literal("\"And now, it's your turn, TO REBORN\"");
+                text6.setStyle(gumasSpeakStyle);
 
-                entity.sendMessage(text6.append(Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.GRAY).withItalic(true))));
+                entity.sendMessage(text6.append(strangevoice.copy()));
                 break;
             case 20:
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.BLINDNESS, 30, 0));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 30, 0));
                 break;
             case 10:
                 World world = entity.getWorld();
@@ -170,7 +186,7 @@ public class BeaconOfHope extends StatusEffect {
 
         if (amplifier != 2) {
             entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_BEACON_POWER_SELECT, SoundCategory.PLAYERS, 1.0f, 1.8f);
-            entity.setStatusEffect(new StatusEffectInstance(this, 700, 2), entity);
+            entity.setStatusEffect(new StatusEffectInstance(this, 500, 2, false, false), entity);
 
             entity.setStackInHand(Hand.MAIN_HAND, ItemRegistry.BROKEN_BEACON_OF_HOPE.getDefaultStack());
         }
