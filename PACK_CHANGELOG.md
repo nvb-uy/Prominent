@@ -14,6 +14,7 @@
 - Fixed Supernova not being able to be enchanted with Spell Power enchants & Spell Infinity
 
 ## Balance Changes
+- All Simply Swords weapons can now cast spells
 - Easy difficulty has 25% reduced damage dealt to players and removes oneshots from bosses (Except Mythic Bosses).
 - Normal difficulty stays with the same values as it was previously
 - Hard difficulty increases damage dealt to players by +30%
