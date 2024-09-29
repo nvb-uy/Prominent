@@ -116,7 +116,7 @@ public class BeaconOfHope extends StatusEffect {
                 entity.sendMessage(text4.append(strangevoice.copy()));
                 break;
             case 80:
-                MutableText text5 = Text.literal("\"But the King in Yellow made be reborn stronger\"");
+                MutableText text5 = Text.literal("\"But the King in Yellow made me reborn stronger\"");
                 text5.setStyle(gumasSpeakStyle);
 
                 entity.sendMessage(text5.append(strangevoice.copy()));
