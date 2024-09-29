@@ -13,7 +13,7 @@
 - Fixed A'zhar damage increase per stack being an additive value instead of a percentile increase
 
 ## Balance Changes
-- Easy difficulty has 15% reduced damage dealt to players and removes oneshots from bosses (Except Mythic Bosses).
+- Easy difficulty has 25% reduced damage dealt to players and removes oneshots from bosses (Except Mythic Bosses).
 - Normal difficulty stays with the same values as it was previously
 - Hard difficulty increases damage dealt to players by +30%
 - Of Runes and Stars no longer reduces ranged damage by -15%
@@ -31,11 +31,14 @@
 - Replaced Poseidon's Breakfast with a Protection IV book
 - Misc formatting changes to tutorial questline
 
+## Loot Changes
+- Increased loot chance of uniques and runic weapons and items (Like Runic Tablets) slightly
+
 ## Other Changes
 - Re-added Overflowing Bars and fixed the empty heart bug (Thanks Fuzs <3)
 - Changed A Bard's Tale description to explain that you need to in a party (or allied) with the players that you want to buff
-- Gray UI Text is now orange to improve readability (Thanks Vindocel for the original shader implementation)
-- UI now supports EMI (Thanks Arssenic)
+- Gray UI Text is now orange to improve readability (Thanks Vindocel for the original shader implementation <3)
+- UI now supports EMI (Thanks Arssenic <3)
 - Fixed crafting table not being shown in backpacks
 
 ## Mods
@@ -49,6 +52,7 @@
 - Sideralis Music for balance suggestions
 - Mim1q for making the Thunderwrath model
 - Tornadoisback for making a concept model of Thunderwrath which the new model was based from
+- Forg for making the Gu'mas bossfight
 
 ------------------------------------------------------------------------------------------------------------------------------------------------------------
 

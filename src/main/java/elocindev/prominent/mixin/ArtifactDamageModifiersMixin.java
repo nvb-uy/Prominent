@@ -85,7 +85,11 @@ public abstract class ArtifactDamageModifiersMixin {
 
         switch (diff) {
             case PEACEFUL:
-                return original * 0.5f;
+                float dmg = original * 0.5f;
+
+                if (source.getSource() instanceof PlayerEntity player && dmg >= (player.getMaxHealth() * 0.90f)) return (player.getMaxHealth() * 0.90f);
+
+                return dmg;
             case EASY:
                 return original * 0.75f;
             case NORMAL:
