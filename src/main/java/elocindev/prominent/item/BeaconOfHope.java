@@ -33,6 +33,6 @@ public class BeaconOfHope extends Item {
     @Override
     public void appendTooltip(ItemStack stack, @Nullable World world, List<Text> tooltip, TooltipContext context) {
         tooltip.add(Text.literal("Call upon S'kellak's Aid to travel to the city of Vaaz.").setStyle(Style.EMPTY.withColor(Formatting.GRAY)));
-        tooltip.add(Text.literal(" Given by S'kellak in Chapter I of Hasturian Era.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
+        tooltip.add(Text.literal(" Given as quest reward in Chapter I of Hasturian Era.").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY)));
     }
 }
