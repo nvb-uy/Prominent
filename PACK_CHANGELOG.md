@@ -2,7 +2,7 @@
 **3.0.5 - Chapter I: The Shadow Beneath The Horizon**
 
 ## Important Changes
-- **Chapter I of the Hasturian Era campaign is out!**
+- **Chapter I of the Hasturian Era campaign is out!** The threat of Hastur is here, S'kellak needs you to go to the City of Vaaz to make a plan.
 - **The New Thunderwrath.** Enjoy the new remastered Thunderwrath artifact meant for physical damage (Warrior) builds or the upcoming Valkyrie build!
 - **Difficulty Changes**. World difficulty is now more impactful in damage dealt to players, with easy having less damage and removing oneshots from bosses, normal being as it was previous to this update, and hard having a global +30% damage increase.
 - **Balance Changes**. From adjustements to talents to new disabled items and enchants.
