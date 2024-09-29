@@ -109,7 +109,7 @@ public class BeaconOfHope extends StatusEffect {
 
                             // Emergency waystone
                             Block waystone = Registries.BLOCK.get(new Identifier("fwaystones:end_stone_brick_waystone"));
-                            BlockPos waystonePos = new BlockPos((int)this.randomX, 63, (int)this.randomZ);
+                            BlockPos waystonePos = new BlockPos((int)this.randomX + 2, 63, (int)this.randomZ);
 
                             if (waystone != null) {
                                 glassocean.setBlockState(waystonePos, waystone.getDefaultState());
