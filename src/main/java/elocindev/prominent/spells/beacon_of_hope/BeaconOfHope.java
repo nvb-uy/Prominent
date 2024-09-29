@@ -194,6 +194,7 @@ public class BeaconOfHope extends StatusEffect {
             entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_BEACON_POWER_SELECT, SoundCategory.PLAYERS, 1.0f, 1.8f);
             entity.setStatusEffect(new StatusEffectInstance(this, 500, 2, false, false), entity);
 
+            entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.PLAYERS, 0.4f, 0.9f);
             entity.setStackInHand(Hand.MAIN_HAND, ItemRegistry.BROKEN_BEACON_OF_HOPE.getDefaultStack());
         }
     }
