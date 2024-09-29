@@ -26,6 +26,13 @@
 - Disabled Sundering Potion
 - Disabled Pale Gold Amulet
 - Disabled Fin Cutter, Sea Stew, Poseidon's Breakfast
+- Limited the enchantments of extra rpg attributes to maximum level of 4
+
+## Item Stat Changes
+- Hero Armor set now gives +2 Lightning Power per piece, attack damage reduced from 7.5% to 5% per piece.
+- Added +2 Unholy and Blood power to the Deathchill armor set.
+- Reduced Gilded Glory's attack speed from 5% to 2% per piece
+- Increased heavily the durability of all MCDA armors
 
 ## Boss Changes
 - Faceless and Warden are now level 50 bosses, instead of 65.
