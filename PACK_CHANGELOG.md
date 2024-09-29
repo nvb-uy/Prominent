@@ -3,7 +3,7 @@
 
 ## Important Changes
 - **Chapter I of the Hasturian Era campaign is out!**
-- **The New Thunderwrath.** Enjoy the new remastered Thunderwrath artifact meant for physical damage (Warrior) builds!
+- **The New Thunderwrath.** Enjoy the new remastered Thunderwrath artifact meant for physical damage (Warrior) builds or the upcoming Valkyrie build!
 - **Difficulty Changes**. World difficulty is now more impactful in damage dealt to players, with easy having less damage and removing oneshots from bosses, normal being as it was previous to this update, and hard having a global +30% damage increase.
 - **Balance Changes**. From adjustements to talents to new disabled items and enchants.
 - **Fixed crash on Linux if using an NVIDIA GPU!** (Some Debian-based distros with outdated packages might still be affected)
@@ -11,6 +11,7 @@
 ## Artifact Changes
 - The overhauled Thunderwrath is here. New model, upgrade tree, new passive, and more!
 - Fixed A'zhar damage increase per stack being an additive value instead of a percentile increase
+- Fixed Supernova not being able to be enchanted with Spell Power enchants & Spell Infinity
 
 ## Balance Changes
 - Easy difficulty has 25% reduced damage dealt to players and removes oneshots from bosses (Except Mythic Bosses).

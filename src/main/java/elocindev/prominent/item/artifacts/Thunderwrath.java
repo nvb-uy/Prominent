@@ -83,7 +83,7 @@ public class Thunderwrath extends SwordItem implements Artifact, Soulbound {
             target.damage(attacker.getDamageSources().create(SpellSchools.LIGHTNING.damageType), (float) damage);
 
             if (attacker.getAttributeInstance(SpellSchools.LIGHTNING.attribute).getValue() >= 35) {
-                target.addStatusEffect(new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecells:stun")), 15, 0, false, false, true));
+                target.addStatusEffect(new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecells:stunned")), 15, 0, false, false, true));
             }
             
             for (int i = 0; i < 4; i++) {
