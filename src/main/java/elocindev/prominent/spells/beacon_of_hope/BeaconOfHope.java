@@ -109,11 +109,16 @@ public class BeaconOfHope extends StatusEffect {
 
                             // Emergency waystone
                             Block waystone = Registries.BLOCK.get(new Identifier("fwaystones:end_stone_brick_waystone"));
+                            BlockPos waystonePos = new BlockPos((int)this.randomX, 63, (int)this.randomZ);
 
-                            if (waystone != null)
-                                glassocean.setBlockState(new BlockPos((int)this.randomX, 64, (int)this.randomZ), waystone.getDefaultState());
+                            if (waystone != null) {
+                                glassocean.setBlockState(waystonePos, waystone.getDefaultState());
+                                glassocean.updateNeighbor(waystonePos.mutableCopy().add(0,1,0), waystone, waystonePos);
+                            }
 
                             FabricDimensions.teleport(player, glassocean, target);
+
+                            player.sendMessage(Text.literal("Tip: Activate the waystone for a checkpoint.").setStyle(Style.EMPTY.withColor(Formatting.GOLD)), true);
                         }
                     }
                 }
@@ -124,6 +129,9 @@ public class BeaconOfHope extends StatusEffect {
                 text4.setStyle(gumasSpeakStyle);
 
                 entity.sendMessage(text4.append(strangevoice.copy()));
+                if (entity instanceof ServerPlayerEntity player)
+                    player.sendMessage(Text.literal("Tip: Activate the waystone for a checkpoint.").setStyle(Style.EMPTY.withColor(Formatting.GOLD)), true);
+                
                 break;
             case 80:
                 MutableText text5 = Text.literal("\"But the King in Yellow made me reborn stronger\"");

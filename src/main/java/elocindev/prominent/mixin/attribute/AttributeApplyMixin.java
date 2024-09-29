@@ -15,7 +15,7 @@ import net.minecraft.entity.attribute.DefaultAttributeContainer;
 )
 public class AttributeApplyMixin {
     @Inject(method = "createLivingAttributes", at = @At("RETURN")) 
-    private static void eldritch_end$registerAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir) {
-        ((DefaultAttributeContainer.Builder)cir.getReturnValue()).add(AttributeRegistry.ARTIFACT_DAMAGE);
+    private static void prominent$registerAttributes(CallbackInfoReturnable<DefaultAttributeContainer.Builder> cir) {
+        ((DefaultAttributeContainer.Builder)cir.getReturnValue()).add(AttributeRegistry.ARTIFACT_DAMAGE).add(AttributeRegistry.TITAN_DAMAGE);
   }
 }

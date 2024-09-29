@@ -19,6 +19,7 @@ import net.minecraft.entity.attribute.EntityAttribute;
 import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
@@ -80,6 +81,10 @@ public class Thunderwrath extends SwordItem implements Artifact, Soulbound {
                 + attacker.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).getValue() * physicalScaleFactor;
 
             target.damage(attacker.getDamageSources().create(SpellSchools.LIGHTNING.damageType), (float) damage);
+
+            if (attacker.getAttributeInstance(SpellSchools.LIGHTNING.attribute).getValue() >= 35) {
+                target.addStatusEffect(new StatusEffectInstance(Registries.STATUS_EFFECT.get(new Identifier("minecells:stun")), 15, 0, false, false, true));
+            }
             
             for (int i = 0; i < 4; i++) {
                 target.getWorld().addParticle(ParticleTypes.ELECTRIC_SPARK, target.getX() + (Math.random() * 0.8), target.getY(), target.getZ() + (Math.random() * 0.8), 0.0D, -0.1D, 0.0D);

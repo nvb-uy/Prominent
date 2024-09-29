@@ -17,8 +17,10 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
+import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.TagKey;
 import net.minecraft.util.Hand;
+import net.minecraft.util.Identifier;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
@@ -59,6 +61,10 @@ public abstract class ArtifactDamageModifiersMixin {
 
             double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
 
+            if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
+                multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
+            }
+            
             return original * (float) multiplier;
         }
         
