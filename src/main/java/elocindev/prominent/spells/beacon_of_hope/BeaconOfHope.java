@@ -5,6 +5,7 @@ import elocindev.prominent.registry.ItemRegistry;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.minecraft.advancement.Advancement;
 import net.minecraft.advancement.AdvancementProgress;
+import net.minecraft.block.Block;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.attribute.AttributeContainer;
@@ -12,6 +13,8 @@ import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectCategory;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.effect.StatusEffects;
+import net.minecraft.registry.Registries;
+import net.minecraft.registry.Registry;
 import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.MinecraftServer;
@@ -26,6 +29,7 @@ import net.minecraft.util.Formatting;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.Vec3i;
 import net.minecraft.util.math.random.Random;
 import net.minecraft.world.TeleportTarget;
 import net.minecraft.world.World;
@@ -102,6 +106,12 @@ public class BeaconOfHope extends StatusEffect {
                                 0.0F,
                                 0.0F
                             );
+
+                            // Emergency waystone
+                            Block waystone = Registries.BLOCK.get(new Identifier("fwaystones:end_stone_brick_waystone"));
+
+                            if (waystone != null)
+                                glassocean.setBlockState(new BlockPos((int)this.randomX, 64, (int)this.randomZ), waystone.getDefaultState());
 
                             FabricDimensions.teleport(player, glassocean, target);
                         }

@@ -16,6 +16,7 @@
 - Easy difficulty has 25% reduced damage dealt to players and removes oneshots from bosses (Except Mythic Bosses).
 - Normal difficulty stays with the same values as it was previously
 - Hard difficulty increases damage dealt to players by +30%
+- Crystalline Flower now requires Level 65 to be used
 - Of Runes and Stars no longer reduces ranged damage by -15%
 - Nerfed attack damage and scaling of Starforge
 - Fixed Warrior's Devotion not actually removing elemental spell power
@@ -25,8 +26,13 @@
 - Disabled Pale Gold Amulet
 - Disabled Fin Cutter, Sea Stew, Poseidon's Breakfast
 
+## Boss Changes
+- Faceless and Warden are now level 50 bosses, instead of 65.
+- Gu'mas is now a Level 65 boss.
+
 ## Quest Changes
 - Added initial Chapter I quests
+- Added Artifact Upgrade Tree questline
 - Removed banned items from quests that previously had them
 - Replaced Poseidon's Breakfast with a Protection IV book
 - Misc formatting changes to tutorial questline
@@ -45,7 +51,7 @@
 - Added Overflowing Bars
 - Added [HTP] Accessories | Spanish Translation Pack
 - Removed Colorful Hearts (Replaced)
-- Updated AAAParticles, Accessories, Trinkets Compat Layer for Accessories, Grass Overhaul, Extra RPG Attributes, Spellblades and Such, SimplySkills, Death Knights, BetterTrims to 2.3.2, Prominent, Satisfying Buttons
+- Updated AAAParticles, Accessories, Trinkets Compat Layer for Accessories, Grass Overhaul, Extra RPG Attributes, Spellblades and Such, SimplySkills, Death Knights, BetterTrims to 2.3.2, Prominent, Satisfying Buttons, Botania, Prominent Talents, Spellblades x Prominence
 
 ## Credits
 - Mr. Reksiu for reporting damage exploits
