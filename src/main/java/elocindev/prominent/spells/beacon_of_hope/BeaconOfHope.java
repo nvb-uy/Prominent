@@ -35,8 +35,7 @@ public class BeaconOfHope extends StatusEffect {
     public double randomZ;
 
     public BeaconOfHope() {
-        super(StatusEffectCategory.BENEFICIAL,
-        0x330066); 
+        super(StatusEffectCategory.BENEFICIAL, 0x330066); 
 
         Random random = Random.create();
 
@@ -58,7 +57,7 @@ public class BeaconOfHope extends StatusEffect {
         // Gotta ensure the chunk is loaded while effect is on, otherwise the player will take an eternity to load.
         glassocean.getChunk(new BlockPos((int) this.randomX, 66, (int) this.randomZ));
 
-        var strangevoice = Text.literal(", a strange voice whispers to you").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY).withItalic(true));
+        var strangevoice = Text.literal(", a familiar voice whispered").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY).withItalic(true));
         var gumasSpeakStyle = Style.EMPTY.withColor(0xc9af57);
 
         switch (instance.getDuration()) {
@@ -83,8 +82,11 @@ public class BeaconOfHope extends StatusEffect {
                 entity.sendMessage(text3.append(strangevoice.copy()));
                 break;
 
+            case 330: 
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 60, 0));
+                break;
             case 320:
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 30, 0));
+                
                 entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7));
                 entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.ENTITY_WARDEN_EMERGE, SoundCategory.PLAYERS, 1.0f, 2.0f);
                 break;
@@ -113,20 +115,24 @@ public class BeaconOfHope extends StatusEffect {
 
                 entity.sendMessage(text4.append(strangevoice.copy()));
                 break;
-            case 90:
+            case 80:
                 MutableText text5 = Text.literal("\"But the King in Yellow made be reborn stronger\"");
                 text5.setStyle(gumasSpeakStyle);
 
                 entity.sendMessage(text5.append(strangevoice.copy()));
                 break;
-            case 60:
+            case 40:
                 MutableText text6 = Text.literal("\"And now, it's your turn, TO REBORN\"");
                 text6.setStyle(gumasSpeakStyle);
 
                 entity.sendMessage(text6.append(strangevoice.copy()));
                 break;
-            case 20:
+            case 30:
                 entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 30, 0));
+                break;
+            case 20:
+                entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.ENTITY_WARDEN_EMERGE, SoundCategory.PLAYERS, 1.0f, 2.0f);
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7));
                 break;
             case 10:
                 World world = entity.getWorld();
@@ -137,7 +143,7 @@ public class BeaconOfHope extends StatusEffect {
                     if (entityType != null) {
                         LivingEntity spawnedEntity = (LivingEntity) entityType.create(serverWorld);
                         if (spawnedEntity != null) {
-                            spawnedEntity.refreshPositionAndAngles(entity.getX() + 4, entity.getY(), entity.getZ(), entity.getYaw(), entity.getPitch());
+                            spawnedEntity.refreshPositionAndAngles(entity.getX() + -Math.sin(Math.toRadians(entity.getYaw())) * 5, entity.getY(), entity.getZ() + Math.cos(Math.toRadians(entity.getYaw())) * 5, entity.getYaw(), entity.getPitch());
                             serverWorld.spawnEntity(spawnedEntity);
                         }
                     }
