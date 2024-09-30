@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.6-SNAPSHOT'
+	id 'fabric-loom' version '1.7-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -78,6 +78,8 @@ dependencies {
 	modImplementation "curse.maven:prism-fabric-665526:4650327"
 
 	modCompileOnly "maven.modrinth:ae2:15.0.15-fabric"
+
+	modCompileOnly "maven.modrinth:immersive-messages-api:${project.immersive_messages_api}-fabric"
 	
 	// Uncomment the following line to enable the deprecated Fabric API modules. 
 	// These are included in the Fabric API production distribution and allow you to update your mod to the latest modules at a later more convenient time.
