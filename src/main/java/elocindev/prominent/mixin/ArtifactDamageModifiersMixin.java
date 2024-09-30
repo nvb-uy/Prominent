@@ -36,39 +36,41 @@ public abstract class ArtifactDamageModifiersMixin {
 
     @ModifyReturnValue(method = "modifyAppliedDamage", at = @At("RETURN"))
     protected float prominent$modifyDamage(float original, DamageSource source, float amount) {
-        if (source.getAttacker() instanceof PlayerEntity src) if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR)) return original / 2;
+        float modifiedDamage = original;
+
+        if (source.getAttacker() instanceof PlayerEntity src) {
+            if (isItemInHand(src, Hand.MAIN_HAND, Ashedar.IS_ASHEDAR) ^ isItemInHand(src, Hand.OFF_HAND, Ashedar.IS_ASHEDAR)) {
+                modifiedDamage /= 2;
+            }
+        }
 
         if (source.getAttacker() != null && source.getAttacker() instanceof LivingEntity attacker && !(attacker instanceof PlayerEntity)) {
             if (!MythicBosses.isMythicBoss(attacker)) {
                 if (NecUtilsAPI.getEntityId(attacker).equals("bosses_of_mass_destruction:gauntlet")) {
-                    return original * 0.5f;
+                    modifiedDamage *= 0.5f;
                 }
-
-                return original;
+            } else {
+                float multiplier = 1.0f + (MythicBosses.getMythicLevel(attacker) * ServerConfig.INSTANCE.mythic_damage_multiplier);
+                modifiedDamage *= multiplier;
             }
-
-            float multiplier = 1.0f + (MythicBosses.getMythicLevel(attacker) * ServerConfig.INSTANCE.mythic_damage_multiplier);
-            return original * multiplier;
         }
 
         if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity playerAttacker && isUsingArtifact(playerAttacker)) {
             if (isArtifactAzhar(playerAttacker)) {
                 double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
-                int souls = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL).getAmplifier() + 1;
+                int souls = 1 + playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL).getAmplifier();
+                modifiedDamage *= (float) (multiplier * souls);
+            } else {
+                double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
 
-                return original * ((float) (multiplier * souls));
+                if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
+                    multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
+                }
+                modifiedDamage *= (float) multiplier;
             }
-
-            double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
-
-            if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
-                multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
-            }
-            
-            return original * (float) multiplier;
         }
-        
-        return original;
+
+        return modifiedDamage;
     }
 
     private boolean isUsingArtifact(LivingEntity source) {
