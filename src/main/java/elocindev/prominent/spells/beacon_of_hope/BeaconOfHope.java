@@ -1,5 +1,6 @@
 package elocindev.prominent.spells.beacon_of_hope;
 
+import elocindev.prominent.dialogue.Dialogue;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.registry.ItemRegistry;
 import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
@@ -21,7 +22,6 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
-import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -38,11 +38,6 @@ public class BeaconOfHope extends StatusEffect {
 
     public BeaconOfHope() {
         super(StatusEffectCategory.BENEFICIAL, 0x330066); 
-
-        Random random = Random.create();
-
-        this.randomX = (random.nextDouble() - 0.5) * 8000;
-        this.randomZ = (random.nextDouble() - 0.5) * 8000;
     }
 
     @Override
@@ -52,6 +47,8 @@ public class BeaconOfHope extends StatusEffect {
         StatusEffectInstance instance = entity.getStatusEffect(this);
         if (instance == null) return;
 
+        if (!(entity instanceof ServerPlayerEntity player)) return;
+
         MinecraftServer server = entity.getServer();
         RegistryKey<World> targetDimensionKey = RegistryKey.of(RegistryKeys.WORLD, new Identifier("spellbladenext", "glassocean"));
         ServerWorld glassocean = server.getWorld(targetDimensionKey);
@@ -59,42 +56,26 @@ public class BeaconOfHope extends StatusEffect {
         // Gotta ensure the chunk is loaded while effect is on, otherwise the player will take an eternity to load.
         glassocean.getChunk(new BlockPos((int) this.randomX, 66, (int) this.randomZ));
 
-        var strangevoice = Text.literal(", a familiar voice whispered").setStyle(Style.EMPTY.withColor(Formatting.DARK_GRAY).withItalic(true));
-        var gumasSpeakStyle = Style.EMPTY.withColor(0xc9af57);
-
         switch (instance.getDuration()) {
-            case 460:
-                MutableText text1 = Text.literal("\"Do you really think you can kill me?\"");
-                text1.setStyle(gumasSpeakStyle);
-
-                entity.sendMessage(text1.append(strangevoice.copy()));
+            case 680:
+                Dialogue.getGumasDialogue("\"Do you really think you can kill me?\"").sendServer(player);
                 break;
 
-            case 400:
-                MutableText text2 = Text.literal("\"You will be very useful to the new king\"");
-                text2.setStyle(gumasSpeakStyle);
-
-                entity.sendMessage(text2.append(strangevoice.copy()));
+            case 580:
+                Dialogue.getGumasDialogue("\"You will be very useful to the new king\"").sendServer(player);
                 break;
 
-            case 340:
-                MutableText text3 = Text.literal("\"But I'll have to kill you first\"");
-                text3.setStyle(gumasSpeakStyle);
-
-                entity.sendMessage(text3.append(strangevoice.copy()));
+            case 480:
+                Dialogue.getGumasDialogue("\"But I'll have to kill you first\"").sendServer(player);
+                player.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 100, 0, false, false));
                 break;
-
-            case 330: 
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 60, 0));
-                break;
-            case 320:
-                
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7));
+            case 420:
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7, false, false));
                 entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.ENTITY_WARDEN_EMERGE, SoundCategory.PLAYERS, 1.0f, 2.0f);
                 break;
             
-            case 300:
-                if (entity instanceof ServerPlayerEntity player && player.getWorld().getRegistryKey().getValue().equals(World.OVERWORLD.getValue())) {
+            case 400:
+                if (player.getWorld().getRegistryKey().getValue().equals(World.OVERWORLD.getValue())) {
         
                     if (server != null) {
                         if (glassocean != null) {
@@ -122,33 +103,21 @@ public class BeaconOfHope extends StatusEffect {
                 }
                 break;
 
+            case 300:
+                Dialogue.getGumasDialogue("\"You thought you killed me...\"").sendServer(player);
+                break;
+            case 220:
+                Dialogue.getGumasDialogue("\"But the King in Yellow made me reborn stronger\"").sendServer(player);
+                break;
             case 140:
-                MutableText text4 = Text.literal("\"You thought you killed me...\"");
-                text4.setStyle(gumasSpeakStyle);
-
-                entity.sendMessage(text4.append(strangevoice.copy()));
-                if (entity instanceof ServerPlayerEntity player)
-                    player.sendMessage(Text.literal("Tip: Activate the waystone for a checkpoint.").setStyle(Style.EMPTY.withColor(Formatting.GOLD)), true);
-                
+                Dialogue.getGumasDialogue("\"And now, it's your turn,§§ TO REBORN!\"", 100).sendServer(player);
                 break;
             case 80:
-                MutableText text5 = Text.literal("\"But the King in Yellow made me reborn stronger\"");
-                text5.setStyle(gumasSpeakStyle);
-
-                entity.sendMessage(text5.append(strangevoice.copy()));
-                break;
-            case 40:
-                MutableText text6 = Text.literal("\"And now, it's your turn, TO REBORN\"");
-                text6.setStyle(gumasSpeakStyle);
-
-                entity.sendMessage(text6.append(strangevoice.copy()));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 80, 1, false, false));
                 break;
             case 30:
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.DARKNESS, 30, 0));
-                break;
-            case 20:
                 entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.ENTITY_WARDEN_EMERGE, SoundCategory.PLAYERS, 1.0f, 2.0f);
-                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7));
+                entity.addStatusEffect(new StatusEffectInstance(StatusEffects.SLOWNESS, 30, 7, false, false));
                 break;
             case 10:
                 World world = entity.getWorld();
@@ -176,6 +145,11 @@ public class BeaconOfHope extends StatusEffect {
 
     @Override
     public void onApplied(LivingEntity entity, AttributeContainer attributes, int amplifier) {
+        Random random = Random.create();
+
+        this.randomX = (random.nextDouble() - 0.5) * 8000;
+        this.randomZ = (random.nextDouble() - 0.5) * 8000;
+
         super.onApplied(entity, attributes, amplifier);
 
         if (entity.getMainHandStack().getItem() != ItemRegistry.BEACON_OF_HOPE && amplifier != 2) {
@@ -208,7 +182,7 @@ public class BeaconOfHope extends StatusEffect {
 
         if (amplifier != 2) {
             entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_BEACON_POWER_SELECT, SoundCategory.PLAYERS, 1.0f, 1.8f);
-            entity.setStatusEffect(new StatusEffectInstance(this, 500, 2, false, false), entity);
+            entity.setStatusEffect(new StatusEffectInstance(this, 700, 2, false, false), entity);
 
             entity.getWorld().playSound(null, entity.getBlockPos(), SoundEvents.BLOCK_GLASS_BREAK, SoundCategory.PLAYERS, 0.4f, 0.9f);
             entity.setStackInHand(Hand.MAIN_HAND, ItemRegistry.BROKEN_BEACON_OF_HOPE.getDefaultStack());
