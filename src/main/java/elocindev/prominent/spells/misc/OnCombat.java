@@ -18,13 +18,15 @@ public class OnCombat extends StatusEffect {
     public void applyUpdateEffect(LivingEntity entity, int amplifier) {
         if (entity instanceof PlayerEntity player && !player.isCreative() && !player.isSpectator()) {
             player.getAbilities().flying = false;
+            player.getAbilities().allowFlying = false;
             player.sendAbilitiesUpdate();
         }
     }
 
     public static void regsiter() {
         ServerLivingEntityEvents.ALLOW_DAMAGE.register((entity, source, amount) -> {
-            if (entity instanceof PlayerEntity player && !player.isCreative() && !player.isSpectator()) {
+            if (entity instanceof PlayerEntity player && !player.isCreative() && !player.isSpectator()
+            && source.getAttacker() instanceof LivingEntity) {
                 player.addStatusEffect(new StatusEffectInstance(
                     EffectRegistry.ON_COMAT,
                     100,

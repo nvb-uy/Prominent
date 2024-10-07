@@ -36,7 +36,8 @@ public class ProminentClient implements ClientModInitializer {
                     "prominent:fyralath",
                     "prominent:ash",
                     "prominent:edar",
-                    "prominent:ashedar_essence"
+                    "prominent:ashedar_essence",
+                    "prominent_talents:level_stat_indicator"
                 )
             );
 

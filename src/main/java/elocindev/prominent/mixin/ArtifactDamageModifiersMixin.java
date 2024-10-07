@@ -15,6 +15,7 @@ import elocindev.prominent.registry.AttributeRegistry;
 import elocindev.prominent.registry.EffectRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
@@ -56,19 +57,23 @@ public abstract class ArtifactDamageModifiersMixin {
         }
 
         if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity playerAttacker && isUsingArtifact(playerAttacker)) {
-            if (isArtifactAzhar(playerAttacker)) {
-                double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
-                int souls = 1 + playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL).getAmplifier();
+        if (isArtifactAzhar(playerAttacker)) {
+            double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
+            StatusEffectInstance brokenSoulEffect = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL);
+            
+            if (brokenSoulEffect != null) {
+                int souls = 1 + brokenSoulEffect.getAmplifier();
                 modifiedDamage *= (float) (multiplier * souls);
-            } else {
-                double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
-
-                if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
-                    multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
-                }
-                modifiedDamage *= (float) multiplier;
             }
+        } else {
+            double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
+
+            if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
+                multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
+            }
+            modifiedDamage *= (float) multiplier;
         }
+    }
 
         return modifiedDamage;
     }
