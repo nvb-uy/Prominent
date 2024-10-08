@@ -1,0 +1,21 @@
+{
+    "type": "prominent:cinderstone_depths",
+    "generator": {
+      "type": "minecraft:flat",
+      "settings": {
+        "biome": "prominent:city_of_vaaz",
+        "lakes": false,
+        "features": false,
+        "layers": [
+          {
+            "block": "minecraft:bedrock",
+            "height": 1
+          },
+          {
+            "block": "minecraft:lava",
+            "height": 100
+          }
+        ]
+      }
+    }
+}
