@@ -1,6 +1,12 @@
 {
     "replace": "false",
     "values": [
-        "prominent:supernova"
+        "prominent:supernova",
+        "prominent:azhar",
+        "prominent:ash",
+        "prominent:edar",
+        "prominent:fury_of_a_thousand_fists",
+        "prominent:frostmourne",
+        "prominent:fyr'alath"
     ]
   }

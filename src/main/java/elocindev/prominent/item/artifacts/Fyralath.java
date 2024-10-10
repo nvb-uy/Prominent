@@ -75,8 +75,8 @@ public class Fyralath extends SwordItem implements Artifact, Soulbound {
                 new EntityAttributeModifier(
                     UUID.fromString("697ae3c8-df64-11e4-b9d1-0242e332074"+i), 
                     attribute.id+" Fyr'alath Modifier", 
-                    0.10,
-                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL
+                    4,
+                    EntityAttributeModifier.Operation.ADDITION
                 )
             );
         i++;

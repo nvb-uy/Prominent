@@ -63,7 +63,7 @@ public abstract class ArtifactDamageModifiersMixin {
             
             if (brokenSoulEffect != null) {
                 int souls = 1 + brokenSoulEffect.getAmplifier();
-                modifiedDamage *= (float) (multiplier * souls);
+                modifiedDamage *= (float) (1 + (multiplier - 1) * souls);
             }
         } else {
             double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();

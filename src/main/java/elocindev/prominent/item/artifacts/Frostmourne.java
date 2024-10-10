@@ -48,8 +48,8 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
             new EntityAttributeModifier(
                 UUID.fromString("157ee278-8f64-115a-b9d1-0242ac320231"), 
                 "Frostmourne Frost Modifier", 
-                0.25, 
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL
+                7, 
+                EntityAttributeModifier.Operation.ADDITION
             )
         );
 
@@ -58,8 +58,8 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
             new EntityAttributeModifier(
                 UUID.fromString("157ee278-8f64-115a-b9d1-0242ac320237"), 
                 "Frostmourne Blood Modifier", 
-                0.25, 
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL
+                7, 
+                EntityAttributeModifier.Operation.ADDITION
             )
         );
 
@@ -68,20 +68,10 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
             new EntityAttributeModifier(
                 UUID.fromString("157ee278-8f64-115a-b9d1-0242ac320238"), 
                 "Frostmourne Blood Modifier", 
-                0.25, 
-                EntityAttributeModifier.Operation.MULTIPLY_TOTAL
+                7, 
+                EntityAttributeModifier.Operation.ADDITION
             )
         );
-
-        modifiers.put(
-                SpellSchools.SOUL.attribute,
-                new EntityAttributeModifier(
-                    UUID.fromString("157ee278-8f64-115a-b9d1-0242ac320239"), 
-                    "Soul Frostmourne Modifier", 
-                    10.0, 
-                    EntityAttributeModifier.Operation.ADDITION
-                )
-            );
 
         this.attributes = modifiers;
         
@@ -100,6 +90,7 @@ public class Frostmourne extends SwordItem implements Artifact, Soulbound {
         tooltip.add(Text.literal("Whoever wields the Frostmourne will become the next Lich King.").setStyle(TEXT));
         tooltip.add(Text.literal("Death Knight abilities deal higher damage.").setStyle(TEXT));
         tooltip.add(Text.literal(" "));
+        tooltip.add(Text.literal("Casts Death Knight abilities from equipped skill book.").setStyle(TEXT));
     }
 
     @Override

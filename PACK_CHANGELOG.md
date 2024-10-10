@@ -1,4 +1,37 @@
 # Prominence II RPG: Hasturian Era
+**3.0.7 - Unholy Death Knights**
+
+This update introduces a new class with new weapons, armors and its own skill book; the Unholy Death Knight.
+
+Become a plaguebringer, use abilities that bring diseases to your victims and spread them to multiple targets.
+
+You might be confused about the balance changes, so please [check the newest blog post for more information](LINKHERE), it's a bit complex.
+
+## Important Changes
+- **Unholy Death Knight**: A versatile melee DPS that can grip targets close to them and infect them with diseases.
+- **Artifacts can now use Spell enchants**. Artifacts can now use again the spell enchants, making them way more powerful.
+- **Balance Changes**. General balance changes to try to get all late game builds to deal consistent ~300 DPS
+
+## Artifact Changes
+- Fixed all artifacts (except Thunderwrath) not being able to use Spell enchants such as Spell Infinity or Spell Power.
+- Fixed artifact damage increase nodes not working properly on some artifacts.
+- Frostmourne now gives +6 Unholy, Frost and Blood Power instead of +25%, it no longer gives soul power.
+- Fyr'alath now gives +4 Fire/Soul instead of +10%
+- Fixed A'zhar damage calculation spiking way too fast than it should.
+
+## Balance Changes
+- Netherite Staves now give +6 Spell Power instead of +5
+- Max Tier Staves now give +8 Spell Power instead of +6
+- Reduced Omni and Ashes maximums heavily
+
+## Other Changes
+- Removed player report button from pause screen while in multiplayer.
+
+## Mods
+- Added No Report Button
+- Updated Death Knights, Prominent
+
+# Prominence II RPG: Hasturian Era
 **3.0.6 - Level Menu & Fixes**
 
 A small update featuring a few fixes and a new menu when hovering the player level icon in your inventory!
