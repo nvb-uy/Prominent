@@ -47,9 +47,7 @@ public class Supernova extends Starforge implements Artifact, Soulbound {
         SpellSchool[] attributeList = {
             SpellSchools.FIRE,
             SpellSchools.FROST,
-            SpellSchools.ARCANE,
-            SpellSchools.SOUL,
-            SpellSchools.LIGHTNING
+            SpellSchools.ARCANE
         };
 
         for (var attribute : attributeList) {
@@ -58,7 +56,7 @@ public class Supernova extends Starforge implements Artifact, Soulbound {
                 new EntityAttributeModifier(
                     UUID.fromString("697fe278-8f64-11e4-b9d1-0242ac32074"+i), 
                     attribute.id+" Supernova Modifier", 
-                    5.0, 
+                    6.0, 
                     EntityAttributeModifier.Operation.ADDITION
                 )
             );

@@ -72,8 +72,8 @@ public class ThousandFists extends FistOfFuryItem implements Artifact, Soulbound
                 new EntityAttributeModifier(
                     UUID.fromString("697ae378-8f64-11e4-b9d1-0242ac32074"+i), 
                     attribute.id+" Fury of a Thousand Fists Modifier", 
-                    0.10, 
-                    EntityAttributeModifier.Operation.MULTIPLY_TOTAL
+                    7.0, 
+                    EntityAttributeModifier.Operation.ADDITION
                 )
             );
         i++;
