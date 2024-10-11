@@ -23,9 +23,12 @@ You might be confused about the balance changes, so please [check the newest blo
 - Fury of a Thousand Fists now gives +7 Spell Power instead of +10%
 
 ## Balance Changes
+- Increased maximum efficiency of armor from 30% to 40% // TODO
+- Changed Sin'dorei Heritage to reduce up to -50% armor instead of -80% // TODO
 - Netherite Staves now give +6 Spell Power instead of +5
 - Max Tier Staves now give +8 Spell Power instead of +6
 - Reduced Omni and Ashes maximums heavily
+- Magus Armor no longer gives flat spell power, it instead gives +12.5% of all elements as it's a medium defense multielement armor. // TODO
 
 ## Other Changes
 - Fixed not being able to go back to the anvil tab once you went to the reforging tab
@@ -34,6 +37,7 @@ You might be confused about the balance changes, so please [check the newest blo
 ## Mods
 - Added No Report Button
 - Updated Death Knights, Prominent
+// UPDATE: Copycats
 
 # Prominence II RPG: Hasturian Era
 **3.0.6 - Level Menu & Fixes**
