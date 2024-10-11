@@ -30,6 +30,8 @@ You might be confused about the balance changes, so please [check the newest blo
 - Max Tier Staves now give +8 Spell Power instead of +6
 - Reduced Omni and Ashes maximums heavily
 - Magus Armor no longer gives flat spell power, it instead gives +12.5% of all elements as it's a medium defense multielement armor.
+- A lot of changes in magic-focused armor sets, please see the blog post linked above for full changes!
+- Disabled amethyst trim
 
 ## Other Changes
 - Fixed not being able to go back to the anvil tab once you went to the reforging tab
@@ -39,8 +41,7 @@ You might be confused about the balance changes, so please [check the newest blo
 
 ## Mods
 - Added No Report Button
-- Updated Death Knights, Prominent
-// UPDATE: Copycats
+- Updated Death Knights, Prominent, Create: Copycats+, Tierify, Mandala's GUI
 
 # Prominence II RPG: Hasturian Era
 **3.0.6 - Level Menu & Fixes**
