@@ -84,6 +84,10 @@ public class MythicSummoner extends Item {
         Entity entity = boss.get().create(world);
         entity.setPos(context.getBlockPos().getX() + 0.5, context.getBlockPos().getY() + 2, context.getBlockPos().getZ() - 0.5);
 
+        NbtCompound entityNbt = entity.writeNbt(new NbtCompound());
+        entityNbt.putUuid("summonerUUID", user.getUuid());
+        entity.readNbt(entityNbt);
+
         world.spawnEntity(entity);
 
         if (entity instanceof LivingEntity mythicBoss) {
@@ -137,13 +141,14 @@ public class MythicSummoner extends Item {
     private static String intToRoman(int num) {
         if (num < 1) {
             return "0";
-        } else if (num > 500) {
+        } else if (num > 499) {
             return String.valueOf(num);
         }
 
-        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC", "C"};
+        String[] hundreds = {"", "C"};
+        String[] tens = {"", "X", "XX", "XXX", "XL", "L", "LX", "LXX", "LXXX", "XC"};
         String[] ones = {"", "I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX"};
 
-        return tens[num / 10] + ones[num % 10];
+        return hundreds[num / 100] + tens[(num % 100) / 10] + ones[num % 10];
     }
 }
