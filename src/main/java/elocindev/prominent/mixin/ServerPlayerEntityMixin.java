@@ -26,7 +26,7 @@ import java.util.ArrayList;
 
 @Mixin(ServerPlayerEntity.class)
 public class ServerPlayerEntityMixin {
-    @Inject(method = "onDeath", at = @At("TAIL"))
+    @Inject(method = "onDeath", at = @At("HEAD"))
     public void prominent$removeMythicBosses(DamageSource damageSource, CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
         if (!(player.getWorld() instanceof ServerWorld)) return;
@@ -49,7 +49,7 @@ public class ServerPlayerEntityMixin {
                 int finalLevel = MythicBosses.getMythicLevel(possibleBoss) - 1;
                 if (finalLevel < 1) finalLevel = 1;
 
-                ItemEntity item = new ItemEntity(possibleBoss.getWorld(), possibleBoss.getX(), possibleBoss.getY() + 32, possibleBoss.getZ(), MythicBosses.getVoidHourglass(finalLevel));
+                ItemEntity item = new ItemEntity(player.getWorld(), player.getX(), player.getY() + 1, player.getZ(), MythicBosses.getVoidHourglass(finalLevel));
                 possibleBoss.getWorld().spawnEntity(item);
             }
         }

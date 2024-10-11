@@ -5,6 +5,8 @@ import java.util.Optional;
 
 import org.jetbrains.annotations.Nullable;
 
+import com.faux.customentitydata.api.CustomDataHelper;
+
 import elocindev.necronomicon.api.text.TextAPI;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import net.minecraft.client.item.TooltipContext;
@@ -84,9 +86,10 @@ public class MythicSummoner extends Item {
         Entity entity = boss.get().create(world);
         entity.setPos(context.getBlockPos().getX() + 0.5, context.getBlockPos().getY() + 2, context.getBlockPos().getZ() - 0.5);
 
-        NbtCompound entityNbt = entity.writeNbt(new NbtCompound());
-        entityNbt.putUuid("summonerUUID", user.getUuid());
-        entity.readNbt(entityNbt);
+        NbtCompound nbt = CustomDataHelper.getCustomData(entity);
+        nbt.putUuid("summonerUUID", user.getUuid());
+
+        CustomDataHelper.setCustomData(entity, nbt);
 
         world.spawnEntity(entity);
 

@@ -25,47 +25,61 @@ import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Identifier;
+import net.minecraft.util.math.BlockPos;
 
 public class MythicBosses {
     public static void registerDrops() {
         ServerLivingEntityEvents.ALLOW_DEATH.register((entity, damageSource, damageAmount) -> {
             if (isMythicBoss(entity)) {
-
-                ItemEntity item = new ItemEntity(entity.getWorld(), entity.getX(), entity.getY() + 32, entity.getZ(), MythicBosses.getVoidHourglass(getMythicLevel(entity) + 1));
-                entity.getWorld().spawnEntity(item);
-
+    
+                UUID summonerUUID = CustomDataHelper.getCustomData(entity).getUuid("summonerUUID");
+                ServerWorld world = (ServerWorld) entity.getWorld();
+                PlayerEntity summoner = getSummoner(world, summonerUUID);
+    
+                ItemEntity item;
+                BlockPos pos = (summoner != null) ? summoner.getBlockPos() : new BlockPos((int)entity.getX(), (int)entity.getY() + 2, (int)entity.getZ());
+    
+                item = new ItemEntity(world, pos.getX(), pos.getY(), pos.getZ(), MythicBosses.getVoidHourglass(getMythicLevel(entity) + 1));
+                world.spawnEntity(item);
+    
                 int level = getMythicLevel(entity);
                 if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
                     grantMilestoneAdvancement(player, level);
-                    player.sendMessage(Text.literal("You defeated a Mythic "+level+" challenge successfully!").setStyle(Style.EMPTY.withColor(0xc49952)), false);
+                    player.sendMessage(Text.literal("You defeated a Mythic " + level + " challenge successfully!").setStyle(Style.EMPTY.withColor(0xc49952)), false);
                 }
-
+    
                 if (level > 20) {
                     if (new Random().nextInt(5) == 0) {
-                        item = new ItemEntity(entity.getWorld(), entity.getX(), entity.getY() + 32, entity.getZ(), new ItemStack(ItemRegistry.GREATER_MYTHICAL_ESSENCE));
-                        
-                        entity.getWorld().spawnEntity(item);
+                        item = new ItemEntity(world, pos.getX(), pos.getY() + 32, pos.getZ(), new ItemStack(ItemRegistry.GREATER_MYTHICAL_ESSENCE));
+                        world.spawnEntity(item);
                     }
-                }
-                else if (level > 10) {
+                } else if (level > 10) {
                     if (new Random().nextInt(5) == 0) {
-                        item = new ItemEntity(entity.getWorld(), entity.getX(), entity.getY() + 32, entity.getZ(), new ItemStack(ItemRegistry.LESSER_MYTHICAL_ESSENCE));
-                        
-                        entity.getWorld().spawnEntity(item);
+                        item = new ItemEntity(world, pos.getX(), pos.getY() + 32, pos.getZ(), new ItemStack(ItemRegistry.LESSER_MYTHICAL_ESSENCE));
+                        world.spawnEntity(item);
                     }
                 }
-
+    
             } else if (NecUtilsAPI.getEntityId(entity).equals("archon:null")) {
                 if (damageSource.getAttacker() instanceof ServerPlayerEntity player) {
-                     if (player.getAdvancementTracker().getProgress(player.getServer().getAdvancementLoader().get(new Identifier("prominent", "unlock_mythic_challenges"))).isDone()) {
+                    if (player.getAdvancementTracker().getProgress(player.getServer().getAdvancementLoader().get(new Identifier("prominent", "unlock_mythic_challenges"))).isDone()) {
                         ItemEntity item = new ItemEntity(entity.getWorld(), entity.getX(), entity.getY() + 2, entity.getZ(), MythicBosses.getVoidHourglass(1));
                         entity.getWorld().spawnEntity(item);
-                     }
+                    }
                 }
             }
-
+    
             return true;
         });
+    }
+    
+    private static PlayerEntity getSummoner(ServerWorld world, UUID summonerUUID) {
+        for (PlayerEntity player : world.getPlayers()) {
+            if (player.getUuid().equals(summonerUUID)) {
+                return player;
+            }
+        }
+        return null;
     }
 
     public static void registerBuff() {
