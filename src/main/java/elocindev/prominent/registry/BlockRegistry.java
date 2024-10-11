@@ -9,8 +9,8 @@ import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
 
 public class BlockRegistry {
-    public static final Block VOLCANIC_CINDERSTONE_BLOCK = reg("volcanic_cinderstone", new Block(Settings.copy(Blocks.BEDROCK)));
-    public static final BlockItem VOLCANIC_CINDERSTONE_BLOCK_ITEM = reg("volcanic_cinderstone", new BlockItem(VOLCANIC_CINDERSTONE_BLOCK, new Item.Settings()));
+    public static final Block VOLCANIC_CINDERSTONE_BLOCK = reg("prominent:volcanic_cinderstone", new Block(Settings.copy(Blocks.BEDROCK)));
+    public static final BlockItem VOLCANIC_CINDERSTONE_BLOCK_ITEM = reg("prominent:volcanic_cinderstone", new BlockItem(VOLCANIC_CINDERSTONE_BLOCK, new Item.Settings()));
     
     public static void registerBlocks() {}
 
