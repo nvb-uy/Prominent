@@ -26,6 +26,7 @@ import elocindev.prominent.config.ServerConfig;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.player.artifact.AritfactAttributes;
 import elocindev.prominent.registry.AttributeRegistry;
+import elocindev.prominent.registry.BlockRegistry;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.registry.ItemRegistry;
 import elocindev.prominent.registry.SoundRegistry;
@@ -58,12 +59,14 @@ public class ProminentLoader implements ModInitializer {
 		AttributeRegistry.register();
 		SoundRegistry.registerSounds();
 		EffectRegistry.register();
+		BlockRegistry.registerBlocks();
 		ItemRegistry.registerItems();	
 		Registry.register(Registries.ITEM_GROUP, new Identifier(MODID, "tab"), ProminentTab);	
 		Registry.register(Registries.ITEM_GROUP, new Identifier(MODID, "mythic_bosses"), MythicTab);	
 		CommandRegistry.register();
 		
 		ItemGroupEvents.modifyEntriesEvent(RegistryKey.of(RegistryKeys.ITEM_GROUP, new Identifier(MODID, "tab"))).register(content -> {
+			content.add(BlockRegistry.VOLCANIC_CINDERSTONE_BLOCK.asItem());
 			content.add(new ItemStack(ItemRegistry.CINDERSTONE_TROPHY));
 			content.add(new ItemStack(ItemRegistry.RESPEC_SCROLL));
 			content.add(new ItemStack(ItemRegistry.MOLTEN_CORE));

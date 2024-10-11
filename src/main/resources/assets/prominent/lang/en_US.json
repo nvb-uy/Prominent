@@ -65,5 +65,7 @@
     "effect.prominent.combat": "In Combat",
 
     "attribute.prominent.mythic_level": "Mythic Level",
-    "attribute.prominent.artifact_damage": "Artifact Damage"
+    "attribute.prominent.artifact_damage": "Artifact Damage",
+
+    "block.prominent.volcanic_cinderstone": "Volcanic Cinderstone"
 }

@@ -65,5 +65,7 @@
     "effect.prominent.combat": "En Combate",
 
     "attribute.prominent.mythic_level": "Nivel Mítico",
-    "attribute.prominent.artifact_damage": "Daño de Artefacto"
+    "attribute.prominent.artifact_damage": "Daño de Artefacto",
+
+    "block.prominent.volcanic_cinderstone": "Piedraceniza Volcánica"
 }
