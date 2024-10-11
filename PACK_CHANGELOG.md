@@ -53,7 +53,8 @@ You might be confused about the balance changes, so please [check the newest blo
 - Added Sodium/Embeddium Extras
 - Added Toni's Immersive Lanterns
 - Added No Report Button
-- Updated Death Knights, Prominent, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm
+- Added Connectible Chains
+- Updated Death Knights, Prominent, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
