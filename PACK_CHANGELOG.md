@@ -28,6 +28,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Reduced Omni and Ashes maximums heavily
 
 ## Other Changes
+- Fixed not being able to go back to the anvil tab once you went to the reforging tab
 - Removed player report button from pause screen while in multiplayer.
 
 ## Mods
