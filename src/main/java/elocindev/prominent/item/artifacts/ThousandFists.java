@@ -29,13 +29,14 @@ import net.minecraft.world.World;
 import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.SpellSchool;
 import net.spell_power.api.SpellSchools;
-import safro.archon.item.earth.FistOfFuryItem;
+import safro.archon.api.Element;
+import safro.archon.item.SpellWeaponItem;
 import safro.archon.registry.EffectRegistry;
 
-public class ThousandFists extends FistOfFuryItem implements Artifact, Soulbound {
+public class ThousandFists extends SpellWeaponItem implements Artifact, Soulbound {
 
     public ThousandFists(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, attackDamage, attackSpeed, settings);
+        super(toolMaterial, Element.EARTH, 3, 0, 0, attackDamage, attackSpeed, settings);
     }
 
     @Override

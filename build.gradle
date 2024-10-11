@@ -67,7 +67,7 @@ dependencies {
 
 	modCompileOnly "maven.modrinth:adventurez:1.4.20+1.20.1"
 
-	modCompileOnly "maven.modrinth:archon:0.5.7"
+	modCompileOnly "maven.modrinth:archon:0.7.2"
 
 	modImplementation "maven.modrinth:minecells:1.7.2"
 	modCompileOnly "maven.modrinth:owo-lib:0.11.2+1.20"
