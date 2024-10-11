@@ -8,7 +8,7 @@ Become a plaguebringer, use abilities that bring diseases to your victims and sp
 You might be confused about the balance changes, so please [check the newest blog post for more information](LINKHERE), it's a bit complex.
 
 ## Important Changes
-- **Unholy Death Knight**: A versatile melee DPS that can grip targets close to them and infect them with diseases.
+- **Unholy Death Knight**: A versatile melee DPS that can grip targets and infect them with diseases.
 - **Artifacts can now use Spell enchants**. Artifacts can now use again the spell enchants, making them way more powerful.
 - **Balance Changes**. General balance changes to try to get all late game builds to deal consistent ~300 DPS
 
@@ -32,6 +32,7 @@ You might be confused about the balance changes, so please [check the newest blo
 
 ## Other Changes
 - Fixed not being able to go back to the anvil tab once you went to the reforging tab
+- Fixed hourglass spawning too high when killing or dying to a mythic boss. It will now spawn on the player that summoned it / died to it; if the summoner isn't online when the mythic boss dies, it'll spawn on the location of the mythic boss
 - Fixed crash caused by Void Hourglass with too high of a level
 - Removed player report button from pause screen while in multiplayer.
 
