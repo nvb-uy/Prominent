@@ -2,8 +2,9 @@
 **3.0.7 - Unholy Death Knights**
 
 This update introduces a new class with new weapons, armors and its own skill book; the Unholy Death Knight.
-
 Become a plaguebringer, use abilities that bring diseases to your victims and spread them to multiple targets.
+
+This update also introduces two new armor sets for Frost Death Knights, and two more for Unholy Death Knights!
 
 You might be confused about the balance changes, so please [check the newest blog post for more information](LINKHERE), it's a bit complex.
 
@@ -23,6 +24,13 @@ You might be confused about the balance changes, so please [check the newest blo
 - A'zhar now gives +7 Spell Power instead of +10%
 - Fury of a Thousand Fists now gives +7 Spell Power instead of +10%
 
+## Boss Changes
+- Mythic bosses now will drop the Void Hourglass at the player that summoned them, instead of above
+- When a player dies against a mythic boss, their gravestone will contain the new Void Hourglass
+- Gu'mas is now invulnerable in phase change, this is done to prevent permanent stuns.
+- Increased base hp of Gu'mas to 1100 from 900
+- Reduced slightly the damage dealy by Gu'mas.
+
 ## Balance Changes
 - Increased maximum efficiency of armor from 30% to 40%, and its max limit to 100.
 - Changed Sin'dorei Heritage to reduce up to -50% armor instead of -80%
@@ -31,6 +39,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Reduced Omni and Ashes maximums heavily
 - Magus Armor no longer gives flat spell power, it instead gives +12.5% of all elements as it's a medium defense multielement armor.
 - A lot of changes in magic-focused armor sets, please see the blog post linked above for full changes!
+- Disabled damage reduction from Silver trim to make Diamond trim useful again
 - Disabled amethyst trim
 
 ## Other Changes
@@ -40,8 +49,13 @@ You might be confused about the balance changes, so please [check the newest blo
 - Removed player report button from pause screen while in multiplayer.
 
 ## Mods
+- Added Sodium/Embeddium Dynamic Lights
+- Added Sodium/Embeddium Extras
+- Added Toni's Immersive Lanterns
 - Added No Report Button
-- Updated Death Knights, Prominent, Create: Copycats+, Tierify, Mandala's GUI
+- Updated Death Knights, Prominent, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm
+
+------------------------------------------------------------------------------------------------------------------------------------
 
 # Prominence II RPG: Hasturian Era
 **3.0.6 - Level Menu & Fixes**
