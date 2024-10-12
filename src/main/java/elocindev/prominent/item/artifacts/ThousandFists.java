@@ -20,6 +20,7 @@ import net.minecraft.entity.attribute.EntityAttributeModifier;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.item.SwordItem;
 import net.minecraft.item.ToolMaterial;
 import net.minecraft.text.MutableText;
 import net.minecraft.text.Style;
@@ -29,14 +30,12 @@ import net.minecraft.world.World;
 import net.spell_power.api.SpellDamageSource;
 import net.spell_power.api.SpellSchool;
 import net.spell_power.api.SpellSchools;
-import safro.archon.api.Element;
-import safro.archon.item.SpellWeaponItem;
 import safro.archon.registry.EffectRegistry;
 
-public class ThousandFists extends SpellWeaponItem implements Artifact, Soulbound {
+public class ThousandFists extends SwordItem implements Artifact, Soulbound {
 
     public ThousandFists(ToolMaterial toolMaterial, int attackDamage, float attackSpeed, Settings settings) {
-        super(toolMaterial, Element.EARTH, 3, 0, 0, attackDamage, attackSpeed, settings);
+        super(toolMaterial, attackDamage, attackSpeed, settings);
     }
 
     @Override
