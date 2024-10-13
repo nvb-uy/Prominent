@@ -1,5 +1,7 @@
 package elocindev.prominent.mixin;
 
+import java.util.Optional;
+
 import org.jetbrains.annotations.Nullable;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.Shadow;
@@ -14,6 +16,7 @@ import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.registry.AttributeRegistry;
 import elocindev.prominent.registry.EffectRegistry;
 import elocindev.prominent.registry.ItemRegistry;
+import elocindev.prominent.talents.Talents;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
@@ -26,6 +29,8 @@ import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
 import net.puffish.skillsmod.api.SkillsAPI;
+import net.puffish.skillsmod.api.Category;
+import net.puffish.skillsmod.api.Skill;
 import net.puffish.skillsmod.api.Skill.State;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
@@ -79,11 +84,18 @@ public abstract class ArtifactDamageModifiersMixin {
                 modifiedDamage *= (float) multiplier;
             }
 
-            if (playerAttacker instanceof ServerPlayerEntity skilluser && SkillsAPI.getCategory(new Identifier("puffish_skills:prom")).get().getSkill("decayingdevotion").get().getState(skilluser).equals(State.UNLOCKED)) {
-                if (skilluser.getVehicle() != null && skilluser.getVehicle() instanceof LivingEntity mount) {
-                    if (mount instanceof HorseEntity || NecUtilsAPI.getEntityId(mount).equals("mythicmounts:nightmare")
-                    && skilluser.getMainHandStack().isIn(ItemRegistry.RIDER_WEAPONS)) {
-                        modifiedDamage *= 1.5f;
+            if (playerAttacker instanceof ServerPlayerEntity skilluser) {
+                Optional<Category> cat = SkillsAPI.getCategory(new Identifier("puffish_skills:prom"));
+
+                if (cat.isPresent()) {
+                    Optional<Skill> skill = cat.get().getSkill(Talents.DECAYING_DEVOTION);
+                    if (skill.isPresent() && skill.get().getState(skilluser).equals(State.UNLOCKED)) {
+                        if (skilluser.getVehicle() != null && skilluser.getVehicle() instanceof LivingEntity mount) {
+                            if ((mount instanceof HorseEntity || NecUtilsAPI.getEntityId(mount).equals("mythicmounts:nightmare"))
+                                && skilluser.getMainHandStack().isIn(ItemRegistry.RIDER_WEAPONS)) {
+                                modifiedDamage *= 1.5f;
+                            }
+                        }
                     }
                 }
             }
