@@ -18,6 +18,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Fixed all artifacts (except Thunderwrath) not being able to use Spell enchants such as Spell Infinity or Spell Power.
 - Fixed artifact damage increase nodes not working properly on some artifacts.
 - Fixed A'zhar damage calculation spiking way too fast than it should.
+- Fixed Frostmourne's size in third person, it's now 20% bigger.
 - Frostmourne now gives +6 Unholy, Frost and Blood Power instead of +25%, it no longer gives soul power.
 - Fyr'alath now gives +4 Fire/Soul instead of +10%
 - Supernova now gives +6 Spell Power instead of +5
