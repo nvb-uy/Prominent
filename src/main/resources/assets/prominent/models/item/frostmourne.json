@@ -1084,12 +1084,10 @@
 	],
 	"display": {
 		"thirdperson_righthand": {
-			"translation": [0, 12, 2],
-			"scale": [0.8, 0.8, 0.8]
+			"translation": [0, 15.25, 2]
 		},
 		"thirdperson_lefthand": {
-			"translation": [0, 12, 1.75],
-			"scale": [0.8, 0.8, 0.8]
+			"translation": [0, 15.25, 2]
 		},
 		"firstperson_righthand": {
 			"rotation": [19, 1, 0],
