@@ -18,6 +18,8 @@ import elocindev.prominent.item.mythic_bosses.MythicSummoner;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.Registry;
+import net.minecraft.registry.RegistryKeys;
+import net.minecraft.registry.tag.TagKey;
 import net.minecraft.text.Style;
 import net.minecraft.text.Text;
 import net.minecraft.util.Formatting;
@@ -31,6 +33,8 @@ import org.slf4j.LoggerFactory;
 
 public class ItemRegistry {
     private static final Logger LOGGER = LoggerFactory.getLogger(ProminentLoader.MODID);
+
+    public static final TagKey<Item> RIDER_WEAPONS = TagKey.of(RegistryKeys.ITEM, new Identifier(ProminentLoader.MODID, "rider_weapons"));
 
     
     private static Item.Settings discSettings = new Item.Settings().rarity(Rarity.RARE).maxCount(1);

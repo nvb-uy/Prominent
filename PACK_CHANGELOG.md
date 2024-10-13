@@ -10,7 +10,7 @@ You might be confused about the balance changes, so please [check the newest blo
 
 ## Important Changes
 - **Unholy Death Knight**: A versatile melee DPS that can grip targets and infect them with diseases.
-- **New Fate Talent: Decaying Devotion**. A Death Knight focused talent that removes elemental powers but increases your Unholy and Blood powers.
+- **New Fate Talent: Decaying Devotion**. A Death Knight focused talent that removes elemental powers but increases your Unholy and Blood powers, and grants a passive to increase damage while riding horses.
 - **Artifacts can now use Spell enchants**. Artifacts can now use again the spell enchants, making them way more powerful.
 - **Balance Changes**. General balance changes to try to get all late game builds to deal consistent ~300 DPS
 
@@ -24,6 +24,11 @@ You might be confused about the balance changes, so please [check the newest blo
 - A'zhar now gives +7 Spell Power instead of +10%
 - Fury of a Thousand Fists now gives +7 Spell Power instead of +10%
 
+## Talent Tree Changes
+- Added "Decaying Devotion", a fate node for Death Knights. Its passive works on vanilla horses and the Nightmare mythic mount!
+- Added new icon background for all fate talents to better differentiate them
+- Changed Sin'dorei Heritage to reduce up to -50% armor instead of -80%
+
 ## Boss Changes
 - Mythic bosses now will drop the Void Hourglass at the player that summoned them, instead of above
 - When a player dies against a mythic boss, their gravestone will contain the new Void Hourglass
@@ -33,7 +38,6 @@ You might be confused about the balance changes, so please [check the newest blo
 
 ## Balance Changes
 - Increased maximum efficiency of armor from 30% to 40%, and its max limit to 100.
-- Changed Sin'dorei Heritage to reduce up to -50% armor instead of -80%
 - Netherite Staves now give +6 Spell Power instead of +5
 - Max Tier Staves now give +8 Spell Power instead of +6
 - Reduced Omni and Ashes maximums heavily
@@ -46,6 +50,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Fixed not being able to go back to the anvil tab once you went to the reforging tab
 - Fixed hourglass spawning too high when killing or dying to a mythic boss. It will now spawn on the player that summoned it / died to it; if the summoner isn't online when the mythic boss dies, it'll spawn on the location of the mythic boss
 - Fixed crash caused by Void Hourglass with too high of a level
+- Fixed stat menu showing unholy icon as passive's icon
 - Removed player report button from pause screen while in multiplayer.
 
 ## Mods
@@ -54,7 +59,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Added Toni's Immersive Lanterns
 - Added No Report Button
 - Added Connectible Chains
-- Updated Death Knights, Prominent, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine
+- Updated Death Knights, Prominent, Prominent Talents, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine
 
 ------------------------------------------------------------------------------------------------------------------------------------
 

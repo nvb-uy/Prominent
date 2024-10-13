@@ -13,15 +13,20 @@ import elocindev.prominent.item.artifacts.Azhar;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.registry.AttributeRegistry;
 import elocindev.prominent.registry.EffectRegistry;
+import elocindev.prominent.registry.ItemRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.effect.StatusEffectInstance;
+import net.minecraft.entity.passive.HorseEntity;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.registry.Registries;
 import net.minecraft.registry.tag.TagKey;
+import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.util.Hand;
 import net.minecraft.util.Identifier;
+import net.puffish.skillsmod.api.SkillsAPI;
+import net.puffish.skillsmod.api.Skill.State;
 
 import com.llamalad7.mixinextras.injector.ModifyReturnValue;
 
@@ -57,23 +62,34 @@ public abstract class ArtifactDamageModifiersMixin {
         }
 
         if (source.getAttacker() != null && source.getAttacker() instanceof PlayerEntity playerAttacker && isUsingArtifact(playerAttacker)) {
-        if (isArtifactAzhar(playerAttacker)) {
-            double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
-            StatusEffectInstance brokenSoulEffect = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL);
-            
-            if (brokenSoulEffect != null) {
-                int souls = 1 + brokenSoulEffect.getAmplifier();
-                modifiedDamage *= (float) (1 + (multiplier - 1) * souls);
-            }
-        } else {
-            double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
+            if (isArtifactAzhar(playerAttacker)) {
+                double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
+                StatusEffectInstance brokenSoulEffect = playerAttacker.getStatusEffect(EffectRegistry.BROKEN_SOUL);
+                
+                if (brokenSoulEffect != null) {
+                    int souls = 1 + brokenSoulEffect.getAmplifier();
+                    modifiedDamage *= (float) (1 + (multiplier - 1) * souls);
+                }
+            } else {
+                double multiplier = playerAttacker.getAttributeInstance(AttributeRegistry.ARTIFACT_DAMAGE).getValue();
 
-            if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
-                multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
+                if (playerAttacker.hasStatusEffect(Registries.STATUS_EFFECT.get(new Identifier("simplyskills:titans_grip")))) {
+                    multiplier += playerAttacker.getAttributeInstance(AttributeRegistry.TITAN_DAMAGE).getValue() - 1;
+                }
+                modifiedDamage *= (float) multiplier;
             }
-            modifiedDamage *= (float) multiplier;
+
+            if (playerAttacker instanceof ServerPlayerEntity skilluser && SkillsAPI.getCategory(new Identifier("puffish_skills:prom")).get().getSkill("decayingdevotion").get().getState(skilluser).equals(State.UNLOCKED)) {
+                if (skilluser.getVehicle() != null && skilluser.getVehicle() instanceof LivingEntity mount) {
+                    if (mount instanceof HorseEntity || NecUtilsAPI.getEntityId(mount).equals("mythicmounts:nightmare")
+                    && skilluser.getMainHandStack().isIn(ItemRegistry.RIDER_WEAPONS)) {
+                        modifiedDamage *= 1.5f;
+                    }
+                }
+            }
         }
-    }
+
+        
 
         return modifiedDamage;
     }
