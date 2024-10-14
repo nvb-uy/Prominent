@@ -14,6 +14,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - **Artifacts can now use Spell enchants**. Artifacts can now use again the spell enchants, making them way more powerful.
 - **Balance Changes**. General balance changes to try to get all late game builds to deal consistent ~300 DPS
 - **Resistance Changes**. The resistance effect now mitigates 5% of the damage dealt per level.
+- **Version Checker**. The version checker from Prominence I is now on Prominence II, notifying you when you're outdated so you can always have your modpack updated!
 
 ## Artifact Changes
 - Fixed all artifacts (except Thunderwrath) not being able to use Spell enchants such as Spell Infinity or Spell Power.
@@ -49,7 +50,15 @@ You might be confused about the balance changes, so please [check the newest blo
 - Disabled Amethyst trim
 - Disabled Broken Watch
 
+## Quest Changed
+- Added tips for melee in the Night Lich quest
+- Added tips on how to not get oneshotted in the Gauntlet quest
+- Added tips on summoning Magus on its campaign quest
+- Removed slumbering lichblade quest and replaced by the two gems
+- Plenty of small quest fixes
+
 ## Other Changes
+- Added version checking and in-game changelog display
 - Fixed not being able to go back to the anvil tab once you went to the reforging tab.,
 - Fixed hourglass spawning too high when killing or dying to a mythic boss. It will now spawn on the player that summoned it / died to it; if the summoner isn't online when the mythic boss dies, it'll spawn on the location of the mythic boss.
 - Fixed crash caused by Void Hourglass with too high of a level.
@@ -59,6 +68,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Removed player report button from pause screen while in multiplayer.
 
 ## Mods
+- Added Modpack Update Checker
 - Added Sodium/Embeddium Dynamic Lights
 - Added Sodium/Embeddium Extras
 - Added Toni's Immersive Lanterns
