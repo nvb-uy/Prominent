@@ -13,6 +13,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - **New Fate Talent: Decaying Devotion**. A Death Knight focused talent that removes elemental powers but increases your Unholy and Blood powers, and grants a passive to increase damage while riding horses.
 - **Artifacts can now use Spell enchants**. Artifacts can now use again the spell enchants, making them way more powerful.
 - **Balance Changes**. General balance changes to try to get all late game builds to deal consistent ~300 DPS
+- **Resistance Changes**. The resistance effect now mitigates 5% of the damage dealt per level.
 
 ## Artifact Changes
 - Fixed all artifacts (except Thunderwrath) not being able to use Spell enchants such as Spell Infinity or Spell Power.
@@ -60,7 +61,8 @@ You might be confused about the balance changes, so please [check the newest blo
 - Added Toni's Immersive Lanterns
 - Added No Report Button
 - Added Connectible Chains
-- Updated Death Knights, Prominent, Prominent Talents, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine
+- Added Resistance Balancer
+- Updated Death Knights, Prominent, Prominent Talents, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine, Eldritch End
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
