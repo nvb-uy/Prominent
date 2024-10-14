@@ -5,15 +5,20 @@ import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
+import com.glisco.things.items.ThingsItems;
+
 import elocindev.prominent.item.artifacts.Artifact;
 import elocindev.prominent.item.artifacts.IPartOfSet;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.soulbinding.Soulbound;
+import io.wispforest.accessories.api.slot.SlotEntryReference;
+import io.wispforest.accessories.pond.AccessoriesAPIAccess;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.Entity.RemovalReason;
 import net.minecraft.entity.ItemEntity;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.item.ItemStack;
+import net.minecraft.registry.Registries;
 import net.minecraft.server.network.ServerPlayerEntity;
 import net.minecraft.server.world.ServerWorld;
 import net.minecraft.text.Style;
@@ -23,9 +28,10 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 
 import java.util.ArrayList;
+import java.util.List;
 
 @Mixin(ServerPlayerEntity.class)
-public class ServerPlayerEntityMixin {
+public class ServerPlayerEntityMixin implements AccessoriesAPIAccess {
     @Inject(method = "onDeath", at = @At("HEAD"))
     public void prominent$removeMythicBosses(DamageSource damageSource, CallbackInfo ci) {
         ServerPlayerEntity player = (ServerPlayerEntity) (Object) this;
@@ -72,7 +78,15 @@ public class ServerPlayerEntityMixin {
         // if (!player.getOffHandStack().isEmpty())
         //     inventory.add(player.getOffHandStack());
     
+        // TODO: Implement this directly to item obliterator later
         if (!world.isClient() && world.getTime() % 20 == 0) {
+            List<SlotEntryReference> equippedStacks = this.accessoriesCapability().getEquipped(stack -> (stack.getItem().equals(ThingsItems.BROKEN_WATCH) || Registries.ITEM.getId(stack.getItem()).toString().equals("artifacts:feral_claws")));
+        
+            for (SlotEntryReference equippedStack : equippedStacks) {
+                if (equippedStack != null) equippedStack.stack().setCount(0);
+            }
+            
+
             for (ItemStack stack : inventory) {
                 if (!(stack.getItem() instanceof Soulbound))
                     continue;

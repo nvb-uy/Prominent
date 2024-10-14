@@ -65,6 +65,9 @@ dependencies {
 
 	modImplementation "maven.modrinth:skills:0.12.2-fabric"
 
+	modImplementation "maven.modrinth:things:0.3.3+1.20-fabric"
+	modImplementation "maven.modrinth:accessories:1.0.0-beta.41+1.20.1-fabric"
+
 	modCompileOnly "maven.modrinth:adventurez:1.4.20+1.20.1"
 
 	modCompileOnly "maven.modrinth:archon:0.7.2"

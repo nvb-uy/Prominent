@@ -6,7 +6,7 @@ Become a plaguebringer, use abilities that bring diseases to your victims and sp
 
 This update also introduces two new armor sets for Frost Death Knights, and two more for Unholy Death Knights!
 
-You might be confused about the balance changes, so please [check the newest blog post for more information](LINKHERE), it's a bit complex.
+You might be confused about the balance changes, so please [check the newest blog post for more information](https://rpg.prominence.wiki/blog/3.0.7-changes), it's a bit complex.
 
 ## Important Changes
 - **Unholy Death Knight**: A versatile melee DPS that can grip targets and infect them with diseases.
@@ -49,10 +49,11 @@ You might be confused about the balance changes, so please [check the newest blo
 - Disabled amethyst trim
 
 ## Other Changes
-- Fixed not being able to go back to the anvil tab once you went to the reforging tab
-- Fixed hourglass spawning too high when killing or dying to a mythic boss. It will now spawn on the player that summoned it / died to it; if the summoner isn't online when the mythic boss dies, it'll spawn on the location of the mythic boss
-- Fixed crash caused by Void Hourglass with too high of a level
-- Fixed stat menu showing unholy icon as passive's icon
+- Fixed not being able to go back to the anvil tab once you went to the reforging tab.,
+- Fixed hourglass spawning too high when killing or dying to a mythic boss. It will now spawn on the player that summoned it / died to it; if the summoner isn't online when the mythic boss dies, it'll spawn on the location of the mythic boss.
+- Fixed crash caused by Void Hourglass with too high of a level.
+- Fixed stat menu showing unholy icon as passive's icon.
+- Fixed Molten Core description saying that it's unlocked at Chapter II instead of Chapter I.
 - Removed player report button from pause screen while in multiplayer.
 
 ## Mods
@@ -62,11 +63,11 @@ You might be confused about the balance changes, so please [check the newest blo
 - Added No Report Button
 - Added Connectible Chains
 - Added Resistance Balancer
-- Updated Death Knights, Prominent, Prominent Talents, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine, Eldritch End
+- Updated Death Knights, Prominent, Prominent Talents, Create: Copycats+, Tierify, Mandala's GUI, Accessories, Archon, Building Wands, Spellblade, SBProm, Spell Engine, Eldritch End, AAAParticles
 
 ------------------------------------------------------------------------------------------------------------------------------------
 
-# Prominence II RPG: Hasturian Era
+# Prominence II RPG: Hasturian Eraz
 **3.0.6 - Level Menu & Fixes**
 
 A small update featuring a few fixes and a new menu when hovering the player level icon in your inventory!

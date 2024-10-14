@@ -13,7 +13,7 @@ import net.minecraft.entity.player.PlayerEntity;
 // import net.minecraft.util.Formatting;
 
 @Mixin(PlayerEntity.class)
-public class PlayerEntityMixin {
+public class PlayerEntityMixin {    
     @Inject(method = "setAbsorptionAmount", at = @At("HEAD"), cancellable = true)
     private void checkSetAbsorbtionEntity(float f, CallbackInfo ci){
         if (Float.isNaN(f)){

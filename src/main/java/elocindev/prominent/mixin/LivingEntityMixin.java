@@ -8,6 +8,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 import elocindev.prominent.ProminentLoader;
 import elocindev.prominent.mythicbosses.MythicBosses;
 import elocindev.prominent.registry.EffectRegistry;
+import io.wispforest.accessories.pond.AccessoriesAPIAccess;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -17,12 +18,11 @@ import net.minecraft.entity.effect.StatusEffectInstance;
 // import net.minecraft.util.Formatting;
 
 @Mixin(LivingEntity.class)
-public class LivingEntityMixin {
+public class LivingEntityMixin implements AccessoriesAPIAccess {
     
     @Inject(method = "tick", at = @At("TAIL"), cancellable = true)
     public void prominent$handleAffixes(CallbackInfo ci) {
         LivingEntity entity = (LivingEntity) (Object) this;
-
 
         if (entity.age % 600 == 0) {   
             if (MythicBosses.isMythicBoss(entity))
@@ -48,7 +48,6 @@ public class LivingEntityMixin {
                         );
                     }
                 }
-
         }
     }
 
