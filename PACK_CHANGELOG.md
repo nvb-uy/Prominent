@@ -46,7 +46,8 @@ You might be confused about the balance changes, so please [check the newest blo
 - Magus Armor no longer gives flat spell power, it instead gives +12.5% of all elements as it's a medium defense multielement armor.
 - A lot of changes in magic-focused armor sets, please see the blog post linked above for full changes!
 - Disabled damage reduction from Silver trim to make Diamond trim useful again
-- Disabled amethyst trim
+- Disabled Amethyst trim
+- Disabled Broken Watch
 
 ## Other Changes
 - Fixed not being able to go back to the anvil tab once you went to the reforging tab.,
@@ -54,6 +55,7 @@ You might be confused about the balance changes, so please [check the newest blo
 - Fixed crash caused by Void Hourglass with too high of a level.
 - Fixed stat menu showing unholy icon as passive's icon.
 - Fixed Molten Core description saying that it's unlocked at Chapter II instead of Chapter I.
+- Fixed feral claws being equippable even if obliterated
 - Removed player report button from pause screen while in multiplayer.
 
 ## Mods
