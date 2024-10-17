@@ -1,4 +1,21 @@
 # Prominence II RPG: Hasturian Era
+**3.0.10 - Health Overhaul**
+
+## Important Changes
+- **Health Overhaul**: Players will now gain health each level. Talents and armor sets have been adjusted to better suit tank builds, and damage was re-adjusted.
+- **PvP**: Thanks to the new HP changes, PvP is in a better state in the late/end game. It still is not fully balanced, but a PvP focused update will come in the future.
+
+## Item Changes
+- Sapphire Rings and Necklaces now give +10 Max Health instead of +2
+- Netherite Sapphire Rings and Necklaces now give +20 Max Health instead of +4
+- Sentinel's Ammulet now gives +60 Max Health instead of +6
+- Juggernaut's Band now gives +40 Max Health instead of +6
+
+## Mods
+- Added AsteorBar
+- Updated Prominent, Prominent Talents, Archon
+
+# Prominence II RPG: Hasturian Era
 **3.0.7 - Unholy Death Knights**
 
 This update introduces a new class with new weapons, armors and its own skill book; the Unholy Death Knight.

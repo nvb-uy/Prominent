@@ -29,7 +29,6 @@ import net.minecraft.util.Formatting;
 import net.minecraft.world.World;
 import net.spell_power.api.SpellSchool;
 import net.spell_power.api.SpellSchools;
-import net.sweenus.simplyswords.api.SimplySwordsAPI;
 import net.sweenus.simplyswords.util.HelperMethods;
 
 public class Azhar extends SwordItem implements Artifact, Soulbound {
@@ -44,7 +43,8 @@ public class Azhar extends SwordItem implements Artifact, Soulbound {
     @Override
     public boolean postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
         if (!(attacker instanceof PlayerEntity player && player.isCreative()))
-            attacker.damage(target.getDamageSources().magic(), attacker.getMaxHealth()*0.1f);
+            attacker.damage(attacker.getDamageSources().magic(), attacker.getMaxHealth()*0.1f);
+        
         BrokenSoul.addStack(attacker);
 
         return super.postHit(stack, target, attacker);
@@ -61,7 +61,6 @@ public class Azhar extends SwordItem implements Artifact, Soulbound {
         }
 
         HelperMethods.createFootfalls(entity, stack, world, stepMod, ParticleTypes.FLAME, ParticleTypes.FLAME, ParticleTypes.FLAME, true);
-        SimplySwordsAPI.inventoryTickGemSocketLogic(stack, world, entity, 100, 100);
    }
 
    @Override
