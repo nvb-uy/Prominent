@@ -29,6 +29,7 @@
 - Spin attacks from Spellblades no longer grant Strength/Haste stacks, this is done to make consumables a better choice.
 
 ## Other Changes
+- Corruption is no longer infusable in weapons; now it's only infusable in armor pieces.
 - Fixed Great Runeblades not being craftable
 - Fixed kick caused by Null
 - Fixed Null being able to get infinite hp
