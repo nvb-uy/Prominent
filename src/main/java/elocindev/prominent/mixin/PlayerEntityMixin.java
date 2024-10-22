@@ -6,6 +6,7 @@ import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
 
 import elocindev.prominent.ProminentLoader;
+import elocindev.prominent.registry.EffectRegistry;
 import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.player.PlayerEntity;
 // import net.minecraft.text.Style;
@@ -31,6 +32,18 @@ public class PlayerEntityMixin {
             // }
 
             ci.cancel();
+        }
+    }
+
+    @Inject(method = "tick", at = @At("TAIL"), cancellable = true)
+    private void prominent$tickOffcombatHealing(CallbackInfo ci) {
+        PlayerEntity ths = (PlayerEntity) (Object) this;
+
+        if (ths.age % 20 != 0) return;
+
+        if (ths.getHealth() < ths.getMaxHealth() && !ths.isCreative() && !ths.isSpectator()
+        && !ths.hasStatusEffect(EffectRegistry.ON_COMAT)) {
+            ths.heal(ths.getMaxHealth() * 0.03f);
         }
     }
 }

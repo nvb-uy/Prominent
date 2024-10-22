@@ -1,18 +1,35 @@
 # Prominence II RPG: Hasturian Era
-**3.0.10 - Health Overhaul**
+**3.0.10 - Health Overhaul & Blood Death Knights**
 
 ## Important Changes
 - **Health Overhaul**: Players will now gain health each level. Talents and armor sets have been adjusted to better suit tank builds, and damage was re-adjusted.
+- **Blood Death Knights**: The new tank class of Blood Death Knights is out! A self sustain focused tank class. 
+- **Healing!**. Due to the new health adjustments, healers are in a better state and even needed for multiplayer. For singleplayer, there were consumable buffs, like the Health Flask heal 10% max health + 35% of maximum health over 10s!
+- **Healthbars**. The hearts in the HUD have been completely replaced with a healthbar, so it's easier to see your HP in later stages 
 - **PvP**: Thanks to the new HP changes, PvP is in a better state in the late/end game. It still is not fully balanced, but a PvP focused update will come in the future.
+
+## Talent Changes
+- S'kellak's Armor Blessing is now "S'kellak's Blessing", and it now also gives +100 Max HP
 
 ## Item Changes
 - Sapphire Rings and Necklaces now give +10 Max Health instead of +2
 - Netherite Sapphire Rings and Necklaces now give +20 Max Health instead of +4
 - Sentinel's Ammulet now gives +60 Max Health instead of +6
 - Juggernaut's Band now gives +40 Max Health instead of +6
+- Health Flask now heals 10% max health and grants Regeneration IV for 5 seconds
+- Health Flas stacks now up to 200 times.
+
+## Boss Changes
+- Highly buffed health and damage of Conjuntivius to make it fit more within the position it is in the campaign.
+- Highly buffed health and damage of Blackstone Golem to make it fit more within the position it is in the campaign.
+
+## Balance Changes
+- Increased damage dealt by whirlwinds from spellblades by +20%.
+- Spin attacks from Spellblades no longer grant Strength/Haste stacks, this is done to make consumables a better choice.
 
 ## Mods
 - Added AsteorBar
+- Removed Overflowing Bars
 - Updated Prominent, Prominent Talents, Archon
 
 # Prominence II RPG: Hasturian Era

@@ -29,7 +29,7 @@ public class OnCombat extends StatusEffect {
             && source.getAttacker() instanceof LivingEntity) {
                 player.addStatusEffect(new StatusEffectInstance(
                     EffectRegistry.ON_COMAT,
-                    100,
+                    300,
                     0,
                     false,
                     false
