@@ -29,16 +29,19 @@
 - Spin attacks from Spellblades no longer grant Strength/Haste stacks, this is done to make consumables a better choice.
 
 ## Other Changes
+- Added icons to some of the main attributes
+- Attack Speed is now called "Haste", as it scales other things than just attacks.
 - Corruption is no longer infusable in weapons; now it's only infusable in armor pieces.
 - Disabled Forlorn Invaders from spawning (Lag issues)
 - Fixed Great Runeblades not being craftable
 - Fixed kick caused by Null
 - Fixed Null being able to get infinite hp
+- Fixed level up sound not playing
 
 ## Mods
 - Added AsteorBar
 - Removed Overflowing Bars
-- Updated Prominent, Prominent Talents, Archon
+- Updated Prominent, Prominent Talents, Archon, Death Knights, You Shall Not Spawn
 
 # Prominence II RPG: Hasturian Era
 **3.0.7 - Unholy Death Knights**
