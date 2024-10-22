@@ -30,6 +30,7 @@
 
 ## Other Changes
 - Corruption is no longer infusable in weapons; now it's only infusable in armor pieces.
+- Disabled Forlorn Invaders from spawning (Lag issues)
 - Fixed Great Runeblades not being craftable
 - Fixed kick caused by Null
 - Fixed Null being able to get infinite hp
