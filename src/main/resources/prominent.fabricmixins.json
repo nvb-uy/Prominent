@@ -13,7 +13,8 @@
     "ServerPlayerEntityMixin",
     "LivingEntityMixin",
     "ArtifactDamageModifiersMixin",
-    "attribute.AttributeApplyMixin"
+    "attribute.AttributeApplyMixin",
+    "items.HealthFlaskItemMixin"
   ],
   "client": [
     "client.UpdateArtifactClientMixin"

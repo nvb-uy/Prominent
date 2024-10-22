@@ -67,5 +67,8 @@
     "attribute.prominent.mythic_level": "Nivel Mítico",
     "attribute.prominent.artifact_damage": "Daño de Artefacto",
 
-    "block.prominent.volcanic_cinderstone": "Piedraceniza Volcánica"
+    "block.prominent.volcanic_cinderstone": "Piedraceniza Volcánica",
+
+    "item.prominent.health_flask.tooltip": "Restaura 10% de vida máxima y otorga Regeneración IV por 5 segundos.",
+    "item.prominent.health_flask.cooldown": " 2 Segundos de enfriamiento"
 }

@@ -67,5 +67,8 @@
     "attribute.prominent.mythic_level": "Mythic Level",
     "attribute.prominent.artifact_damage": "Artifact Damage",
 
-    "block.prominent.volcanic_cinderstone": "Volcanic Cinderstone"
+    "block.prominent.volcanic_cinderstone": "Volcanic Cinderstone",
+
+    "item.prominent.health_flask.tooltip": "Restores 10% Maximum Health and grants Regeneration IV for 5 seconds.",
+    "item.prominent.health_flask.cooldown": " 2 Second Cooldown"
 }

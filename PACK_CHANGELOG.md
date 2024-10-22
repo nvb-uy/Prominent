@@ -17,7 +17,8 @@
 - Sentinel's Ammulet now gives +60 Max Health instead of +6
 - Juggernaut's Band now gives +40 Max Health instead of +6
 - Health Flask now heals 10% max health and grants Regeneration IV for 5 seconds
-- Health Flas stacks now up to 200 times.
+- Health Flask stacks now up to 200 times.
+- Health Flask's use time reduced by 1 second, but after drinking it goes on cooldown for 2 seconds.
 
 ## Boss Changes
 - Highly buffed health and damage of Conjuntivius to make it fit more within the position it is in the campaign.
