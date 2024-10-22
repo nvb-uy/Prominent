@@ -87,7 +87,7 @@ public class MythicBosses {
             if (entity instanceof LivingEntity livingEntity && NecUtilsAPI.getEntityId(livingEntity).equals("archon:null")) {
                 livingEntity.setCustomName(Text.literal("\uA835"));
 
-                livingEntity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addPersistentModifier(
+                livingEntity.getAttributeInstance(EntityAttributes.GENERIC_MAX_HEALTH).addTemporaryModifier(
                     new EntityAttributeModifier(
                         "360f2807-d2cd-4d0e-9040-b0d511d484ne",
                         2, 
@@ -95,10 +95,10 @@ public class MythicBosses {
                     )
                 );
 
-                livingEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addPersistentModifier(
+                livingEntity.getAttributeInstance(EntityAttributes.GENERIC_ATTACK_DAMAGE).addTemporaryModifier(
                     new EntityAttributeModifier(
                         "360f2807-d2cd-4d0e-9040-b0d511d484nc",
-                        0.5, 
+                        0.65, 
                         EntityAttributeModifier.Operation.MULTIPLY_TOTAL
                     )
                 );

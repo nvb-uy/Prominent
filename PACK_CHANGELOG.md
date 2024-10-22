@@ -28,6 +28,11 @@
 - Increased damage dealt by whirlwinds from spellblades by +20%.
 - Spin attacks from Spellblades no longer grant Strength/Haste stacks, this is done to make consumables a better choice.
 
+## Other Changes
+- Fixed Great Runeblades not being craftable
+- Fixed kick caused by Null
+- Fixed Null being able to get infinite hp
+
 ## Mods
 - Added AsteorBar
 - Removed Overflowing Bars
