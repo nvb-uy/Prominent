@@ -42,7 +42,7 @@ public class PlayerEntityMixin {
         if (ths.age % 20 != 0) return;
 
         if (ths.getHealth() < ths.getMaxHealth() && !ths.isCreative() && !ths.isSpectator()
-        && !ths.hasStatusEffect(EffectRegistry.ON_COMAT)) {
+        && !ths.hasStatusEffect(EffectRegistry.ON_COMAT) && !ths.getHungerManager().isNotFull()) {
             ths.heal(ths.getMaxHealth() * 0.03f);
         }
     }
