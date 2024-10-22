@@ -31,6 +31,7 @@
 ## Other Changes
 - Added icons to some of the main attributes
 - Attack Speed is now called "Haste", as it scales other things than just attacks.
+- Attack Damage is now called "Physical Damage", as it scales other things than just attacks.
 - Corruption is no longer infusable in weapons; now it's only infusable in armor pieces.
 - Disabled Forlorn Invaders from spawning (Lag issues)
 - Fixed Great Runeblades not being craftable
