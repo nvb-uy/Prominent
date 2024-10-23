@@ -24,7 +24,6 @@ For more info about this, read the [blog post that explains these changes](https
 - Sentinel's Ammulet now gives +60 Max Health instead of +6
 - Juggernaut's Band now gives +40 Max Health instead of +6
 - Health Flask now heals 10% max health and grants Regeneration IV for 5 seconds
-- Health Flask stacks now up to 200 times.
 - Health Flask's use time reduced by 1 second, but after drinking it goes on cooldown for 2 seconds.
 
 ## Boss Changes
@@ -48,7 +47,6 @@ For more info about this, read the [blog post that explains these changes](https
 
 ## Mods
 - Added AsteorBar
-- Added Stack Size Edit
 - Removed Overflowing Bars
 - Updated Prominent, Prominent Talents, Archon, Death Knights, You Shall Not Spawn
 
