@@ -5,7 +5,7 @@ This update brings two new big things: A new tank class; the Blood Death Knight.
 
 From now on, players will start gaining max HP based when they level up. Enemy damage was adjusted and the max hp given by gear and talents was too; the S'kellak's Blessing fate now grants +100 Max HP.
 
-For more info about this, read the [blog post that explains these changes]()
+For more info about this, read the [blog post that explains these changes](https://rpg.prominence.wiki/blog/3.0.10-changes)
 
 ## Important Changes
 - **Health Overhaul**: Players will now gain health each level. Talents and armor sets have been adjusted to better suit tank builds, and damage was re-adjusted.
