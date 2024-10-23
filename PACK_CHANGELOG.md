@@ -3,7 +3,8 @@
 
 ## Important Changes
 - **Health Overhaul**: Players will now gain health each level. Talents and armor sets have been adjusted to better suit tank builds, and damage was re-adjusted.
-- **Blood Death Knights**: The new tank class of Blood Death Knights is out! A self sustain focused tank class. 
+- **Blood Death Knights**: The new tank class of Blood Death Knights is out! A self sustain focused tank class. Jewelry & Runeaxes aren't implemented yet!
+- **New Frostmourne Model**: A new model for the Frostmourne artifact has been forged.
 - **Healing!**. Due to the new health adjustments, healers are in a better state and even needed for multiplayer. For singleplayer, there were consumable buffs, like the Health Flask heal 10% max health + 35% of maximum health over 10s!
 - **Healthbars**. The hearts in the HUD have been completely replaced with a healthbar, so it's easier to see your HP in later stages 
 - **PvP**: Thanks to the new HP changes, PvP is in a better state in the late/end game. It still is not fully balanced, but a PvP focused update will come in the future.
@@ -41,8 +42,14 @@
 
 ## Mods
 - Added AsteorBar
+- Added Stack Size Edit
 - Removed Overflowing Bars
 - Updated Prominent, Prominent Talents, Archon, Death Knights, You Shall Not Spawn
+
+## Credits
+- Eftann for making the new Frostmourne model and texture.
+- Mim1q for making the spell icons for Blood Death Knight.
+- Patchouli for making the textures and model for Crimson Guard armor. 
 
 # Prominence II RPG: Hasturian Era
 **3.0.7 - Unholy Death Knights**
